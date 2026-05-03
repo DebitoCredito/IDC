@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>การพัฒนาระบบบัญชีดิจิทัลด้วยเทคโนโลยีคลาวด์และปัญญาประดิษฐ์ | KKBS x KKU</title>
+  <title>การประยุกต์โปรแกรมบัญชีคลาวด์และเทคโนโลยีปัญญาประดิษฐ์เพื่องานบัญชี | KKBS x KKU</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&family=Noto+Sans+Thai:wght@300;400;500;600;700&family=Inter:ital,wght@0,400;0,500;0,600;0,700&display=swap" rel="stylesheet">
@@ -142,6 +142,27 @@
     }
 
     .hero-body { max-width: 920px; }
+
+    /* ── Hero Avatar ── */
+    .page-bottom-avatar-wrap {
+      text-align: center;
+      overflow: hidden;
+      height: 440px;
+      position: relative;
+      background: var(--color-off-white);
+    }
+    .page-bottom-avatar {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      height: 100%;
+      object-fit: contain;
+      object-position: bottom center;
+      filter: drop-shadow(0 -6px 28px rgba(0,20,80,0.13));
+      pointer-events: none;
+      user-select: none;
+    }
     .module-tag {
       display: inline-block;
       font-family: var(--font-en);
@@ -172,6 +193,31 @@
       margin-bottom: 36px;
       line-height: 1.4;
     }
+    .hero-instructor {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 32px;
+      font-family: var(--font-th);
+    }
+    .hero-instructor .label-tag {
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      color: rgba(255,255,255,0.65);
+      white-space: nowrap;
+    }
+    .hero-instructor .name {
+      font-size: clamp(1.05rem, 2.2vw, 1.35rem);
+      font-weight: 600;
+      color: var(--color-white);
+      letter-spacing: 0.01em;
+    }
+    .hero-instructor .divider {
+      width: 1px;
+      height: 20px;
+      background: rgba(255,255,255,0.30);
+    }
+
     .hero-pills {
       display: flex;
       flex-wrap: wrap;
@@ -192,7 +238,7 @@
 
     .hero-meta {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 24px;
       padding-top: 36px;
       border-top: 1px solid rgba(255,255,255,0.18);
@@ -611,7 +657,6 @@
 <section class="hero">
   <div class="hero-inner">
     <div class="hero-header">
-      <div class="hero-eyebrow">Course · <strong>AI and Cloud-based Accounting Software</strong></div>
       <div class="kkbs-block">
         <img class="kkbs-logo" src="https://kkbs.kku.ac.th/wp/wp-content/uploads/2025/01/KKUxKKBS250w-2.png" alt="KKBS">
         <div class="kkbs-text">
@@ -620,15 +665,21 @@
           <span class="th">มหาวิทยาลัยขอนแก่น</span>
         </div>
       </div>
+      <div class="hero-eyebrow">เนื้อหารายวิชา · <strong>AI and Cloud-based Accounting Software</strong></div>
     </div>
     <div class="hero-body">
-      <div class="module-tag">Course Homepage · 4 Days · 28 Hours</div>
+      <div class="module-tag">เนื้อหารายวิชา · 4 วัน · 28 ชั่วโมง</div>
       <h1>การประยุกต์โปรแกรมบัญชีคลาวด์และเทคโนโลยีปัญญาประดิษฐ์เพื่องานบัญชี</h1>
       <div class="hero-subtitle-en">Applying Cloud Accounting Software and AI Technology for Accounting<br>From Thai Software Foundation to Capstone Integration</div>
+      <div class="hero-instructor">
+        <span class="label-tag">อาจารย์ผู้สอน</span>
+        <span class="divider"></span>
+        <span class="name">รองศาสตราจารย์ ดร.อุเทน เลานำทา</span>
+      </div>
       <div class="hero-pills">
-        <span>Express Cloud</span>
+        <span>Express Accounting Software</span>
         <span>Generative AI</span>
-        <span>RICIOV Prompting</span>
+        <span>Context Engineering</span>
         <span>Power Query</span>
         <span>CLEAR Dashboard</span>
         <span>Capstone Project</span>
@@ -640,15 +691,11 @@
         </div>
         <div class="meta-cell">
           <div class="label">Duration</div>
-          <div class="value">28 ชั่วโมง<small>09:00 — 16:30 น.</small></div>
+          <div class="value">28 ชั่วโมง<small>09:00 — 17:00 น.</small></div>
         </div>
         <div class="meta-cell">
           <div class="label">Faculty</div>
           <div class="value">KKBS · KKU<small>บริหารธุรกิจและการบัญชี · มข.</small></div>
-        </div>
-        <div class="meta-cell">
-          <div class="label">Instructor</div>
-          <div class="value">รศ.ดร.อุเทน เลานำทา<small>Assoc. Prof. Dr. Uthen Laonamtha</small></div>
         </div>
       </div>
     </div>
@@ -749,16 +796,16 @@
       </div>
       <div class="day-module-tag">Module 03 · Reporting &amp; Dashboard</div>
       <div class="day-title">วิเคราะห์ &amp; ออกแบบรายงานบัญชีด้วย Dashboard</div>
-      <div class="day-subtitle-en">Reporting: Express Reports · Excel · CLEAR · Power BI</div>
+      <div class="day-subtitle-en">Reporting: Express Accounting Software Reports · Excel · CLEAR · Power BI</div>
       <div class="day-topics">
-        <span>Express Reports</span>
+        <span>Express Accounting Software Reports</span>
         <span>Power Query</span>
         <span>Pivot · SUMIFS</span>
         <span>CLEAR Framework</span>
         <span>4 Charts + Power BI</span>
       </div>
       <div class="day-stats">
-        <div class="day-stat"><div class="num">7.5h</div><div class="lbl">Duration</div></div>
+        <div class="day-stat"><div class="num">7h</div><div class="lbl">Duration</div></div>
         <div class="day-stat"><div class="num">6</div><div class="lbl">Sections</div></div>
         <div class="day-stat"><div class="num">70%</div><div class="lbl">Hands-on</div></div>
       </div>
@@ -792,7 +839,7 @@
         <span>30/60/90 Roadmap</span>
       </div>
       <div class="day-stats">
-        <div class="day-stat"><div class="num">7.5h</div><div class="lbl">Duration</div></div>
+        <div class="day-stat"><div class="num">7h</div><div class="lbl">Duration</div></div>
         <div class="day-stat"><div class="num">6</div><div class="lbl">Sections</div></div>
         <div class="day-stat"><div class="num">50%</div><div class="lbl">Capstone</div></div>
       </div>
@@ -818,7 +865,7 @@
       <div class="journey-step">
         <span class="journey-icon">🌱</span>
         <div class="journey-title">Day 1 · Foundation</div>
-        <div class="journey-desc">เข้าใจ Cloud Accounting + Express + ความเสี่ยง PDPA · ปูพื้นฐาน</div>
+        <div class="journey-desc">เข้าใจ Cloud Technology + Express Accounting Software + Modern Accounting Information Systems</div>
       </div>
       <div class="journey-step">
         <span class="journey-icon">🤖</span>
@@ -827,8 +874,8 @@
       </div>
       <div class="journey-step">
         <span class="journey-icon">📊</span>
-        <div class="journey-title">Day 3 · Dashboard</div>
-        <div class="journey-desc">Excel · Pivot · Power BI · ออกแบบ Dashboard ระดับ Executive</div>
+        <div class="journey-title">Day 3 · Accounting Dynamic Report</div>
+        <div class="journey-desc">AI Excel · Power BI · ออกแบบ Dashboard ระดับ Executive</div>
       </div>
       <div class="journey-step">
         <span class="journey-icon">🚀</span>
@@ -873,6 +920,11 @@
     </div>
   </div>
 </section>
+
+<!-- ═══ BOTTOM AVATAR ═══ -->
+<div class="page-bottom-avatar-wrap">
+  <img class="page-bottom-avatar" src="shared/images/LINE_ALBUM_AI_260503_1_nobg.png" alt="">
+</div>
 
 <!-- ═══ FOOTER ═══ -->
 <footer>
