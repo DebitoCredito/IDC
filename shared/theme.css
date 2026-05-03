@@ -1,0 +1,252 @@
+/* ============================================================
+   AI and Cloud-based Accounting Software
+   KKBS - Khon Kaen Business School
+   Master Theme : Navy / Sky Blue / White / Purple Accent
+   ============================================================ */
+
+:root {
+  /* Brand Colors */
+  --color-navy:        #003D7A;
+  --color-navy-deep:   #002A55;
+  --color-sky:         #4A90E2;
+  --color-sky-light:   #BBDEFB;
+  --color-sky-pale:    #E8F2FC;
+  --color-white:       #FFFFFF;
+  --color-off-white:   #F5F8FC;
+
+  /* Purple Accent (small highlights) */
+  --color-purple:      #7B4FBF;
+  --color-purple-soft: #B89AE0;
+
+  /* Neutral */
+  --color-text:        #1A2B47;
+  --color-text-muted:  #5A6B85;
+  --color-border:      #D6E1EE;
+  --color-code-bg:     #1E2A44;
+  --color-code-text:   #E8F2FC;
+
+  /* Status */
+  --color-success:     #2BA84A;
+  --color-warning:     #F4B400;
+  --color-danger:      #D72638;
+
+  /* Typography */
+  --font-display: 'Kanit', 'Noto Sans Thai', sans-serif;     /* Headings */
+  --font-th:      'Noto Sans Thai', 'Kanit', sans-serif;     /* Body */
+  --font-en:      'Inter', 'Noto Sans Thai', sans-serif;     /* English-only */
+  --font-mono:    'JetBrains Mono', 'Fira Code', monospace;  /* Code/numbers */
+
+  /* Sizing */
+  --radius-sm: 6px;
+  --radius:    12px;
+  --radius-lg: 20px;
+  --shadow-sm: 0 2px 8px rgba(0,61,122,0.08);
+  --shadow:    0 6px 20px rgba(0,61,122,0.12);
+  --shadow-lg: 0 12px 40px rgba(0,61,122,0.18);
+}
+
+/* ============================================================
+   Reveal.js Overrides
+   ============================================================ */
+
+.reveal {
+  font-family: var(--font-th);
+  font-size: 32px;
+  font-weight: 400;
+  color: var(--color-text);
+  background: var(--color-off-white);
+}
+
+.reveal .slides {
+  text-align: left;
+}
+
+.reveal .slides > section,
+.reveal .slides > section > section {
+  padding: 28px 50px 50px;
+  height: 100%;
+  background: var(--color-white);
+  border-radius: 0;
+  overflow: hidden;
+}
+
+/* Headings */
+.reveal h1, .reveal h2, .reveal h3,
+.reveal h4, .reveal h5, .reveal h6 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--color-navy);
+  text-transform: none;
+  letter-spacing: -0.015em;
+  margin-bottom: 0.5em;
+  line-height: 1.2;
+}
+
+.reveal h1 { font-size: 2em; }
+.reveal h2 { font-size: 1.4em; margin-bottom: 0.25em; line-height: 1.15; }
+.reveal h3 { font-size: 1.15em; color: var(--color-navy-deep); }
+.reveal h4 { font-size: 1.05em; color: var(--color-text); }
+
+/* Body Text */
+.reveal p,
+.reveal li {
+  line-height: 1.45;
+  color: var(--color-text);
+  font-size: 0.9em;
+}
+.reveal .text-muted.fs-sm {
+  font-size: 0.78em !important;
+  margin-top: -0.3em;
+  margin-bottom: 0.6em;
+}
+
+.reveal strong { color: var(--color-navy); font-weight: 700; }
+.reveal em     { color: var(--color-purple); font-style: normal; font-weight: 600; }
+
+/* Lists */
+.reveal ul, .reveal ol {
+  margin-left: 1.2em;
+}
+.reveal ul li {
+  list-style: none;
+  position: relative;
+  padding-left: 1.3em;
+  margin-bottom: 0.4em;
+}
+.reveal ol li { margin-bottom: 0.35em; }
+.reveal ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-sky);
+  box-shadow: 0 0 0 4px var(--color-sky-pale);
+}
+.reveal ol li {
+  margin-bottom: 0.6em;
+}
+
+/* Links */
+.reveal a {
+  color: var(--color-sky);
+  text-decoration: none;
+  border-bottom: 1px dashed var(--color-sky);
+  transition: all 0.2s;
+}
+.reveal a:hover {
+  color: var(--color-purple);
+  border-bottom-color: var(--color-purple);
+}
+
+/* Code */
+.reveal code {
+  font-family: var(--font-mono);
+  background: var(--color-sky-pale);
+  color: var(--color-navy-deep);
+  padding: 0.15em 0.4em;
+  border-radius: var(--radius-sm);
+  font-size: 0.9em;
+}
+.reveal pre {
+  background: var(--color-code-bg);
+  border-radius: var(--radius);
+  padding: 1.2em 1.6em;
+  box-shadow: var(--shadow);
+  font-size: 0.78em;
+  line-height: 1.5;
+  margin: 0.8em 0;
+}
+.reveal pre code {
+  background: transparent;
+  color: var(--color-code-text);
+  padding: 0;
+  font-size: 1em;
+}
+
+/* Tables */
+.reveal table {
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%;
+  margin: 0.8em 0;
+  font-size: 0.85em;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+.reveal table thead th {
+  background: var(--color-navy);
+  color: var(--color-white);
+  padding: 0.7em 1em;
+  text-align: left;
+  font-weight: 600;
+  border: none;
+}
+.reveal table tbody td {
+  padding: 0.6em 1em;
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-white);
+}
+.reveal table tbody tr:nth-child(even) td {
+  background: var(--color-sky-pale);
+}
+.reveal table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Blockquote */
+.reveal blockquote {
+  background: var(--color-sky-pale);
+  border-left: 4px solid var(--color-sky);
+  padding: 0.8em 1.2em;
+  border-radius: 0 var(--radius) var(--radius) 0;
+  font-style: normal;
+  box-shadow: none;
+  margin: 0.6em 0;
+  font-size: 0.92em;
+  line-height: 1.5;
+}
+.reveal blockquote::before { content: ""; }
+
+/* Selection */
+.reveal ::selection {
+  background: var(--color-purple-soft);
+  color: var(--color-navy-deep);
+}
+
+/* Progress bar */
+.reveal .progress {
+  background: rgba(0,61,122,0.1);
+  height: 6px;
+}
+.reveal .progress span {
+  background: linear-gradient(90deg, var(--color-sky), var(--color-purple));
+}
+
+/* Slide number / controls */
+.reveal .slide-number {
+  background: var(--color-navy);
+  color: var(--color-white);
+  padding: 0.3em 0.8em;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: 0.7em;
+  opacity: 0.85;
+}
+
+.reveal .controls {
+  color: var(--color-navy);
+}
+
+/* ============================================================
+   Print / PDF
+   ============================================================ */
+@media print {
+  .reveal .slides > section,
+  .reveal .slides > section > section {
+    padding: 30px 50px;
+  }
+}

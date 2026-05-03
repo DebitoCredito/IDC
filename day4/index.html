@@ -1,0 +1,1481 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Day 4 — Capstone: Digital Integration | KKBS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&family=Noto+Sans+Thai:wght@300;400;500;600;700&family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reset.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/monokai.css">
+  <link rel="stylesheet" href="../shared/theme.css">
+  <link rel="stylesheet" href="../shared/layouts.css">
+</head>
+<body>
+
+<div class="reveal">
+<div class="slides">
+
+<!-- ═══ SLIDE 1 — TITLE COVER (T1) ═══ -->
+<section class="layout-T1 cover-day" data-day-num="04">
+  <div class="cover-header">
+    <div class="cover-eyebrow">Course · <strong>AI and Cloud-based Accounting Software</strong></div>
+    <img class="kkbs-logo" src="https://kkbs.kku.ac.th/wp/wp-content/uploads/2025/01/KKUxKKBS250w-2.png" alt="KKBS">
+  </div>
+  <div class="cover-body">
+    <div class="day-badge">
+      <div class="day-label">Day</div>
+      <div class="day-num">04</div>
+      <div class="day-of">of 04</div>
+    </div>
+    <div class="title-block">
+      <div class="module-tag">Module 04 · Capstone Integration</div>
+      <h1>Capstone: บูรณาการระบบ<br>บัญชีดิจิทัลครบวงจร</h1>
+      <div class="subtitle-en">Full-Cycle Digital Accounting System Integration<br>Express + AI + Dashboard + Capstone Presentation</div>
+      <div class="topic-pills">
+        <span>System Blueprint</span>
+        <span>AI Workflow</span>
+        <span>Management Report</span>
+        <span>Capstone Presentation</span>
+      </div>
+    </div>
+  </div>
+  <div class="cover-footer cols-4">
+    <div class="meta-cell"><div class="label">Date</div><div class="value">4 Oct 2026<small>วันอาทิตย์ที่ 4 ต.ค. 2569</small></div></div>
+    <div class="meta-cell"><div class="label">Instructor</div><div class="value">Dr. Uthen Laonamtha<small>รศ.ดร.อุเทน เลานำทา</small></div></div>
+    <div class="meta-cell"><div class="label">Faculty</div><div class="value">KKBS · KKU<small>บริหารธุรกิจ​และการบัญชี · มข.</small></div></div>
+    <div class="meta-cell"><div class="label">Duration</div><div class="value">09:00 — 16:30<small>7 ชั่วโมง · Capstone 50%</small></div></div>
+  </div>
+  <aside class="notes">วันสุดท้าย — Capstone + ปิดหลักสูตร · ตรวจสอบว่าทุกกลุ่มเตรียม Capstone Project มาแล้ว · เตรียมพิธีปิด + Certificate</aside>
+</section>
+
+<!-- SLIDE 2 — Welcome to Final Day -->
+<section class="layout-T3">
+  <h2>ยินดีต้อนรับสู่ <span class="text-purple">Day 4 · วันสุดท้าย</span></h2>
+  <p class="text-muted fs-sm">วันบูรณาการ — รวม 3 วันที่เรียนเป็น 1 ระบบสมบูรณ์ + Capstone Presentation</p>
+  <div class="concept-grid">
+    <div class="concept-item">
+      <div class="icon">🔗</div>
+      <div class="text"><strong>วันนี้รวมทุกอย่างเข้าด้วยกัน</strong>
+        <p>Express (Day 1) + AI (Day 2) + Dashboard (Day 3) → System Blueprint สมบูรณ์</p></div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">🎓</div>
+      <div class="text"><strong>เป้าหมาย: Present Capstone อย่างมืออาชีพ</strong>
+        <p>จบวันนี้ — ทุกกลุ่มต้องนำเสนอระบบที่ออกแบบเอง · พร้อม Q&amp;A กับ "CFO"</p></div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">🚀</div>
+      <div class="text"><strong>30/60/90-Day Roadmap = ของขวัญสุดท้าย</strong>
+        <p>วางแผนพัฒนาตัวเองหลังหลักสูตร — มี Accountability Partner</p></div>
+    </div>
+  </div>
+  <aside class="notes">บอกผู้เรียนว่าวันนี้พิเศษ — มีพิธีปิด · Certificate · ภาพรวมรุ่น · ขอให้ทุกคนมีส่วนร่วม</aside>
+</section>
+
+<!-- SLIDE 3 — Recap Days 1-3 -->
+<section class="layout-T8">
+  <h2>ทบทวน Days 1-3 · Stack ของนักบัญชีดิจิทัล</h2>
+  <p class="text-muted fs-sm">3 วันที่ผ่านมา — Skill Stack ที่จะใช้ใน Capstone วันนี้</p>
+  <div class="takeaway-grid">
+    <div class="takeaway"><div class="num">1</div><strong>Day 1 · Cloud Accounting</strong><p>Express · Cloud Setup · Bank Feed · e-Tax · PDPA</p></div>
+    <div class="takeaway"><div class="num">2</div><strong>Day 2 · AI &amp; Prompting</strong><p>RICIOV · 5 Use Cases · NotebookLM · AI Governance</p></div>
+    <div class="takeaway"><div class="num">3</div><strong>Day 3 · Data &amp; Dashboard</strong><p>Power Query · Pivot · CLEAR Framework · 4 Charts</p></div>
+    <div class="takeaway"><div class="num">4</div><strong>Day 4 · Integration (วันนี้)</strong><p>Blueprint · ROI · Capstone · Future-Ready</p></div>
+    <div class="takeaway"><div class="num">5</div><strong>Total: 7 ทักษะหลัก</strong><p>Express · AI · Workflow · Dashboard · Report · Storytelling · Strategy</p></div>
+  </div>
+  <aside class="notes">ขอเสียงผู้เรียนแชร์ว่า 3 วันที่ผ่านมา · ทักษะใดเปลี่ยนงานท่านมากที่สุด</aside>
+</section>
+
+<!-- SLIDE 4 — Today's Agenda · Clickable TOC -->
+<section class="layout-T3" id="agenda">
+  <h2>วาระประจำวันที่ 4 · <span class="text-purple" style="font-size:0.75em;">คลิกเพื่อข้ามไปหัวข้อ</span></h2>
+  <p class="text-muted fs-sm">09:00 — 16:30 น. · พักเที่ยง 12:00-13:00 · พักย่อย 10:30 และ 14:15</p>
+  <div class="concept-grid">
+    <a class="concept-item" href="#/sec-1">
+      <div class="icon">🔗</div>
+      <div class="text"><strong>1. Integration Review &amp; Framework</strong>
+        <p>Stack · Big Picture · 5-Dim Framework · 09:00-09:30</p></div>
+      <div class="arrow-go">›</div>
+    </a>
+    <a class="concept-item" href="#/sec-2">
+      <div class="icon">🏗️</div>
+      <div class="text"><strong>2. Design Your Digital System</strong>
+        <p>Blueprint · Tool Selection · ROI · 09:30-10:30</p></div>
+      <div class="arrow-go">›</div>
+    </a>
+    <a class="concept-item" href="#/sec-3">
+      <div class="icon">⚙️</div>
+      <div class="text"><strong>3. AI-Powered Accounting Workflow</strong>
+        <p>Express → AI → Auto Report · Prompt Library · 10:45-12:00</p></div>
+      <div class="arrow-go">›</div>
+    </a>
+    <a class="concept-item" href="#/sec-4">
+      <div class="icon">📊</div>
+      <div class="text"><strong>4. Integrated Dashboard &amp; Report</strong>
+        <p>5-Section Report · Pyramid · Storytelling · 13:00-14:15</p></div>
+      <div class="arrow-go">›</div>
+    </a>
+    <a class="concept-item" href="#/sec-5">
+      <div class="icon">🎤</div>
+      <div class="text"><strong>5. Capstone Project Presentation</strong>
+        <p>นำเสนอ + Peer Review + Feedback · 14:30-16:00</p></div>
+      <div class="arrow-go">›</div>
+    </a>
+    <a class="concept-item" href="#/sec-6">
+      <div class="icon">🚀</div>
+      <div class="text"><strong>6. Future-Ready Accountant + ปิด</strong>
+        <p>Career Path · 30/60/90 Roadmap · Ceremony · 16:00-16:30</p></div>
+      <div class="arrow-go">›</div>
+    </a>
+  </div>
+  <aside class="notes">Agenda Day 4 — 6 sections · Capstone ครึ่งบ่ายเป็นหัวใจของวัน · ปิดหลักสูตร 16:30</aside>
+</section>
+
+<!-- SLIDE 5 — Pre-flight Check -->
+<section class="layout-T3">
+  <h2>เช็คความพร้อมก่อนบินขึ้น</h2>
+  <p class="text-muted fs-sm">Pre-flight Checklist สำหรับวัน Capstone</p>
+  <div class="concept-grid">
+    <div class="concept-item">
+      <div class="icon">✅</div>
+      <div class="text"><strong>Capstone Project พร้อม Present</strong>
+        <p>Slide · Demo · Dashboard · Sample Report — ทุกกลุ่มเช็ค Final Version</p></div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">✅</div>
+      <div class="text"><strong>Notebook + HDMI/Adapter</strong>
+        <p>เครื่อง Present พร้อม · ทดสอบต่อจอเข้า · มี backup ใน Drive</p></div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">✅</div>
+      <div class="text"><strong>Group Slot 15 นาที</strong>
+        <p>10 นาที Present + 5 นาที Q&amp;A — ฝึกควบคุมเวลา · หาเพื่อนซ้อม</p></div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">✅</div>
+      <div class="text"><strong>Peer Review Form</strong>
+        <p>กลุ่มที่ฟัง = ผู้ประเมิน · กรอกฟอร์มทันทีหลัง Present · ส่งครบทุกกลุ่ม</p></div>
+    </div>
+  </div>
+  <aside class="notes">ถ้ากลุ่มไหนยังไม่พร้อม Slide — ให้ใช้ช่วงเช้าเร่ง · พักเที่ยงไม่มีเวลาแก้</aside>
+</section>
+
+<!-- ═══ SECTION 1 · INTEGRATION REVIEW ═══ -->
+<section class="layout-T2" id="sec-1" data-id="sec-1">
+  <div class="section-num">SECTION 01</div>
+  <h1>Integration Review &amp; Framework</h1>
+  <div class="en-title">Connecting the Dots — Days 1, 2, 3 → Day 4</div>
+  <div class="topic-list">
+    <span>Digital Stack</span>
+    <span>Big Picture</span>
+    <span>Skill Map</span>
+    <span>5-Dim Framework</span>
+    <span>Success Cases</span>
+  </div>
+  <aside class="notes">30 นาทีสั้น · เน้นเชื่อมความรู้ก่อนเข้า workshop</aside>
+</section>
+
+<!-- SLIDE 7 — Digital Accounting Stack -->
+<section class="layout-T4">
+  <h2>Digital Accounting Stack · 7 Layers</h2>
+  <p class="text-muted fs-sm">รวมสิ่งที่เรียนทั้ง 3 วัน · เห็นภาพระบบสมบูรณ์</p>
+  <div class="compare-grid cols-2">
+    <div class="compare-card">
+      <h3>📦 Foundation Layers (Day 1)</h3>
+      <ul>
+        <li><strong>Data Entry &amp; Capture:</strong> Express · Cloud ERP</li>
+        <li><strong>Data Storage &amp; Sync:</strong> Cloud Storage · Real-time Sync</li>
+        <li><strong>Compliance:</strong> e-Tax · PDPA · Bank Feed</li>
+      </ul>
+    </div>
+    <div class="compare-card">
+      <h3>🤖 Intelligence Layers (Day 2)</h3>
+      <ul>
+        <li><strong>AI Analysis:</strong> Generative AI · LLM · Prompting</li>
+        <li><strong>Agentic Automation:</strong> Workflow · Tool Use · MCP</li>
+        <li><strong>Governance:</strong> Guardrails · HITL · Audit Trail</li>
+      </ul>
+    </div>
+    <div class="compare-card">
+      <h3>📊 Insight Layers (Day 3)</h3>
+      <ul>
+        <li><strong>Visualization:</strong> Dashboard · Charts · Power BI</li>
+        <li><strong>Reporting:</strong> Management Report · 5-Section</li>
+        <li><strong>Storytelling:</strong> CLEAR · Narrative</li>
+      </ul>
+    </div>
+    <div class="compare-card highlight">
+      <h3>🔗 Integration Layer (Day 4)</h3>
+      <ul>
+        <li><strong>System Blueprint:</strong> รวมทุกชั้น</li>
+        <li><strong>ROI &amp; Change Mgmt:</strong> ภาษาธุรกิจ</li>
+        <li><strong>Capstone:</strong> ใช้กับองค์กรจริง</li>
+      </ul>
+    </div>
+  </div>
+  <aside class="notes">วาด Stack บนกระดาน + ใส่ตัวอย่างของแต่ละ Layer ที่ผู้เรียนทำในแต่ละวัน</aside>
+</section>
+
+<!-- SLIDE 8 — Big Picture Pipeline -->
+<section class="layout-T5">
+  <h2>Big Picture · Cloud → AI → Visualization → Decision</h2>
+  <p class="text-muted fs-sm">การไหลของข้อมูลในระบบบัญชีดิจิทัลที่สมบูรณ์</p>
+  <div class="workflow">
+    <div class="step"><div class="num">1</div><strong>Data Entry</strong><span>Express / ERP<br>Invoices · JV</span></div>
+    <div class="arrow">→</div>
+    <div class="step"><div class="num">2</div><strong>Cloud Storage</strong><span>Real-time Sync<br>Database · Backup</span></div>
+    <div class="arrow">→</div>
+    <div class="step"><div class="num">3</div><strong>AI Engine</strong><span>Generative AI<br>Anomaly Detection</span></div>
+    <div class="arrow">→</div>
+    <div class="step"><div class="num">4</div><strong>Visualization</strong><span>Dashboard<br>KPI · Alerts</span></div>
+    <div class="arrow">→</div>
+    <div class="step"><div class="num">5</div><strong>Decision</strong><span>CFO / Board<br>Strategy · Action</span></div>
+  </div>
+  <div class="callout purple"><strong>คำถามทดสอบ:</strong> "ถ้าไม่มี Cloud — ระบบส่วนไหนจะพัง?" · "ถ้าไม่มี AI — งานจะใช้เวลาเพิ่มกี่เท่า?" · "ถ้าไม่มี Dashboard — ผู้บริหารจะตัดสินใจช้าแค่ไหน?"</div>
+  <aside class="notes">เน้นว่าทุก Layer เชื่อมกัน · ขาด Layer ใด Layer หนึ่งระบบไม่ทำงาน</aside>
+</section>
+
+<!-- SLIDE 9 — Skill Map T-Shape -->
+<section class="layout-T4">
+  <h2>Skill Map · Technical · Analytical · Advisory</h2>
+  <p class="text-muted fs-sm">ทักษะที่ได้จากแต่ละวัน · จัดเป็น 3 ด้าน</p>
+  <div class="compare-grid cols-3">
+    <div class="compare-card">
+      <h3>🛠️ Technical</h3>
+      <ul>
+        <li><strong>Day 1:</strong> Express · Cloud Setup</li>
+        <li><strong>Day 2:</strong> AI Prompting · Workflow</li>
+        <li><strong>Day 3:</strong> Power Query · Power BI</li>
+        <li><strong>Day 4:</strong> System Integration</li>
+      </ul>
+    </div>
+    <div class="compare-card">
+      <h3>🔬 Analytical</h3>
+      <ul>
+        <li><strong>Day 1:</strong> Reconciliation</li>
+        <li><strong>Day 2:</strong> AI-Generated Insights</li>
+        <li><strong>Day 3:</strong> KPI · Trend Analysis</li>
+        <li><strong>Day 4:</strong> Capstone Analysis</li>
+      </ul>
+    </div>
+    <div class="compare-card highlight">
+      <h3>💼 Advisory</h3>
+      <ul>
+        <li><strong>Day 1:</strong> Compliance Check</li>
+        <li><strong>Day 2:</strong> Insight Recommendation</li>
+        <li><strong>Day 3:</strong> Executive Storytelling</li>
+        <li><strong>Day 4:</strong> Full Advisory + ROI</li>
+      </ul>
+    </div>
+  </div>
+  <div class="callout purple"><strong>T-Shaped Skills:</strong> กว้างทั้ง 3 ด้าน · ลึก 1 ด้าน — เลือก track ที่ตัวเองเก่งและอยากพัฒนา</div>
+  <aside class="notes">ให้ผู้เรียนช่วยกันเล่าว่าตัวเองอยู่ track ใด · อยากพัฒนา track ใด</aside>
+</section>
+
+<!-- SLIDE 10 — 5-Dimension Design Framework -->
+<section class="layout-T3">
+  <h2>5-Dimension System Design Framework</h2>
+  <p class="text-muted fs-sm">ออกแบบระบบบัญชีดิจิทัลต้องมองให้ครบ 5 มิติ — ขาดมิติเดียวล้มเหลว</p>
+  <div class="concept-grid">
+    <div class="concept-item">
+      <div class="icon">👥</div>
+      <div class="text"><strong>1. People · คน</strong>
+        <p>ใครใช้? · ใครดูแล? · ทักษะที่ต้องมี — CFO · Accountant · IT Admin</p></div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">⚙️</div>
+      <div class="text"><strong>2. Process · กระบวนการ</strong>
+        <p>ขั้นตอนใด Automate ได้? — AP · AR · Closing · Reporting</p></div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">💻</div>
+      <div class="text"><strong>3. Technology · เทคโนโลยี</strong>
+        <p>Software อะไร? · Integration อย่างไร? — Express · Power BI · ChatGPT</p></div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">📁</div>
+      <div class="text"><strong>4. Data · ข้อมูล</strong>
+        <p>Source ไหน? · คุณภาพ? · Security? — ERP · Bank Feed · CSV</p></div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">🛡️</div>
+      <div class="text"><strong>5. Governance · กำกับ</strong>
+        <p>Internal Control? · Audit Trail? · Policy? — Access · Approval Flow</p></div>
+    </div>
+  </div>
+  <aside class="notes">เหตุผลที่ digital project ล้มเหลว 70% = ขาดมิติ People (Change Management) — ไม่ใช่ Technology</aside>
+</section>
+
+<!-- SLIDE 11 — Success Cases -->
+<section class="layout-T4">
+  <h2>2 Success Cases · SME vs Enterprise</h2>
+  <p class="text-muted fs-sm">ตัวอย่างจริงที่นำระบบบัญชีดิจิทัลมาใช้สำเร็จ</p>
+  <div class="compare-grid cols-2">
+    <div class="compare-card">
+      <h3>🏭 Case 1 · SME ไทย</h3>
+      <ul>
+        <li>ผู้ผลิตชิ้นส่วนยานยนต์ ภาคอีสาน</li>
+        <li>ขนาด 50 คน</li>
+        <li><strong>Stack:</strong> Express Cloud + Power BI + AI</li>
+        <li><strong>ผลลัพธ์:</strong> ลด Closing Time 15 → 3 วัน</li>
+        <li><strong>เวลา:</strong> 8 เดือนถึง Full Adoption</li>
+      </ul>
+    </div>
+    <div class="compare-card highlight">
+      <h3>🏢 Case 2 · Enterprise</h3>
+      <ul>
+        <li>กลุ่มค้าปลีกระดับประเทศ</li>
+        <li>ขนาด 500+ สาขา</li>
+        <li><strong>Stack:</strong> SAP + AI Anomaly + Executive Dashboard</li>
+        <li><strong>ผลลัพธ์:</strong> Detect Anomaly 30 วัน → 24 ชั่วโมง</li>
+        <li><strong>เวลา:</strong> 18 เดือนถึง ROI Positive</li>
+      </ul>
+    </div>
+  </div>
+  <div class="callout purple"><strong>หลักการ:</strong> ทั้ง 2 cases เริ่มจาก Quick Win เล็กๆ ก่อน · ไม่ใช่ Big Bang — Pilot → Scale → Integrate</div>
+  <aside class="notes">เน้นว่า Case 1 ใช้เครื่องมือใกล้เคียงกับที่นักศึกษาเรียน — ทำได้เลย</aside>
+</section>
+
+<!-- SLIDE 12 — Activity 1.1 Skill Map -->
+<section class="layout-T7">
+  <span class="workshop-header">⚡ ACTIVITY 1.1 · Draw Your Skill Map</span>
+  <h2>วาด Skill Map ของทีมก่อน Capstone</h2>
+  <div class="workshop-grid">
+    <div class="workshop-card">
+      <h3>วัตถุประสงค์</h3>
+      <ul>
+        <li>ทบทวนทักษะของทีม 3 วันที่ผ่านมา</li>
+        <li>ระบุจุดแข็ง + จุดที่ต้องช่วยกัน</li>
+        <li>เตรียมเชื่อม skills กับ Capstone</li>
+      </ul>
+    </div>
+    <div class="workshop-card purple">
+      <h3>5 ขั้นตอน</h3>
+      <ol>
+        <li>แบ่งกลุ่ม Capstone (3-4 คน)</li>
+        <li>วาด Skill Map ของทีมบน A3</li>
+        <li>ระบุ Strength + Gap</li>
+        <li>เชื่อม skill → Capstone Project</li>
+        <li>นำเสนอกลุ่มละ 2 นาที</li>
+      </ol>
+    </div>
+  </div>
+  <div class="workshop-meta">
+    <span class="badge">⏱️ 15 นาที</span>
+    <span class="badge">👥 กลุ่ม Capstone (3-4 คน)</span>
+    <span class="badge">📝 A3 หรือ Miro</span>
+    <span class="badge">🎯 Skill Map ที่นำไปใช้ใน Capstone</span>
+  </div>
+  <aside class="notes">กิจกรรมนี้สำคัญ · ช่วยให้ทีมเห็นภาพก่อนเริ่มออกแบบ Blueprint</aside>
+</section>
+
+<!-- SLIDE 13 — Section 1 Recap -->
+<section class="layout-T8">
+  <h2>สรุป Section 1</h2>
+  <div class="takeaway-grid">
+    <div class="takeaway"><div class="num">1</div><strong>Stack 7 Layers</strong><p>Foundation (Day 1) · Intelligence (Day 2) · Insight (Day 3) · Integration (Day 4)</p></div>
+    <div class="takeaway"><div class="num">2</div><strong>Pipeline 5 ขั้น</strong><p>Data → Cloud → AI → Visualization → Decision</p></div>
+    <div class="takeaway"><div class="num">3</div><strong>3 Skill Tracks</strong><p>Technical · Analytical · Advisory — เลือก T-Shape</p></div>
+    <div class="takeaway"><div class="num">4</div><strong>5-Dim Framework</strong><p>People · Process · Technology · Data · Governance</p></div>
+  </div>
+  <aside class="notes">เข้า Section 2 ทันที · ออกแบบ Blueprint จริง</aside>
+</section>
+
+<!-- ═══ SECTION 2 · SYSTEM DESIGN ═══ -->
+<section class="layout-T2" id="sec-2" data-id="sec-2">
+  <div class="section-num">SECTION 02</div>
+  <h1>Design Your Digital Accounting System</h1>
+  <div class="en-title">Blueprint · Tool Selection · Internal Control · ROI</div>
+  <div class="topic-list">
+    <span>Digital Blueprint</span>
+    <span>SME vs Enterprise</span>
+    <span>Internal Control</span>
+    <span>Change Management</span>
+    <span>ROI Calculation</span>
+    <span>Workshop</span>
+  </div>
+  <aside class="notes">60 นาที — Workshop ที่จะเป็น input สำคัญสำหรับ Capstone</aside>
+</section>
+
+<!-- SLIDE 15 — Digital Accounting Blueprint -->
+<section class="layout-T4">
+  <h2>Digital Accounting Blueprint · 3 Layers</h2>
+  <p class="text-muted fs-sm">แผนผังที่อ่านได้ทั้งนักบัญชีและทีม IT</p>
+  <div class="compare-grid cols-3">
+    <div class="compare-card">
+      <h3>📥 Input Layer</h3>
+      <ul>
+        <li>Bank Feed</li>
+        <li>Invoices · Receipts</li>
+        <li>Payroll</li>
+        <li>Inventory</li>
+        <li><em>Source:</em> Bank · Vendors · Customers</li>
+      </ul>
+    </div>
+    <div class="compare-card highlight">
+      <h3>⚙️ Processing Layer</h3>
+      <ul>
+        <li>Express / ERP</li>
+        <li>AI Engine</li>
+        <li>Automation</li>
+        <li>Reconciliation · Closing</li>
+        <li><em>Platform:</em> Express · SAP · Power BI</li>
+      </ul>
+    </div>
+    <div class="compare-card">
+      <h3>📤 Output Layer</h3>
+      <ul>
+        <li>Financial Reports</li>
+        <li>Management Report</li>
+        <li>Dashboard · Alerts</li>
+        <li>Audit Trail</li>
+        <li><em>Stakeholders:</em> CFO · Auditor · Tax</li>
+      </ul>
+    </div>
+  </div>
+  <div class="callout purple"><strong>หลักออกแบบ Blueprint ที่ดี:</strong> ① ครบทั้ง 3 ชั้น ② เห็นการไหลของข้อมูล ③ ระบุ Integration Point ④ มี Failure Path (ถ้าระบบล่ม ทำอย่างไร)</div>
+  <aside class="notes">โชว์ตัวอย่าง Blueprint ที่ดี + ที่แย่ — ให้ผู้เรียนเห็นความต่าง</aside>
+</section>
+
+<!-- SLIDE 16 — SME vs Enterprise -->
+<section class="layout-T4">
+  <h2>SME vs Enterprise · เครื่องมือต่างกันอย่างไร</h2>
+  <p class="text-muted fs-sm">เลือกผิดขนาด = เสียเงิน หรือ ระบบไม่พอ</p>
+  <div class="compare-grid cols-2">
+    <div class="compare-card">
+      <h3>🏪 SME (&lt; 200 คน)</h3>
+      <ul>
+        <li><strong>Core:</strong> Express · QuickBooks · Xero</li>
+        <li><strong>Cloud:</strong> Google Drive · Dropbox</li>
+        <li><strong>AI:</strong> ChatGPT API · Gemini</li>
+        <li><strong>Dashboard:</strong> Looker Studio · Power BI Pro</li>
+        <li><strong>Automation:</strong> Zapier · Make.com</li>
+        <li><strong>Cost:</strong> 5,000-30,000 บาท/เดือน</li>
+        <li><strong>Implement:</strong> 1-3 เดือน</li>
+      </ul>
+    </div>
+    <div class="compare-card highlight">
+      <h3>🏢 Enterprise (&gt; 200 คน)</h3>
+      <ul>
+        <li><strong>Core:</strong> SAP · Oracle · MS Dynamics 365</li>
+        <li><strong>Cloud:</strong> Azure · AWS · Google Cloud</li>
+        <li><strong>AI:</strong> Azure OpenAI · Private LLM</li>
+        <li><strong>Dashboard:</strong> Power BI Premium · Tableau</li>
+        <li><strong>Automation:</strong> Power Automate · Custom API</li>
+        <li><strong>Cost:</strong> 100k-1M+ บาท/เดือน</li>
+        <li><strong>Implement:</strong> 6-24 เดือน</li>
+      </ul>
+    </div>
+  </div>
+  <div class="callout purple"><strong>กฎทอง:</strong> เริ่มเล็ก · ขยายตามจริง · อย่าซื้อ Enterprise สำหรับ SME (เปลือง 90%) · อย่าใช้ SME tool สำหรับ Enterprise (Scale ไม่พอ)</div>
+  <aside class="notes">SME ส่วนใหญ่ใช้ Tool ที่นักศึกษาเรียนได้เลย — ขายความรู้ได้ทันที</aside>
+</section>
+
+<!-- SLIDE 17 — Internal Control -->
+<section class="layout-T3">
+  <h2>Digital Internal Control · 6 Areas</h2>
+  <p class="text-muted fs-sm">ระบบดิจิทัลสร้าง Risk ใหม่ — ต้องมี Control ใหม่</p>
+  <div class="concept-grid">
+    <div class="concept-item">
+      <div class="icon">🔐</div>
+      <div class="text"><strong>1. Access Control</strong>
+        <p>Role-based access · MFA · Password policy — ใครเห็นอะไร · ทำอะไรได้</p></div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">📜</div>
+      <div class="text"><strong>2. Audit Trail</strong>
+        <p>Log ทุก Transaction · Timestamp · User ID — ตามรอยได้เสมอ</p></div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">✋</div>
+      <div class="text"><strong>3. Approval Workflow</strong>
+        <p>Dual control · Segregation of duties — กันคนเดียวทำทุกอย่าง</p></div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">💾</div>
+      <div class="text"><strong>4. Data Backup</strong>
+        <p>Daily backup · Off-site · Recovery test — ทดสอบจริงทุกเดือน</p></div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">🤖</div>
+      <div class="text"><strong>5. AI Output Review</strong>
+        <p>HITL ก่อน Finalize — AI ผิดได้ · มนุษย์ต้องตรวจ</p></div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">🔓</div>
+      <div class="text"><strong>6. Vendor Lock-in Risk</strong>
+        <p>Data export ได้ · Contract terms ชัด — ไม่ติด vendor เดียว</p></div>
+    </div>
+  </div>
+  <aside class="notes">Vendor Lock-in คือเรื่องใหม่ที่นักบัญชีไม่เคยคิด — เน้นว่าต้องอ่าน Contract ก่อนเซ็น</aside>
+</section>
+
+<!-- SLIDE 18 — ADKAR Change Management -->
+<section class="layout-T5">
+  <h2>ADKAR Change Management · 70% ของ Digital Project ล้มเพราะคน</h2>
+  <p class="text-muted fs-sm">ระบบดิจิทัลล้มไม่ใช่เพราะเทคโนโลยี · แต่เพราะ Change Management</p>
+  <div class="workflow">
+    <div class="step"><div class="num">A</div><strong>Awareness</strong><span>ตระหนัก<br>ทำไมต้องเปลี่ยน</span></div>
+    <div class="arrow">→</div>
+    <div class="step"><div class="num">D</div><strong>Desire</strong><span>ต้องการ<br>Buy-in Stakeholders</span></div>
+    <div class="arrow">→</div>
+    <div class="step"><div class="num">K</div><strong>Knowledge</strong><span>รู้วิธี<br>Train · Manual</span></div>
+    <div class="arrow">→</div>
+    <div class="step"><div class="num">A</div><strong>Ability</strong><span>ทำได้จริง<br>Pilot ก่อน Go-live</span></div>
+    <div class="arrow">→</div>
+    <div class="step"><div class="num">R</div><strong>Reinforcement</strong><span>รักษาต่อ<br>KPI · Reward · Fix</span></div>
+  </div>
+  <div class="callout purple"><strong>หัวใจ:</strong> Change Management ต้องทำควบคู่กับ Implementation ตลอด · ไม่ใช่ทำทีหลัง — Awareness + Desire ต้องสร้างก่อน Day 1 ของโครงการ</div>
+  <aside class="notes">เคสจริง: บริษัทใหญ่ลง SAP ลงทุน 100 ล้าน · ล้มเพราะพนักงานไม่ใช้ — ปัญหาคือ A และ D</aside>
+</section>
+
+<!-- SLIDE 19 — ROI Calculation Example -->
+<section class="layout-T6">
+  <h2>ROI Calculation · ภาษาที่ CFO เข้าใจ</h2>
+  <p class="text-muted fs-sm">ตัวอย่างจริง: ลงทุนระบบบัญชีดิจิทัลใน SME</p>
+  <div class="prompt-box">
+<span class="prompt-tag"># ต้นทุน / System Cost (Year 1)</span>
+Software License:        120,000  บาท/ปี
+Implementation:           80,000  บาท (one-time)
+Training:                 30,000  บาท (one-time)
+                        ─────────
+<span class="prompt-tag">Total Year 1:</span>          230,000  บาท
+
+
+<span class="prompt-tag"># ผลประโยชน์ / Benefits (Year 1)</span>
+ลด Closing Time 12 วัน × 3 คน × 500 บาท/วัน
+   = 18,000 × 12 เดือน               =  216,000 บาท/ปี
+
+ลดข้อผิดพลาด ค่าแก้ไขเฉลี่ย          =   60,000 บาท/ปี
+
+ตัดสินใจเร็วขึ้น มูลค่าประมาณ          =   50,000 บาท/ปี
+                                      ─────────
+<span class="prompt-tag">Total Annual Benefit:</span>             326,000 บาท/ปี
+
+
+<span class="prompt-tag"># ROI</span>
+ROI Year 1 = (326,000 - 230,000) / 230,000 × 100
+           = <span class="prompt-var">41.7%</span>
+
+Payback Period ≈ <span class="prompt-var">8.5 เดือน</span>
+  </div>
+  <aside class="notes">เน้นว่า ROI ไม่ใช่แค่ตัวเลข · เป็นเครื่องมือสื่อสารกับ CFO เพื่อขออนุมัติงบ</aside>
+</section>
+
+<!-- SLIDE 20 — Workshop 2.1 -->
+<section class="layout-T7">
+  <span class="workshop-header">⚡ WORKSHOP 2.1 · Design Your Blueprint</span>
+  <h2>ออกแบบ Blueprint สำหรับธุรกิจสมมติ</h2>
+  <div class="workshop-grid">
+    <div class="workshop-card">
+      <h3>โจทย์ธุรกิจ</h3>
+      <ul>
+        <li>บริษัทค้าปลีกเสื้อผ้า SME</li>
+        <li>80 พนักงาน · รายได้ 30 ล้าน/ปี</li>
+        <li>ต้องการดิจิทัลไลซ์ระบบบัญชี</li>
+        <li>งบลงทุนปีแรก: ไม่เกิน 500k</li>
+      </ul>
+    </div>
+    <div class="workshop-card purple">
+      <h3>5 Deliverables</h3>
+      <ol>
+        <li>Blueprint บนกระดาษ A3 หรือ Miro</li>
+        <li>เลือก Tool แต่ละชั้น + เหตุผล</li>
+        <li>ระบุ Top 3 Internal Controls</li>
+        <li>คำนวณ ROI ใน 3 ปี</li>
+        <li>Present 3 นาทีต่อกลุ่ม</li>
+      </ol>
+    </div>
+  </div>
+  <div class="workshop-meta">
+    <span class="badge">⏱️ 30 นาที</span>
+    <span class="badge">👥 กลุ่ม Capstone</span>
+    <span class="badge">📁 Template ใน Drive</span>
+    <span class="badge">🎯 Reuse ใน Capstone</span>
+  </div>
+  <aside class="notes">Blueprint จาก Workshop นี้จะใช้ใน Capstone Project ตอนบ่าย — ขอให้ทำจริงจัง</aside>
+</section>
+
+<!-- SLIDE 21 — Section 2 Recap -->
+<section class="layout-T8">
+  <h2>สรุป Section 2</h2>
+  <div class="takeaway-grid">
+    <div class="takeaway"><div class="num">1</div><strong>Blueprint 3 Layers</strong><p>Input · Processing · Output — เห็นการไหลของข้อมูล</p></div>
+    <div class="takeaway"><div class="num">2</div><strong>SME vs Enterprise Tool</strong><p>เลือกตาม Scale + Budget — อย่า over-buy หรือ under-buy</p></div>
+    <div class="takeaway"><div class="num">3</div><strong>Internal Control 6 Areas</strong><p>Access · Audit · Approval · Backup · AI Review · Vendor Lock-in</p></div>
+    <div class="takeaway"><div class="num">4</div><strong>ADKAR + ROI</strong><p>Change Mgmt + ภาษาธุรกิจ = Approve โครงการได้</p></div>
+  </div>
+  <aside class="notes">พักย่อย 10:30-10:45 — กลับมา Section 3 ลึกเรื่อง AI Workflow</aside>
+</section>
+
+<!-- ═══ SECTION 3 · AI WORKFLOW ═══ -->
+<section class="layout-T2" id="sec-3" data-id="sec-3">
+  <div class="section-num">SECTION 03</div>
+  <h1>AI-Powered Accounting Workflow</h1>
+  <div class="en-title">Express → Generative AI → Agentic AI → Auto Report</div>
+  <div class="topic-list">
+    <span>End-to-End Workflow</span>
+    <span>Prompt Library</span>
+    <span>Anomaly Detection</span>
+    <span>Human-in-the-Loop</span>
+    <span>Workshop</span>
+  </div>
+  <aside class="notes">75 นาที — ลงลึกการสร้าง Workflow + Prompt Library ที่ใช้ใน Capstone</aside>
+</section>
+
+<!-- SLIDE 23 — End-to-End Workflow -->
+<section class="layout-T5">
+  <h2>End-to-End AI Workflow · 4 ขั้นตอน</h2>
+  <p class="text-muted fs-sm">จาก Express Export ถึง Auto Report ส่ง CFO</p>
+  <div class="workflow">
+    <div class="step"><div class="num">1</div><strong>Data Export</strong><span>Express<br>CSV/Excel · Structured</span></div>
+    <div class="arrow">→</div>
+    <div class="step"><div class="num">2</div><strong>Generative AI</strong><span>Prompt → Analysis<br>Trend · Cost · Cash</span></div>
+    <div class="arrow">→</div>
+    <div class="step"><div class="num">3</div><strong>Agentic AI</strong><span>Schedule · Auto<br>Daily · Weekly · Monthly</span></div>
+    <div class="arrow">→</div>
+    <div class="step"><div class="num">4</div><strong>Auto Report</strong><span>HITL Review<br>Final · Distribute</span></div>
+  </div>
+  <div class="callout purple"><strong>Schedule ตัวอย่าง:</strong> ทุกวันที่ 1 ของเดือน · Auto-pull Express → AI วิเคราะห์ → ส่ง Executive Summary ให้ CFO ภายใน 09:00 — ลดเวลาทำรายงานจาก 3 วัน เหลือ 30 นาที (Human Review)</div>
+  <aside class="notes">Demo Live: เปิด ChatGPT/Claude ทำ workflow จริง · ให้ผู้เรียนเห็นผลลัพธ์</aside>
+</section>
+
+<!-- SLIDE 24 — Prompt Library Structure -->
+<section class="layout-T4">
+  <h2>Prompt Library · 5 หมวดสำหรับงานบัญชี</h2>
+  <p class="text-muted fs-sm">ทรัพย์สินขององค์กร — เก็บ + ปรับปรุงต่อเนื่อง · ทีมใช้ผลลัพธ์เท่ากัน</p>
+  <div class="compare-grid cols-2">
+    <div class="compare-card">
+      <h3>📈 หมวดวิเคราะห์</h3>
+      <ul>
+        <li><strong>Revenue Analysis:</strong> วิเคราะห์รายได้รายเดือน · YoY · MoM</li>
+        <li><strong>Cost Analysis:</strong> โครงสร้างต้นทุน · จุดประหยัด</li>
+        <li><strong>Cash Flow:</strong> พยากรณ์ Cash 3 เดือน</li>
+      </ul>
+    </div>
+    <div class="compare-card highlight">
+      <h3>🛡️ หมวดควบคุม + รายงาน</h3>
+      <ul>
+        <li><strong>Anomaly Detection:</strong> รายการผิดปกติ/ทุจริต</li>
+        <li><strong>Executive Summary:</strong> สรุปผู้บริหาร 1 หน้า</li>
+        <li><em>+ Audit Memo · Tax Interpretation · JE Draft (ถ้าขยาย)</em></li>
+      </ul>
+    </div>
+  </div>
+  <div class="callout purple"><strong>Best Practice:</strong> ① เก็บใน Google Doc/Notion ที่ทีมเข้าได้ ② Version Control (v1, v2) ③ Test Case + Expected Output ทุก Prompt ④ Review ทุก 3 เดือน</div>
+  <aside class="notes">Prompt Library ที่ดี = ทุกคนในทีมใช้ AI ได้ผลลัพธ์เท่ากัน · ไม่ต้องเขียนใหม่ทุกครั้ง</aside>
+</section>
+
+<!-- SLIDE 25 — High-Quality Prompt Example -->
+<section class="layout-T6">
+  <h2>ตัวอย่าง Prompt คุณภาพสูง · Revenue Analyzer</h2>
+  <p class="text-muted fs-sm">ใช้ RICIOV จาก Day 2 + Structure ที่ทดสอบแล้ว</p>
+  <div class="prompt-box">
+<span class="prompt-tag">SYSTEM:</span> คุณคือนักวิเคราะห์การเงินอาวุโส
+เชี่ยวชาญธุรกิจ SME ไทย วิเคราะห์แม่นยำ
+ให้คำแนะนำเชิงปฏิบัติได้
+
+<span class="prompt-tag">USER:</span> นี่คือข้อมูลรายได้รายเดือนของเดือน [เดือน]:
+[วาง CSV หรือ Table ที่นี่]
+
+<span class="prompt-tag">กรุณาวิเคราะห์ตามนี้:</span>
+1. แนวโน้มรายได้เทียบเดือนก่อน (MoM) และปีก่อน (YoY)
+2. สินค้า/บริการที่รายได้เติบโตสูงสุดและต่ำสุด 3 อันดับ
+3. สาเหตุที่น่าจะเป็นของการเปลี่ยนแปลง
+4. คำแนะนำเชิงกลยุทธ์ 2-3 ข้อ
+5. ข้อควรระวังและ Red Flags ที่พบ
+
+<span class="prompt-tag">OUTPUT:</span> ตอบเป็นภาษาไทย · Structured Report
+พร้อม Bullet Points · ห้ามเดาตัวเลข · ถ้าข้อมูลไม่พอให้ระบุ
+  </div>
+  <div class="callout purple"><strong>Pro Tip:</strong> ทุก Prompt ใน Library ต้องระบุ <code>OUTPUT FORMAT</code> ชัดเจน — ทำให้ผลลัพธ์เปรียบเทียบได้ + Auto-process ได้</div>
+  <aside class="notes">นี่คือ Template ที่ผู้เรียนจะ copy ไปดัดแปลงสำหรับ Capstone</aside>
+</section>
+
+<!-- SLIDE 26 — Anomaly Detection -->
+<section class="layout-T4">
+  <h2>AI Anomaly Detection · 6 ประเภทที่จับได้</h2>
+  <p class="text-muted fs-sm">AI ช่วยลดเวลา Internal Audit + เพิ่มความครอบคลุม</p>
+  <div class="compare-grid cols-2">
+    <div class="compare-card">
+      <h3>🚩 Risk สูง</h3>
+      <ul>
+        <li><strong>Amount Anomaly:</strong> รายการใหญ่ผิดปกติ</li>
+        <li><strong>Authorization Bypass:</strong> ข้ามขั้นตอนอนุมัติ</li>
+        <li><strong>Pattern Anomaly:</strong> รูปแบบสะสมผิดปกติ</li>
+      </ul>
+    </div>
+    <div class="compare-card">
+      <h3>⚠️ Risk กลาง</h3>
+      <ul>
+        <li><strong>Duplicate Entry:</strong> รายการซ้ำวันเดียว</li>
+        <li><strong>Timing Anomaly:</strong> บันทึกช่วงนอกเวลา</li>
+        <li><strong>Rounding Anomaly:</strong> ตัวเลขกลมผิดปกติ</li>
+      </ul>
+    </div>
+  </div>
+  <div class="callout purple"><strong>เคสจริง:</strong> AI พบรายการ JE 19,999 บาท บันทึก 23:47 น. โดย user เดียว — เกือบหลุดเกณฑ์อนุมัติ 20k · อาจเป็นความผิดพลาดหรือทุจริต — ส่งให้ Internal Audit ตรวจ</div>
+  <aside class="notes">เคสนี้เกิดจริงในสำนักบัญชีไทย · ตัวอย่างจริงที่ AI ช่วยจับได้</aside>
+</section>
+
+<!-- SLIDE 27 — Human-in-the-Loop Checkpoints -->
+<section class="layout-T3">
+  <h2>Human-in-the-Loop · เมื่อไหร่มนุษย์ต้องตรวจ</h2>
+  <p class="text-muted fs-sm">AI เร็ว · มนุษย์แม่น — ผสมให้ถูก = ทั้งเร็ว + ทั้งแม่น</p>
+  <div class="concept-grid">
+    <div class="concept-item">
+      <div class="icon">💰</div>
+      <div class="text"><strong>1. รายการ &gt; Threshold</strong>
+        <p>เกินยอดที่กำหนด (เช่น &gt;100k) — มนุษย์ต้อง Approve ก่อน</p></div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">📊</div>
+      <div class="text"><strong>2. AI Confidence &lt; 80%</strong>
+        <p>AI ไม่มั่นใจ — ส่งให้นักบัญชีตัดสิน · ห้าม Auto-approve</p></div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">🚩</div>
+      <div class="text"><strong>3. Anomaly ที่ AI พบ</strong>
+        <p>ทุก Anomaly ต้องมีมนุษย์ตรวจ · ไม่ใช่ AI ตัดสินเองว่าผิด</p></div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">📑</div>
+      <div class="text"><strong>4. งบการเงิน · Tax · เอกสารราชการ</strong>
+        <p>Sign-off เป็นหน้าที่นักบัญชี · AI แค่ draft</p></div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">👔</div>
+      <div class="text"><strong>5. รายการที่กระทบผู้บริหาร</strong>
+        <p>ผู้บริหารระดับสูง · เงินเดือน · โบนัส — มนุษย์ต้องตรวจทุกครั้ง</p></div>
+    </div>
+  </div>
+  <aside class="notes">HITL คือกุญแจให้ AI ใช้ได้จริงโดยไม่เสี่ยง — ผู้เรียนต้องระบุใน Capstone ของตัวเอง</aside>
+</section>
+
+<!-- SLIDE 28 — Workshop 3.1 -->
+<section class="layout-T7">
+  <span class="workshop-header">⚡ WORKSHOP 3.1 · Build Your AI Workflow</span>
+  <h2>ออกแบบ AI Workflow สำหรับบริษัท XYZ</h2>
+  <div class="workshop-grid">
+    <div class="workshop-card">
+      <h3>โจทย์</h3>
+      <ul>
+        <li>บริษัทค้าปลีก XYZ</li>
+        <li>ต้องการ AI Workflow ทำงาน Auto ทุกวันที่ 1</li>
+        <li>Pull Express → วิเคราะห์ → ส่ง Executive Summary</li>
+        <li>ส่งให้ CFO ภายใน 09:00 น.</li>
+      </ul>
+    </div>
+    <div class="workshop-card purple">
+      <h3>4 Deliverables</h3>
+      <ol>
+        <li>วาด Workflow Diagram (10 นาที)</li>
+        <li>เขียน Prompt Monthly Revenue Analyzer (10 นาที)</li>
+        <li>ระบุ HITL Checkpoints (5 นาที)</li>
+        <li>Present + รับ Feedback กลุ่มข้างๆ (5 นาที)</li>
+      </ol>
+    </div>
+  </div>
+  <div class="workshop-meta">
+    <span class="badge">⏱️ 30 นาที</span>
+    <span class="badge">👥 กลุ่ม Capstone</span>
+    <span class="badge">📁 Workflow + 1 Prompt</span>
+    <span class="badge">🎯 Reuse ใน Capstone</span>
+  </div>
+  <aside class="notes">Workflow ที่ทำใน Workshop นี้ = ส่วน B ของ Capstone — ทำให้ดี</aside>
+</section>
+
+<!-- SLIDE 29 — Section 3 Recap -->
+<section class="layout-T8">
+  <h2>สรุป Section 3</h2>
+  <div class="takeaway-grid">
+    <div class="takeaway"><div class="num">1</div><strong>4-Step Workflow</strong><p>Export → Generative → Agentic → Auto Report</p></div>
+    <div class="takeaway"><div class="num">2</div><strong>Prompt Library 5 หมวด</strong><p>Revenue · Cost · Cash · Anomaly · Executive Summary</p></div>
+    <div class="takeaway"><div class="num">3</div><strong>Anomaly 6 ประเภท</strong><p>Amount · Duplicate · Timing · Authorization · Pattern · Rounding</p></div>
+    <div class="takeaway"><div class="num">4</div><strong>HITL 5 Checkpoints</strong><p>Threshold · Low Confidence · Anomaly · Official Doc · Senior Mgmt</p></div>
+  </div>
+  <aside class="notes">พักเที่ยง 12:00-13:00 — Section 4 ตอนบ่าย เริ่มทันที 13:00</aside>
+</section>
+
+<!-- LUNCH -->
+<section class="layout-T2">
+  <div class="section-num">BREAK</div>
+  <h1>พักรับประทานอาหารกลางวัน</h1>
+  <div class="en-title">Lunch Break · 12:00 — 13:00</div>
+  <div class="topic-list">
+    <span>กลับมา 13:00</span>
+    <span>กลุ่มซ้อม Capstone Slide</span>
+    <span>เตรียม Demo + Backup</span>
+  </div>
+  <aside class="notes">กลุ่มที่ slide ยังไม่เสร็จ — ใช้พักเที่ยงทำต่อ · ไม่มีเวลาแก้ตอนบ่าย</aside>
+</section>
+
+<!-- ═══ SECTION 4 · DASHBOARD & MGMT REPORT ═══ -->
+<section class="layout-T2" id="sec-4" data-id="sec-4">
+  <div class="section-num">SECTION 04</div>
+  <h1>Integrated Dashboard &amp; Management Report</h1>
+  <div class="en-title">From Data to Story · 5-Section Report + Pyramid + Storytelling</div>
+  <div class="topic-list">
+    <span>Executive vs Operational</span>
+    <span>5-Section Report</span>
+    <span>Pyramid Principle</span>
+    <span>AI-Assisted Process</span>
+    <span>Financial Storytelling</span>
+    <span>Workshop</span>
+  </div>
+  <aside class="notes">75 นาที — เน้น Storytelling เพราะ Capstone ต้อง present ให้ CFO</aside>
+</section>
+
+<!-- SLIDE 32 — Executive vs Operational Dashboard -->
+<section class="layout-T4">
+  <h2>Executive vs Operational Dashboard</h2>
+  <p class="text-muted fs-sm">2 Dashboard สำหรับ 2 ผู้ใช้ที่ต่างกัน — ออกแบบต่างกัน</p>
+  <div class="compare-grid cols-2">
+    <div class="compare-card">
+      <h3>👔 Executive Dashboard</h3>
+      <ul>
+        <li><strong>ผู้ใช้:</strong> CFO · CEO · Board</li>
+        <li><strong>ความถี่:</strong> รายเดือน · ไตรมาส</li>
+        <li><strong>KPI:</strong> Revenue · EBITDA · Cash · ROE</li>
+        <li><strong>รายละเอียด:</strong> สูง-ต่ำ (Summary)</li>
+        <li><strong>การกระทำ:</strong> กลยุทธ์</li>
+        <li><strong>รูปแบบ:</strong> Visual Heavy · 1 Page</li>
+      </ul>
+    </div>
+    <div class="compare-card highlight">
+      <h3>🛠️ Operational Dashboard</h3>
+      <ul>
+        <li><strong>ผู้ใช้:</strong> Acct Manager · Controller</li>
+        <li><strong>ความถี่:</strong> รายวัน · สัปดาห์</li>
+        <li><strong>KPI:</strong> AP/AR Aging · Bank · Error Rate</li>
+        <li><strong>รายละเอียด:</strong> ต่ำ-สูง (Detail)</li>
+        <li><strong>การกระทำ:</strong> จัดการประจำวัน</li>
+        <li><strong>รูปแบบ:</strong> Table Heavy · Multiple Pages</li>
+      </ul>
+    </div>
+  </div>
+  <div class="callout purple"><strong>กฎ:</strong> Executive Dashboard ต้องอ่านได้ใน 30 วินาที · Operational Dashboard ต้องมีรายละเอียดให้ Drill-down — สับสนกัน = ใช้ไม่ได้ทั้งคู่</div>
+  <aside class="notes">นักศึกษามักออกแบบ Executive แบบ Operational — รายละเอียดเยอะเกิน · ผู้บริหารไม่อ่าน</aside>
+</section>
+
+<!-- SLIDE 33 — 5-Section Management Report -->
+<section class="layout-T3">
+  <h2>Management Report ครบ 5 ส่วน</h2>
+  <p class="text-muted fs-sm">โครงสร้างที่ครอบคลุมทุกมิติของสุขภาพการเงิน</p>
+  <div class="concept-grid">
+    <div class="concept-item">
+      <div class="icon">📌</div>
+      <div class="text"><strong>1. Executive Summary</strong>
+        <p>1 หน้า · Highlights + Lowlights · เทียบ Budget + ปีก่อน</p></div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">💵</div>
+      <div class="text"><strong>2. Revenue Analysis</strong>
+        <p>รวม + แยกตาม สินค้า/บริการ/ภูมิภาค · Trend + Forecast</p></div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">💸</div>
+      <div class="text"><strong>3. Cost &amp; Profitability</strong>
+        <p>Gross Margin · OPEX · EBITDA · Net Profit Margin</p></div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">💧</div>
+      <div class="text"><strong>4. Cash Flow</strong>
+        <p>Current Cash · Operations Cash · 3-Month Forecast</p></div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">🎯</div>
+      <div class="text"><strong>5. Recommendations</strong>
+        <p>AI Insights (Human-Reviewed) · Action Items + Owner · Risk Alerts</p></div>
+    </div>
+  </div>
+  <aside class="notes">5 ส่วนนี้คือมาตรฐาน · เพิ่มได้ตามอุตสาหกรรม · แต่ไม่ควรขาด</aside>
+</section>
+
+<!-- SLIDE 34 — Pyramid Principle -->
+<section class="layout-T5">
+  <h2>Pyramid Principle · ข้อสรุปก่อน รายละเอียดทีหลัง</h2>
+  <p class="text-muted fs-sm">Barbara Minto — CFO มีเวลาจำกัด ต้องการ Bottom Line Up Front</p>
+  <div class="workflow">
+    <div class="step"><div class="num">1</div><strong>Conclusion</strong><span>ข้อสรุป<br>(เสนอก่อน)</span></div>
+    <div class="arrow">↓</div>
+    <div class="step"><div class="num">2</div><strong>Reasons</strong><span>เหตุผล 2-3 ข้อ<br>สนับสนุน</span></div>
+    <div class="arrow">↓</div>
+    <div class="step"><div class="num">3</div><strong>Data</strong><span>ตัวเลข<br>รายละเอียด</span></div>
+  </div>
+  <div class="callout purple"><strong>เปรียบเทียบ:</strong><br>❌ Bottom-up: "รายได้ 5 ล้าน · ต้นทุน 3.5 ล้าน · ค่าใช้จ่าย 1 ล้าน · กำไร 500k · ต่ำกว่า Budget 20%"<br>✅ Pyramid: "กำไรเดือนนี้ต่ำกว่า Budget 20% จาก 2 สาเหตุหลัก: ยอดขายลด 15% และต้นทุนวัตถุดิบสูงขึ้น 8% · ผมแนะนำให้พิจารณา..."</div>
+  <aside class="notes">เน้นว่า Pyramid Principle ใช้ทั้งใน Report เขียน · ใน Slide · และในการ Present ปากเปล่า</aside>
+</section>
+
+<!-- SLIDE 35 — AI-Assisted Report Process -->
+<section class="layout-T5">
+  <h2>AI-Assisted Report Process · 4 Steps</h2>
+  <p class="text-muted fs-sm">ผสม AI ความเร็ว + มนุษย์ความแม่น = รายงานที่ดี</p>
+  <div class="workflow">
+    <div class="step"><div class="num">1</div><strong>Calc KPI</strong><span>Auto<br>จาก Express</span></div>
+    <div class="arrow">→</div>
+    <div class="step"><div class="num">2</div><strong>AI Draft</strong><span>First Draft<br>จาก KPI + Data</span></div>
+    <div class="arrow">→</div>
+    <div class="step"><div class="num">3</div><strong>Human Review</strong><span>นักบัญชี<br>Edit + เพิ่ม Context</span></div>
+    <div class="arrow">→</div>
+    <div class="step"><div class="num">4</div><strong>Final Report</strong><span>พร้อมส่ง<br>ผู้บริหาร</span></div>
+  </div>
+  <div class="callout purple"><strong>Time Save:</strong> ก่อนใช้ AI: 6-8 ชั่วโมง · ใช้ AI: 1.5 ชั่วโมง (Step 2 = 5 นาที + Step 3 = 1 ชั่วโมง) — แต่คุณภาพต้องไม่ต่ำกว่าเดิม</div>
+  <aside class="notes">เน้นว่า Step 3 (Human Review) ห้ามตัด · เป็นจุดที่ AI ผิดพลาดได้</aside>
+</section>
+
+<!-- SLIDE 36 — Financial Storytelling -->
+<section class="layout-T6">
+  <h2>Financial Storytelling · Context · Complication · Resolution</h2>
+  <p class="text-muted fs-sm">สร้าง "เรื่องราว" ให้ตัวเลข — ผู้บริหารเข้าใจและตัดสินใจได้</p>
+  <div class="prompt-box">
+<span class="prompt-tag"># Storytelling Framework</span>
+
+<span class="prompt-tag">CONTEXT:</span>
+"ในไตรมาสที่ 2 ที่ผ่านมา บริษัทมีรายได้รวม 15 ล้านบาท
+ เติบโต 5% YoY"
+                       ↓
+<span class="prompt-tag">COMPLICATION:</span>
+"อย่างไรก็ตาม กำไรสุทธิลดลง 12% เนื่องจากต้นทุน
+ วัตถุดิบสูงขึ้น 18%"
+                       ↓
+<span class="prompt-tag">RESOLUTION:</span>
+"ทีมแนะนำให้ <span class="prompt-var">Lock ราคาวัตถุดิบ 6 เดือน</span>
+ และทบทวนราคาขายในเดือนหน้า"
+
+
+<span class="prompt-tag"># 3 ข้อต้องมีเสมอ</span>
+1. Context ต้องสั้น · ตัวเลขใหญ่อันเดียว
+2. Complication ต้องชัด · ทำไมถึงเป็นปัญหา
+3. Resolution ต้องเป็น Action ที่ทำได้
+  </div>
+  <aside class="notes">ฝึก Storytelling 1 ครั้งกับข้อมูลจริงในห้อง · ขอผู้เรียน 1 คนลองพูด</aside>
+</section>
+
+<!-- SLIDE 37 — Workshop 4.1 1-Page Report -->
+<section class="layout-T7">
+  <span class="workshop-header">⚡ WORKSHOP 4.1 · 1-Page Management Report</span>
+  <h2>เขียน Report + ฝึก Storytelling</h2>
+  <div class="workshop-grid">
+    <div class="workshop-card">
+      <h3>5 ขั้นตอน</h3>
+      <ul>
+        <li>รับ Sample Data Sheet (ผู้สอนแจก)</li>
+        <li>ใช้ AI Draft Executive Summary</li>
+        <li>Review + ปรับปรุง Draft</li>
+        <li>Format ตาม 1-Page Template</li>
+        <li>ฝึก Present ด้วย Storytelling</li>
+      </ul>
+    </div>
+    <div class="workshop-card purple">
+      <h3>Deliverable</h3>
+      <ol>
+        <li>1-Page Management Report</li>
+        <li>ใช้ Pyramid Principle</li>
+        <li>มี Storytelling Script (CCR)</li>
+        <li>พร้อม Present 2 นาทีต่อ "CFO" (ผู้สอน)</li>
+        <li>Reuse ใน Capstone Section C</li>
+      </ol>
+    </div>
+  </div>
+  <div class="workshop-meta">
+    <span class="badge">⏱️ 30 นาที</span>
+    <span class="badge">👥 กลุ่ม Capstone</span>
+    <span class="badge">🎤 ผู้สอนเป็น CFO</span>
+    <span class="badge">❓ Q: "So what?"</span>
+  </div>
+  <aside class="notes">ผู้สอนจะถาม "So what?" ทุกกลุ่ม — เพื่อทดสอบว่าเข้าใจ Insight จริง · ไม่ใช่อ่านตัวเลข</aside>
+</section>
+
+<!-- SLIDE 38 — Section 4 Recap -->
+<section class="layout-T8">
+  <h2>สรุป Section 4</h2>
+  <div class="takeaway-grid">
+    <div class="takeaway"><div class="num">1</div><strong>2 ประเภท Dashboard</strong><p>Executive (Visual · 1-Page) vs Operational (Table · Drill-down)</p></div>
+    <div class="takeaway"><div class="num">2</div><strong>5-Section Report</strong><p>Summary · Revenue · Cost · Cash · Recommendations</p></div>
+    <div class="takeaway"><div class="num">3</div><strong>Pyramid Principle</strong><p>Conclusion ก่อน · Reason สนับสนุน · Data รายละเอียด</p></div>
+    <div class="takeaway"><div class="num">4</div><strong>Storytelling CCR</strong><p>Context · Complication · Resolution — ทำให้ตัวเลขมีชีวิต</p></div>
+  </div>
+  <aside class="notes">พัก 14:15-14:30 — กลับมาเข้า Capstone Presentation</aside>
+</section>
+
+<!-- ═══ SECTION 5 · CAPSTONE PRESENTATION ═══ -->
+<section class="layout-T2" id="sec-5" data-id="sec-5">
+  <div class="section-num">SECTION 05</div>
+  <h1>Capstone Project Presentation</h1>
+  <div class="en-title">Present · Peer Review · Feedback · 90 Minutes</div>
+  <div class="topic-list">
+    <span>3 Sections (A · B · C)</span>
+    <span>Assessment Rubric</span>
+    <span>Peer Review</span>
+    <span>WWW + EBI Feedback</span>
+    <span>Schedule</span>
+  </div>
+  <aside class="notes">90 นาที = หัวใจของวัน · บรรยากาศบวก · ทุกกลุ่มได้ Present</aside>
+</section>
+
+<!-- SLIDE 40 — Capstone Structure 3 Parts -->
+<section class="layout-T4">
+  <h2>Capstone Structure · 3 Parts</h2>
+  <p class="text-muted fs-sm">รวม 3 วันที่เรียนเป็น 1 Project — ตั้งบริษัทสมมติ + ออกแบบระบบ + Present</p>
+  <div class="compare-grid cols-3">
+    <div class="compare-card">
+      <h3>📐 Part A · Day 1 Skills</h3>
+      <ul>
+        <li>A1. Digital Blueprint</li>
+        <li>A2. Tool Selection 5 Layers</li>
+        <li>A3. Internal Control 3 ข้อ</li>
+        <li>A4. ROI 3 ปี</li>
+        <li><em>เน้น: System Design</em></li>
+      </ul>
+    </div>
+    <div class="compare-card highlight">
+      <h3>🤖 Part B · Day 2 Skills</h3>
+      <ul>
+        <li>B1. AI Workflow Diagram</li>
+        <li>B2. Prompt Library 3 ตัว</li>
+        <li>B3. Sample AI Output</li>
+        <li>B4. HITL Checkpoints</li>
+        <li><em>เน้น: AI Application</em></li>
+      </ul>
+    </div>
+    <div class="compare-card">
+      <h3>📊 Part C · Day 3 Skills</h3>
+      <ul>
+        <li>C1. Executive Dashboard</li>
+        <li>C2. 1-Page Mgmt Report</li>
+        <li>C3. Storytelling Script (CCR)</li>
+        <li><em>เน้น: Communication</em></li>
+      </ul>
+    </div>
+  </div>
+  <div class="callout purple"><strong>Time:</strong> 10 นาที Present + 5 นาที Q&amp;A · กลุ่มที่ฟัง = Peer Reviewer · กรอกฟอร์มทันที</div>
+  <aside class="notes">ทบทวน Part A B C สั้นๆ · เน้นว่าทุก Part ต้องมี · ขาด Part = ขาดคะแนน</aside>
+</section>
+
+<!-- SLIDE 41 — Assessment Rubric -->
+<section class="layout-T4">
+  <h2>Assessment Rubric · 4 หมวด · 100 คะแนน</h2>
+  <p class="text-muted fs-sm">ผู้สอนใช้ Rubric นี้ · กลุ่มต้องรู้ก่อน Present</p>
+  <div class="compare-grid cols-2">
+    <div class="compare-card">
+      <h3>🎯 Content (50%)</h3>
+      <ul>
+        <li><strong>Digital System Design (25%)</strong><br>Blueprint ครบ · Tool เหมาะ · ROI ชัด</li>
+        <li><strong>AI Application (25%)</strong><br>3 Prompts ทำงาน · Workflow สมบูรณ์ · Insights มีคุณภาพ</li>
+      </ul>
+    </div>
+    <div class="compare-card highlight">
+      <h3>💬 Delivery (50%)</h3>
+      <ul>
+        <li><strong>Dashboard &amp; Report (30%)</strong><br>Dashboard ถูก · Report 5 ส่วน · Storytelling เด่น</li>
+        <li><strong>Presentation &amp; Q&amp;A (20%)</strong><br>สื่อสารชัด · มั่นใจ · ตอบคำถามได้</li>
+      </ul>
+    </div>
+  </div>
+  <div class="callout purple"><strong>4 ระดับ:</strong> 4 = ดีเยี่ยม · 3 = ดี · 2 = พอใช้ · 1 = ต้องปรับปรุง — เน้นว่าทุกกลุ่มมีโอกาส 4 ได้ ถ้าตั้งใจเตรียม</div>
+  <aside class="notes">บอกล่วงหน้าว่า Q&amp;A 20% = ต้องตอบคำถาม "So what?" + "ถ้า X จะทำอย่างไร" ได้</aside>
+</section>
+
+<!-- SLIDE 42 — Peer Review + WWW EBI -->
+<section class="layout-T4">
+  <h2>Peer Review + Feedback Framework</h2>
+  <p class="text-muted fs-sm">ผู้ฟังมีหน้าที่ — ไม่ใช่แค่รอตัวเองขึ้น</p>
+  <div class="compare-grid cols-2">
+    <div class="compare-card">
+      <h3>📝 Peer Review (4 ข้อ)</h3>
+      <ul>
+        <li>1. สิ่งที่ดีที่สุดในการนำเสนอ</li>
+        <li>2. สิ่งที่ควรปรับปรุง</li>
+        <li>3. คำถาม 1 ข้อที่อยากถาม</li>
+        <li>4. Peer Score (1-10)</li>
+        <li><em>กรอกทันทีหลัง Present</em></li>
+      </ul>
+    </div>
+    <div class="compare-card highlight">
+      <h3>💭 WWW + EBI (ผู้สอน)</h3>
+      <ul>
+        <li><strong>WWW</strong> What Went Well — 2-3 จุดแข็ง</li>
+        <li><strong>EBI</strong> Even Better If — 1-2 จุดที่ดียิ่งขึ้น</li>
+        <li><strong>Key Takeaway</strong> — 1 ประโยคที่จะจำได้</li>
+        <li><em>หลีกเลี่ยง: เริ่มด้วย "แต่..."</em></li>
+      </ul>
+    </div>
+  </div>
+  <div class="callout purple"><strong>กฎ:</strong> ชมก่อน · แนะนำหลัง · ปิดด้วยกำลังใจ — ไม่ใช่สอบสวน · บรรยากาศบวกเรียนรู้ได้ดีกว่า</div>
+  <aside class="notes">ผู้เรียนใหม่จะกลัว Q&amp;A · เน้นบรรยากาศมิตรภาพ · ผู้สอนเริ่มชมก่อนเสมอ</aside>
+</section>
+
+<!-- SLIDE 43 — Presentation Schedule -->
+<section class="layout-T6">
+  <h2>Presentation Schedule · 14:30 — 16:00</h2>
+  <p class="text-muted fs-sm">15 นาที/กลุ่ม (10 Present + 5 Q&amp;A) · ปรับตามจำนวนกลุ่มจริง</p>
+  <div class="prompt-box">
+<span class="prompt-tag"># ตารางการนำเสนอ (สำหรับ 6 กลุ่ม)</span>
+
+ลำดับ  กลุ่ม      เวลา           Peer Reviewer
+─────  ─────────  ─────────────  ──────────────
+  1    กลุ่ม A    14:30 - 14:45  กลุ่ม B
+  2    กลุ่ม B    14:45 - 15:00  กลุ่ม C
+  3    กลุ่ม C    15:00 - 15:15  กลุ่ม D
+  4    กลุ่ม D    15:15 - 15:30  กลุ่ม A
+  5    กลุ่ม E    15:30 - 15:45  กลุ่ม F
+  6    กลุ่ม F    15:45 - 16:00  กลุ่ม E
+
+<span class="prompt-tag"># กฎการ Present</span>
+✓ <span class="prompt-var">Timer</span> ดังเสียง 5 นาที + 1 นาที ก่อนหมด
+✓ ทุกคนในกลุ่มต้องพูดอย่างน้อย 1 ส่วน
+✓ Slide ไม่เกิน 10 หน้า
+✓ Demo จริง ดีกว่า Screenshot
+✓ ปิดด้วย "We recommend..."
+  </div>
+  <aside class="notes">Timer สำคัญ · ผู้สอนต้องคุมเวลาเข้ม · ไม่ใช่กลุ่มแรกใช้ 20 นาที กลุ่มท้ายเหลือ 5</aside>
+</section>
+
+<!-- SLIDE 44 — Section 5 Recap -->
+<section class="layout-T8">
+  <h2>สรุป Section 5 · After Presentations</h2>
+  <div class="takeaway-grid">
+    <div class="takeaway"><div class="num">1</div><strong>ทุกกลุ่ม Present สำเร็จ</strong><p>ขอแสดงความยินดีกับทุกกลุ่ม</p></div>
+    <div class="takeaway"><div class="num">2</div><strong>3 จุดแข็งร่วมของรุ่น</strong><p>(ผู้สอนสรุปจาก WWW)</p></div>
+    <div class="takeaway"><div class="num">3</div><strong>2 จุดที่ทุกกลุ่มควรพัฒนา</strong><p>(ผู้สอนสรุปจาก EBI)</p></div>
+    <div class="takeaway"><div class="num">4</div><strong>1 Best Practice ของรุ่น</strong><p>(ผู้สอนเลือก 1 idea ที่โดดเด่นที่สุด)</p></div>
+  </div>
+  <aside class="notes">Recap นี้สด ๆ · ผู้สอนกรอกระหว่าง Presentation · ใช้ตอนปิด Section</aside>
+</section>
+
+<!-- ═══ SECTION 6 · FUTURE-READY ═══ -->
+<section class="layout-T2" id="sec-6" data-id="sec-6">
+  <div class="section-num">SECTION 06</div>
+  <h1>Future-Ready Accountant + ปิดหลักสูตร</h1>
+  <div class="en-title">Career Path · Roadmap · Closing Ceremony · 30 Minutes</div>
+  <div class="topic-list">
+    <span>3 Career Tracks</span>
+    <span>T-Shape Skills</span>
+    <span>Certifications</span>
+    <span>30/60/90 Roadmap</span>
+    <span>Future Trends</span>
+    <span>Ceremony</span>
+  </div>
+  <aside class="notes">30 นาที · บรรยากาศสบาย · เน้น Inspiration + Commitment ในอนาคต</aside>
+</section>
+
+<!-- SLIDE 46 — Career Path 3 Tracks -->
+<section class="layout-T4">
+  <h2>Digital Accountant Career Path · 3 Tracks · 3 Levels</h2>
+  <p class="text-muted fs-sm">เส้นทางอาชีพในยุค Digital + AI</p>
+  <div class="compare-grid cols-3">
+    <div class="compare-card">
+      <h3>🌱 Entry (1-3 ปี)</h3>
+      <ul>
+        <li>Digital Accounting Specialist</li>
+        <li>Cloud Accounting Admin</li>
+        <li>Financial Data Analyst (Jr)</li>
+        <li><em>เน้น: ใช้ tool ได้คล่อง</em></li>
+      </ul>
+    </div>
+    <div class="compare-card highlight">
+      <h3>🌳 Middle (3-7 ปี)</h3>
+      <ul>
+        <li>Digital Finance Manager</li>
+        <li>AI &amp; Automation Lead</li>
+        <li>Mgmt Reporting Manager</li>
+        <li>Internal Audit (Digital)</li>
+        <li><em>เน้น: นำทีม + ออกแบบ</em></li>
+      </ul>
+    </div>
+    <div class="compare-card">
+      <h3>🌲 Senior (7+ ปี)</h3>
+      <ul>
+        <li>CFO (Digital-First)</li>
+        <li>Chief Data Officer (Finance)</li>
+        <li>Digital Transformation Lead</li>
+        <li>FinTech Consultant</li>
+        <li><em>เน้น: Strategy + Influence</em></li>
+      </ul>
+    </div>
+  </div>
+  <aside class="notes">เน้นว่า Path ไม่ตายตัว · เปลี่ยนได้ตามที่ตัวเองชอบ · Important: ไม่หยุดเรียนรู้</aside>
+</section>
+
+<!-- SLIDE 47 — T-Shape Skills -->
+<section class="layout-T4">
+  <h2>T-Shape Skills · กว้าง 3 ด้าน · ลึก 1 ด้าน</h2>
+  <p class="text-muted fs-sm">ทักษะที่นักบัญชีดิจิทัลต้องมี</p>
+  <div class="compare-grid cols-3">
+    <div class="compare-card">
+      <h3>🛠️ Technical</h3>
+      <ul>
+        <li>Cloud Accounting</li>
+        <li>Data Modeling</li>
+        <li>API Basic</li>
+        <li>Database</li>
+        <li><em>Tools:</em> Express · SAP · SQL · Power BI</li>
+      </ul>
+    </div>
+    <div class="compare-card highlight">
+      <h3>🔬 Analytical</h3>
+      <ul>
+        <li>Financial Analysis</li>
+        <li>Statistics</li>
+        <li>AI Prompting</li>
+        <li>Forecasting</li>
+        <li><em>Tools:</em> Excel · Python Basic · ChatGPT</li>
+      </ul>
+    </div>
+    <div class="compare-card">
+      <h3>💼 Advisory</h3>
+      <ul>
+        <li>Business Acumen</li>
+        <li>Storytelling</li>
+        <li>Presentation</li>
+        <li>Strategy</li>
+        <li><em>Tools:</em> PowerPoint · Tableau · Soft Skills</li>
+      </ul>
+    </div>
+  </div>
+  <div class="callout purple"><strong>เลือก:</strong> 1 ด้านที่ตัวเองชอบและเก่งที่สุด → ลงลึก · อีก 2 ด้านที่เหลือ → กว้างพอใช้ — รวมเป็น T-Shape</div>
+  <aside class="notes">ตัวอย่างที่อาจารย์อุเทน: Advisory ลึก + Technical/Analytical กว้าง</aside>
+</section>
+
+<!-- SLIDE 48 — Recommended Certifications -->
+<section class="layout-T4">
+  <h2>Certifications แนะนำ · 6 ใบ</h2>
+  <p class="text-muted fs-sm">เลือกตามสายอาชีพ + งบ + เวลา</p>
+  <div class="compare-grid cols-2">
+    <div class="compare-card">
+      <h3>🎓 พื้นฐาน · ทุกสาย</h3>
+      <ul>
+        <li><strong>CPA</strong> · สภาวิชาชีพบัญชี · 2-4 ปี</li>
+        <li><strong>AI Literacy</strong> · Various · 1-3 เดือน</li>
+        <li><strong>Xero Advisor</strong> · Xero · 1-2 เดือน · เหมาะ SME</li>
+      </ul>
+    </div>
+    <div class="compare-card highlight">
+      <h3>📊 เฉพาะสาย</h3>
+      <ul>
+        <li><strong>CISA</strong> · ISACA · 1-2 ปี · Audit + IT</li>
+        <li><strong>Power BI Data Analyst</strong> · Microsoft · 3-6 เดือน · Reporting</li>
+        <li><strong>Google Data Analytics</strong> · Google · 6 เดือน · Analytical</li>
+      </ul>
+    </div>
+  </div>
+  <div class="callout purple"><strong>กลยุทธ์:</strong> เริ่มด้วยใบที่เร็ว (1-3 เดือน) เพื่อสร้าง Momentum · จากนั้นค่อยลงใบใหญ่ (CPA, CISA) — ไม่จำเป็นต้องครบทุกใบ</div>
+  <aside class="notes">CPA ยังคงเป็น "เสาหลัก" ของอาชีพในไทย · ใบอื่นเป็น "เสริม" สำหรับสายดิจิทัล</aside>
+</section>
+
+<!-- SLIDE 49 — 30/60/90-Day Roadmap -->
+<section class="layout-T5">
+  <h2>30/60/90-Day Roadmap · หลังจบหลักสูตร</h2>
+  <p class="text-muted fs-sm">Consolidate · Apply · Advance — ก้าวเล็ก · ก้าวต่อเนื่อง</p>
+  <div class="workflow">
+    <div class="step"><div class="num">30</div><strong>Consolidate</strong><span>ทบทวน + เสริม<br>ฝึก 5 แบบฝึก<br>Prompt Library 10<br>Simple Dashboard</span></div>
+    <div class="arrow">→</div>
+    <div class="step"><div class="num">60</div><strong>Apply</strong><span>ใช้จริง<br>3 Prompts ที่ทำงาน<br>1 Real Mgmt Report<br>เริ่ม Cert</span></div>
+    <div class="arrow">→</div>
+    <div class="step"><div class="num">90</div><strong>Advance</strong><span>ยกระดับ<br>Portfolio พร้อม<br>Present ผลงาน<br>สอบ Cert ผ่าน</span></div>
+  </div>
+  <div class="callout purple"><strong>Milestones:</strong> 6 เดือน → Portfolio พร้อมสมัครงาน · 1 ปี → Lead Digital Accounting Project ในองค์กรได้</div>
+  <aside class="notes">เน้นว่า Roadmap ไม่ใช่กฎ · เป็น Guide · ปรับตามสถานการณ์</aside>
+</section>
+
+<!-- SLIDE 50 — Future Trends -->
+<section class="layout-T3">
+  <h2>5 Future Trends ที่นักบัญชีต้องติดตาม</h2>
+  <p class="text-muted fs-sm">5-10 ปีข้างหน้า · งานเปลี่ยนรูป · คนที่เตรียมตัวจะได้เปรียบ</p>
+  <div class="concept-grid">
+    <div class="concept-item">
+      <div class="icon">🔍</div>
+      <div class="text"><strong>1. Real-time Audit</strong>
+        <p>AI ตรวจทุกธุรกรรม Real-time — งาน Audit เปลี่ยนรูป · เรียน Data Analytics + Audit Tech</p></div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">🤖</div>
+      <div class="text"><strong>2. Autonomous Finance</strong>
+        <p>ระบบทำ AP/AR/Closing เอง — ลด Routine · เน้น Advisory Skills</p></div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">📝</div>
+      <div class="text"><strong>3. AI Accountant</strong>
+        <p>AI Draft ทุกอย่างจาก JE ถึง Report — นักบัญชี = Reviewer · พัฒนา Judgment</p></div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">⛓️</div>
+      <div class="text"><strong>4. Blockchain Accounting</strong>
+        <p>รายการบนบล็อกเชน · ตรวจได้ทันที — Transparency สูง · เรียน Blockchain Basics</p></div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">🌱</div>
+      <div class="text"><strong>5. ESG Reporting</strong>
+        <p>AI รวบรวม ESG Data อัตโนมัติ — งาน Reporting ขยาย · เรียน ESG Framework</p></div>
+    </div>
+  </div>
+  <aside class="notes">เน้นว่า trends ทั้ง 5 = "งานใหม่" สำหรับนักบัญชีที่เตรียมตัว · ไม่ใช่ "งานหาย"</aside>
+</section>
+
+<!-- SLIDE 51 — Reflection: Personal Roadmap -->
+<section class="layout-T7">
+  <span class="workshop-header">💭 REFLECTION 6.1 · My 30/60/90 Roadmap</span>
+  <h2>เขียน Personal Roadmap + หา Accountability Partner</h2>
+  <div class="workshop-grid">
+    <div class="workshop-card">
+      <h3>3 เป้าหมายในกระดาษ</h3>
+      <ol>
+        <li>30 วัน — 1 สิ่งที่จะ <strong>ทบทวน/ฝึก</strong></li>
+        <li>60 วัน — 1 สิ่งที่จะ <strong>นำไปใช้จริง</strong></li>
+        <li>90 วัน — 1 สิ่งที่จะ <strong>ยกระดับ</strong></li>
+      </ol>
+    </div>
+    <div class="workshop-card purple">
+      <h3>Accountability Partner</h3>
+      <ul>
+        <li>แชร์ Roadmap กับเพื่อนข้างๆ</li>
+        <li>แลกเบอร์/Line</li>
+        <li>นัดเช็ค Progress 30 วันข้างหน้า</li>
+        <li>Commit ต่อเป้าหมายของกันและกัน</li>
+      </ul>
+    </div>
+  </div>
+  <div class="workshop-meta">
+    <span class="badge">⏱️ 10 นาที</span>
+    <span class="badge">👤 รายบุคคล + คู่</span>
+    <span class="badge">📝 เก็บ Roadmap ไว้กับตัว</span>
+    <span class="badge">📞 Check-in 30 วัน</span>
+  </div>
+  <aside class="notes">เน้นว่า Accountability Partner = ตัวขับให้ Roadmap ไม่ตาย · งานวิจัยพบว่า commitment ทางสังคมเพิ่มความสำเร็จ 65%</aside>
+</section>
+
+<!-- SLIDE 52 — Course Summary 4 Days -->
+<section class="layout-T8">
+  <h2>สรุปหลักสูตร 4 วัน · สิ่งที่ทุกท่านได้รับ</h2>
+  <div class="takeaway-grid">
+    <div class="takeaway"><div class="num">1</div><strong>Cloud Accounting</strong><p>Express · Bank Feed · e-Tax · PDPA</p></div>
+    <div class="takeaway"><div class="num">2</div><strong>AI &amp; Prompt Engineering</strong><p>RICIOV · 5 Use Cases · NotebookLM · Governance</p></div>
+    <div class="takeaway"><div class="num">3</div><strong>Data &amp; Dashboard</strong><p>Power Query · CLEAR · 4 Charts · Storytelling</p></div>
+    <div class="takeaway"><div class="num">4</div><strong>System Integration</strong><p>Blueprint · ROI · AI Workflow · Mgmt Report</p></div>
+    <div class="takeaway"><div class="num">5</div><strong>Capstone Portfolio</strong><p>1 Project ที่ใช้สมัครงาน/Present ผู้บริหารได้</p></div>
+    <div class="takeaway"><div class="num">6</div><strong>Personal Roadmap</strong><p>30/60/90 วัน + Accountability Partner</p></div>
+  </div>
+  <aside class="notes">ขอผู้เรียน 2-3 คน บอกว่า 4 วันนี้ · 1 สิ่งที่ประทับใจที่สุด</aside>
+</section>
+
+<!-- SLIDE 53 — Final Inspirational Message -->
+<section class="layout-T6">
+  <h2>ปิดท้ายด้วย · 3 ข้อความที่อยากให้จำ</h2>
+  <p class="text-muted fs-sm">Inspiration · ไม่ใช่บทเรียน · เก็บไว้ในใจระยะยาว</p>
+  <div class="prompt-box">
+<span class="prompt-tag"># ข้อความที่ 1</span>
+"AI ไม่ได้มาแทนนักบัญชี
+ — AI มาช่วยให้นักบัญชีที่ใช้ AI ได้
+   แทนนักบัญชีที่ไม่ใช้"
+
+
+<span class="prompt-tag"># ข้อความที่ 2</span>
+"Tools จะเปลี่ยน · Thinking จะอยู่ตลอด
+ คนที่เข้าใจ <span class="prompt-var">'ทำไม'</span> เบื้องหลังตัวเลข
+ จะมีคุณค่าเสมอ"
+
+
+<span class="prompt-tag"># ข้อความที่ 3</span>
+"Best time to start was yesterday.
+ Second best time is <span class="prompt-var">today</span>."
+
+ — เริ่ม Roadmap วันนี้ · ไม่ใช่พรุ่งนี้
+  </div>
+  <aside class="notes">พูดด้วยน้ำเสียงจริงใจ · ไม่ท่องสคริปต์ · ผู้เรียนจะรู้สึกได้</aside>
+</section>
+
+<!-- SLIDE 54 — Q&A -->
+<section class="layout-T1 cover-qa">
+  <div class="cover-header">
+    <div class="cover-eyebrow">Day 04 · <strong>Final Q&amp;A · Open Discussion</strong></div>
+    <img class="kkbs-logo" src="https://kkbs.kku.ac.th/wp/wp-content/uploads/2025/01/KKUxKKBS-Color250w-2.png" alt="KKBS">
+  </div>
+  <div class="cover-body">
+    <div class="qa-mark">?</div>
+    <div class="qa-content">
+      <div class="qa-tag">Question · Reflection · Commitment</div>
+      <h1>คำถามสุดท้าย<br>และคำขอบคุณ</h1>
+      <div class="qa-subtitle">Open Discussion · ทุกคำถามที่ค้างใจจาก 4 วัน</div>
+      <div class="qa-prompts">
+        <div class="prompt-card"><strong>Aha Moment</strong>4 วันนี้ · 1 ความเข้าใจใหม่ที่สำคัญที่สุด?</div>
+        <div class="prompt-card"><strong>Skill to Master</strong>1 ทักษะที่จะลงทุนเวลามากที่สุด?</div>
+        <div class="prompt-card"><strong>First Action</strong>สัปดาห์นี้จะลองทำอะไรเป็นอย่างแรก?</div>
+        <div class="prompt-card"><strong>Stay Connected</strong>อยากติดต่อกลับเรื่องอะไร?</div>
+      </div>
+    </div>
+  </div>
+  <div class="cover-footer cols-3">
+    <div class="meta-cell"><div class="label">Phone</div><div class="value">081-595-0990<small>โทรได้ทุกวันทำการ</small></div></div>
+    <div class="meta-cell"><div class="label">Line ID</div><div class="value">Aj_uthen<small>แชทตอบเร็วที่สุด</small></div></div>
+    <div class="meta-cell"><div class="label">Email</div><div class="value">Uthen.l@I-dc.co.th<small>คำถามยาว · เอกสารแนบ</small></div></div>
+  </div>
+  <aside class="notes">ปิดด้วยการเปิดใจ · บอกผู้เรียนว่าติดต่อกลับได้ตลอด · ไม่ได้จบแค่วันนี้</aside>
+</section>
+
+<!-- SLIDE 55 — End of Course / Certificate -->
+<section class="layout-T1 cover-end">
+  <div class="cover-header">
+    <div class="cover-eyebrow">End of <strong>Course · Day 04</strong> · 16:30</div>
+    <img class="kkbs-logo" src="https://kkbs.kku.ac.th/wp/wp-content/uploads/2025/01/KKUxKKBS250w-2.png" alt="KKBS">
+  </div>
+  <div class="cover-body">
+    <div class="end-tag">Congratulations · ขอแสดงความยินดี</div>
+    <div class="end-thanks-th">ทุกท่านสำเร็จหลักสูตรอย่างยอดเยี่ยม</div>
+    <h1>Future-Ready<br>Digital Accountant</h1>
+    <div class="end-subtitle">การพัฒนาระบบบัญชีดิจิทัลด้วยเทคโนโลยีคลาวด์และปัญญาประดิษฐ์ · 4 วัน · 28 ชั่วโมง · 1 Capstone Project</div>
+    <div class="end-quote">
+      <div class="quote-text">"AI won't replace accountants — accountants who use AI will replace those who don't."<br>"AI ไม่ได้แทนนักบัญชี — นักบัญชีที่ใช้ AI ได้จะแทนนักบัญชีที่ไม่ใช้"</div>
+      <div class="quote-author">— Closing Message · KKBS x KKU 2026</div>
+    </div>
+  </div>
+  <div class="cover-footer cols-3">
+    <div class="meta-cell"><div class="label">Certificate</div><div class="value">Pickup ที่หน้าห้อง<small>ถ่ายรูปกลุ่มก่อนกลับ</small></div></div>
+    <div class="meta-cell"><div class="label">Stay in Touch</div><div class="value">Line @Aj_uthen<small>กลุ่มศิษย์เก่า</small></div></div>
+    <div class="meta-cell"><div class="label">Next Step</div><div class="value">30-Day Roadmap<small>เริ่มพรุ่งนี้</small></div></div>
+  </div>
+  <aside class="notes">พิธีปิด · มอบ Certificate · ถ่ายรูปกลุ่ม · บรรยากาศบวก · ไม่รีบ</aside>
+</section>
+
+</div>
+</div>
+
+<!-- Persistent TOC Navigation Bar -->
+<nav class="toc-nav">
+  <span class="toc-day-tag">Day 04</span>
+  <a class="toc-home" href="#/agenda" title="Agenda · กลับไปสารบัญ">⌂ TOC</a>
+  <span class="toc-divider">|</span>
+  <a href="#/sec-1" title="Integration Review">01 · Review</a>
+  <a href="#/sec-2" title="System Design">02 · Design</a>
+  <a href="#/sec-3" title="AI Workflow">03 · Workflow</a>
+  <a href="#/sec-4" title="Dashboard &amp; Report">04 · Report</a>
+  <a href="#/sec-5" title="Capstone">05 · Capstone</a>
+  <a href="#/sec-6" title="Future-Ready">06 · Future</a>
+</nav>
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/notes/notes.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/highlight.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/zoom/zoom.js"></script>
+
+<script>
+  Reveal.initialize({
+    hash: true, slideNumber: 'c/t', progress: true, controls: true,
+    transition: 'fade', transitionSpeed: 'default', backgroundTransition: 'fade',
+    width: 1280, height: 800, margin: 0.04, minScale: 0.2, maxScale: 2.0,
+    plugins: [ RevealNotes, RevealHighlight, RevealZoom ]
+  });
+  Reveal.on('slidechanged', function(event) {
+    var s = event.currentSlide;
+    document.body.classList.toggle('hide-toc-nav', s.classList.contains('layout-T1'));
+  });
+  document.addEventListener('DOMContentLoaded', function() {
+    var s = Reveal.getCurrentSlide && Reveal.getCurrentSlide();
+    if (s && s.classList.contains('layout-T1')) document.body.classList.add('hide-toc-nav');
+  });
+</script>
+</body>
+</html>

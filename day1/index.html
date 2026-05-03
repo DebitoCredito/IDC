@@ -1,0 +1,1867 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Day 1 — การพัฒนาระบบบัญชีดิจิทัลด้วยเทคโนโลยีคลาวด์และปัญญาประดิษฐ์ | KKBS</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&family=Noto+Sans+Thai:wght@300;400;500;600;700&family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reset.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/monokai.css">
+
+  <link rel="stylesheet" href="../shared/theme.css">
+  <link rel="stylesheet" href="../shared/layouts.css">
+</head>
+<body>
+
+<div class="reveal">
+<div class="slides">
+
+<!-- ═══════════════════════════════════════════════════════════
+     SLIDE 1 — TITLE (T1) · Premium Editorial Cover
+     ═══════════════════════════════════════════════════════════ -->
+<section class="layout-T1 cover-day" data-day-num="01">
+  <div class="cover-header">
+    <div class="cover-eyebrow">Course · <strong>AI and Cloud-based Accounting Software</strong></div>
+    <img class="kkbs-logo" src="https://kkbs.kku.ac.th/wp/wp-content/uploads/2025/01/KKUxKKBS250w-2.png" alt="KKBS">
+  </div>
+  <div class="cover-body">
+    <div class="day-badge">
+      <div class="day-label">Day</div>
+      <div class="day-num">01</div>
+      <div class="day-of">of 04</div>
+    </div>
+    <div class="title-block">
+      <div class="module-tag">Module 01 · Foundation</div>
+      <h1>การพัฒนาระบบบัญชีดิจิทัล<br>ด้วยเทคโนโลยีคลาวด์และ AI</h1>
+      <div class="subtitle-en">Developing Digital Accounting Systems<br>with Cloud and AI Technology</div>
+      <div class="topic-pills">
+        <span>AI-Era Accountant</span>
+        <span>Modern AIS</span>
+        <span>Cloud Software</span>
+        <span>RPA &amp; Automation</span>
+      </div>
+    </div>
+  </div>
+  <div class="cover-footer cols-4">
+    <div class="meta-cell">
+      <div class="label">Date</div>
+      <div class="value">12 Sep 2026<small>วันเสาร์ที่ 12 ก.ย. 2569</small></div>
+    </div>
+    <div class="meta-cell">
+      <div class="label">Instructor</div>
+      <div class="value">Dr. Uthen Laonamtha<small>รศ.ดร.อุเทน เลานำทา</small></div>
+    </div>
+    <div class="meta-cell">
+      <div class="label">Faculty</div>
+      <div class="value">KKBS · KKU<small>บริหารธุรกิจ​และการบัญชี · มข.</small></div>
+    </div>
+    <div class="meta-cell">
+      <div class="label">Duration</div>
+      <div class="value">09:00 — 16:00<small>6 ชั่วโมง · 5 Sections</small></div>
+    </div>
+  </div>
+  <aside class="notes">เปิดด้วยการกล่าวสวัสดี แนะนำตัวสั้นๆ — เน้นว่าวันนี้คือวันแรกของหลักสูตร 4 วัน</aside>
+</section>
+
+<!-- SLIDE 2 — Welcome -->
+<section class="layout-T3">
+  <h2>ยินดีต้อนรับสู่หลักสูตร</h2>
+  <p class="text-muted fs-sm">A 4-Day Journey · From Foundation to Capstone Project</p>
+  <div class="concept-grid">
+    <div class="concept-item">
+      <div class="icon">👨‍🏫</div>
+      <div class="text">
+        <strong>รศ.ดร.อุเทน เลานำทา</strong>
+        <p>ผู้สอนหลัก · ผู้เชี่ยวชาญด้านระบบสารสนเทศและการประยุกต์ใช้ AI ในงานบัญชี</p>
+      </div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">🎯</div>
+      <div class="text">
+        <strong>เป้าหมายหลัก</strong>
+        <p>นักบัญชียุคใหม่ที่ใช้ Cloud + AI ขับเคลื่อนงานบัญชีได้จริง ไม่ใช่แค่รู้ทฤษฎี</p>
+      </div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">🤝</div>
+      <div class="text">
+        <strong>การเรียนรู้แบบ Active</strong>
+        <p>40% บรรยาย · 30% Workshop · 20% Discussion · 10% Reflection</p>
+      </div>
+    </div>
+  </div>
+  <aside class="notes">แนะนำตัวลึกขึ้น พูดถึงประสบการณ์ และทำให้ผู้เรียนรู้สึกว่ามาถูกที่ เน้นว่าหลักสูตรนี้เน้น "ทำได้จริง" ไม่ใช่แค่ฟัง</aside>
+</section>
+
+<!-- SLIDE 3 — Course Roadmap (4 Days Overview) -->
+<section class="layout-T5">
+  <h2>เส้นทางการเรียนรู้ <span class="text-purple">4 วัน</span></h2>
+  <div class="workflow">
+    <div class="step">
+      <div class="num">1</div>
+      <strong>Foundation</strong>
+      <span>ระบบบัญชีดิจิทัล Cloud · RPA · 12 ก.ย.</span>
+    </div>
+    <div class="arrow">→</div>
+    <div class="step">
+      <div class="num">2</div>
+      <strong>Applied AI</strong>
+      <span>Prompt Engineering และ AI Use Cases · 13 ก.ย.</span>
+    </div>
+    <div class="arrow">→</div>
+    <div class="step">
+      <div class="num">3</div>
+      <strong>Analytics</strong>
+      <span>Data + Reporting จาก Express · 3 ต.ค.</span>
+    </div>
+    <div class="arrow">→</div>
+    <div class="step">
+      <div class="num">4</div>
+      <strong>Capstone</strong>
+      <span>Dashboard อัตโนมัติ + Project · 4 ต.ค.</span>
+    </div>
+  </div>
+  <div class="callout purple">
+    <strong>หลักสูตรต่อเนื่อง:</strong> จากองค์ความรู้ → การประยุกต์ → การวิเคราะห์ → การบูรณาการ
+  </div>
+  <aside class="notes">ย้ำว่าเรียงลำดับเชื่อมต่อกัน ไม่ควรขาดวันใดวันหนึ่ง เปรียบเทียบเหมือนการเรียนการเดิน-วิ่ง-แข่ง</aside>
+</section>
+
+<!-- SLIDE 4 — Day 1 Agenda · Clickable Table of Contents -->
+<section class="layout-T3" id="agenda">
+  <h2>วาระประจำวันที่ 1 · <span class="text-purple" style="font-size:0.75em;">คลิกเพื่อข้ามไปหัวข้อ</span></h2>
+  <p class="text-muted fs-sm">09:00 — 16:00 น. · พักเที่ยง 12:00-13:00 · พักย่อย 10:30 และ 14:30</p>
+  <div class="concept-grid">
+    <a class="concept-item" href="#/sec-1">
+      <div class="icon">📋</div>
+      <div class="text"><strong>1. ภาพรวมและการแนะนำเนื้อหารายวิชา</strong>
+        <p>Course Overview &amp; Introduction · 09:00-09:45</p></div>
+      <div class="arrow-go">›</div>
+    </a>
+    <a class="concept-item" href="#/sec-2">
+      <div class="icon">🤖</div>
+      <div class="text"><strong>2. นักบัญชียุค AI : บริบท บทบาท ความพร้อม</strong>
+        <p>The AI-Era Accountant · 09:45-11:00</p></div>
+      <div class="arrow-go">›</div>
+    </a>
+    <a class="concept-item" href="#/sec-3">
+      <div class="icon">🏛️</div>
+      <div class="text"><strong>3. ระบบสารสนเทศทางการบัญชีสมัยใหม่</strong>
+        <p>Modern Accounting Information Systems · 11:00-12:00</p></div>
+      <div class="arrow-go">›</div>
+    </a>
+    <a class="concept-item" href="#/sec-4">
+      <div class="icon">☁️</div>
+      <div class="text"><strong>4. โปรแกรมบัญชีคลาวด์</strong>
+        <p>Cloud-based Accounting Software · 13:00-14:30</p></div>
+      <div class="arrow-go">›</div>
+    </a>
+    <a class="concept-item" href="#/sec-5">
+      <div class="icon">⚙️</div>
+      <div class="text"><strong>5. พื้นฐานระบบบัญชีอัตโนมัติและ RPA</strong>
+        <p>Automation Fundamental &amp; RPA · 14:30-16:00</p></div>
+      <div class="arrow-go">›</div>
+    </a>
+  </div>
+  <aside class="notes">เป็น Table of Contents — คลิกที่หัวข้อเพื่อข้ามไป section นั้นได้ทันที เหมาะสำหรับเปิดอ้างอิงระหว่างสอน</aside>
+</section>
+
+<!-- SLIDE 5 — House Rules -->
+<section class="layout-T3">
+  <h2>ข้อตกลงในการเรียน</h2>
+  <div class="concept-grid">
+    <div class="concept-item">
+      <div class="icon">📱</div>
+      <div class="text"><strong>เปิดอุปกรณ์ได้เต็มที่</strong>
+        <p>เพราะหลักสูตรนี้ต้องลองทำสด ใช้ Notebook/Tablet/มือถือคู่กันได้</p></div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">💬</div>
+      <div class="text"><strong>ถามได้ทันที ถามได้ทุกข้อ</strong>
+        <p>ไม่มีคำถามไหนโง่ ในยุค AI สิ่งที่ "ไม่รู้" คือ "ยังไม่ถาม"</p></div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">🧪</div>
+      <div class="text"><strong>ลองทำ ผิดได้ พังได้</strong>
+        <p>Workshop เน้นการทดลอง ไม่ใช่ตอบให้ถูก</p></div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">🤝</div>
+      <div class="text"><strong>เรียนรู้ร่วมกัน</strong>
+        <p>เพื่อนข้างๆ คือทรัพยากรการเรียนรู้ที่สำคัญที่สุด</p></div>
+    </div>
+  </div>
+  <aside class="notes">ตั้งบรรยากาศให้ผ่อนคลาย ลดความเครียด เน้นว่าผู้เรียนเป็นนักบัญชีมืออาชีพอยู่แล้ว ไม่ต้องกังวล AI</aside>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SECTION 1 — COURSE OVERVIEW & INTRODUCTION
+     ═══════════════════════════════════════════════════════════ -->
+
+<!-- SLIDE 6 — Section 1 Divider -->
+<section class="layout-T2" id="sec-1" data-id="sec-1">
+  <div class="section-num">SECTION 01</div>
+  <h1>ภาพรวมและการแนะนำเนื้อหารายวิชา</h1>
+  <div class="en-title">Course Overview &amp; Introduction</div>
+  <div class="topic-list">
+    <span>วัตถุประสงค์</span>
+    <span>เป้าหมาย</span>
+    <span>ผลลัพธ์ที่คาดหวัง</span>
+    <span>กิจกรรม</span>
+    <span>การวัดผล</span>
+    <span>แหล่งค้นคว้า</span>
+  </div>
+  <aside class="notes">หัวข้อแรก ใช้เวลาประมาณ 45 นาที ปูพื้นความเข้าใจหลักสูตรทั้งหมด</aside>
+</section>
+
+<!-- SLIDE 7 — Why this course -->
+<section class="layout-T3">
+  <h2>ทำไมต้องเรียนหลักสูตรนี้?</h2>
+  <p class="text-muted fs-sm">โลกบัญชีเปลี่ยนแล้ว และเปลี่ยนเร็วกว่าที่คิด</p>
+  <div class="concept-grid">
+    <div class="concept-item">
+      <div class="icon">📉</div>
+      <div class="text"><strong>งาน Manual Accounting ลดลง 40%</strong>
+        <p>WEF Future of Jobs Report 2025: bookkeeping, payroll clerks อยู่ในกลุ่มงานที่ลดลงเร็วที่สุด</p></div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">📈</div>
+      <div class="text"><strong>นักบัญชีที่ใช้ AI เก่ง = รายได้สูงขึ้น 2 เท่า</strong>
+        <p>AICPA &amp; CIMA: นักบัญชีที่เป็น "AI-augmented accountant" มีค่าตัวสูงกว่ามาก</p></div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">⚡</div>
+      <div class="text"><strong>SME ไทย 70% ใช้โปรแกรมบัญชีคลาวด์ภายในปี 2570</strong>
+        <p>การเปลี่ยน Express → Cloud + AI Integration เป็นทักษะที่ตลาดต้องการเร่งด่วน</p></div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">🛡️</div>
+      <div class="text"><strong>PDPA &amp; AI Ethics เป็นข้อบังคับ</strong>
+        <p>นักบัญชีต้องเข้าใจขอบเขตการใช้ AI กับข้อมูลลูกค้าอย่างถูกต้อง</p></div>
+    </div>
+  </div>
+  <aside class="notes">เน้นย้ำว่าความเสี่ยงไม่ใช่ "AI จะมาแทน" แต่คือ "นักบัญชีที่ใช้ AI จะมาแทนนักบัญชีที่ไม่ใช้"</aside>
+</section>
+
+<!-- SLIDE 8 — Course Objectives -->
+<section class="layout-T3">
+  <h2>วัตถุประสงค์ของหลักสูตร</h2>
+  <p class="text-muted fs-sm">Course Objectives — มุ่งสร้าง 4 ความสามารถหลัก</p>
+  <div class="concept-grid">
+    <div class="concept-item">
+      <div class="icon">🧠</div>
+      <div class="text"><strong>O1: เข้าใจบริบท Digital Accounting</strong>
+        <p>ผู้เรียนสามารถอธิบายแนวคิด AI, Cloud, RPA และผลกระทบต่ออาชีพบัญชีได้อย่างถูกต้อง</p></div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">🛠️</div>
+      <div class="text"><strong>O2: ประยุกต์ใช้ AI ในงานบัญชี</strong>
+        <p>ผู้เรียนสามารถใช้ ChatGPT/Claude/Gemini ในงาน AP, AR, Tax, Reporting ได้จริง</p></div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">📊</div>
+      <div class="text"><strong>O3: วิเคราะห์ข้อมูลจาก Express</strong>
+        <p>ผู้เรียนสามารถส่งออก-ทำความสะอาด-วิเคราะห์ข้อมูลด้วย AI ได้</p></div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">🚀</div>
+      <div class="text"><strong>O4: บูรณาการเป็นระบบรายงานอัตโนมัติ</strong>
+        <p>ผู้เรียนสามารถออกแบบ Workflow Express → AI → Dashboard ได้</p></div>
+    </div>
+  </div>
+  <aside class="notes">วัตถุประสงค์เป็น Bloom's Taxonomy ไล่ระดับ Understand → Apply → Analyze → Create</aside>
+</section>
+
+<!-- SLIDE 9 — Learning Outcomes -->
+<section class="layout-T3">
+  <h2>ผลลัพธ์ที่คาดหวัง <span class="badge badge-purple">CLOs</span></h2>
+  <p class="text-muted fs-sm">เมื่อเรียนจบหลักสูตร 4 วันแล้ว ผู้เรียนจะสามารถ:</p>
+  <ol style="font-size: 0.85em; line-height: 1.6;">
+    <li><strong>อธิบาย</strong> บทบาทใหม่ของนักบัญชีในยุค AI พร้อมประเด็น Cybersecurity, PDPA, AI Ethics</li>
+    <li><strong>เปรียบเทียบ</strong> ระบบ Desktop กับ Cloud Accounting และเลือกใช้งานเหมาะสมกับ SME ไทย</li>
+    <li><strong>สั่งงาน AI</strong> ด้วย RICIOV Prompt Framework ในงาน AP/AR/Tax/Reporting ได้</li>
+    <li><strong>ส่งออก-ทำความสะอาด-วิเคราะห์</strong> ข้อมูลจาก Express ด้วย AI Platform</li>
+    <li><strong>สร้าง Executive Summary</strong> และ Dashboard อัตโนมัติจากข้อมูลบัญชี</li>
+    <li><strong>ออกแบบ Workflow</strong> Express → AI → Report → Delivery พร้อม HITL Checkpoint</li>
+    <li><strong>ประเมินความเสี่ยง</strong> และวาง AI Governance สำหรับองค์กรบัญชี</li>
+  </ol>
+  <aside class="notes">ทบทวน CLOs ทุกข้อกับผู้เรียน เพื่อให้รู้ว่าจบหลักสูตรแล้วต้องทำอะไรได้บ้าง — เป็นเกณฑ์ที่ใช้วัดผลตอนท้าย</aside>
+</section>
+
+<!-- SLIDE 10 — Assessment -->
+<section class="layout-T4">
+  <h2>การวัดและประเมินผล</h2>
+  <p class="text-muted fs-sm">เน้นปฏิบัติ &gt; ทฤษฎี | Performance-Based Assessment</p>
+  <div class="compare-grid cols-3">
+    <div class="compare-card">
+      <h3>การมีส่วนร่วม <span class="badge badge-sky">20%</span></h3>
+      <ul>
+        <li>เข้าเรียนครบ 4 วัน</li>
+        <li>ตอบคำถามและร่วมอภิปราย</li>
+        <li>ช่วยเพื่อนใน Workshop</li>
+      </ul>
+    </div>
+    <div class="compare-card">
+      <h3>Workshop รายวัน <span class="badge badge-sky">40%</span></h3>
+      <ul>
+        <li>Day 1: Cloud + Automation</li>
+        <li>Day 2: Prompt Engineering</li>
+        <li>Day 3: Data Analysis</li>
+        <li>ส่งผ่าน Google Drive ภายในวัน</li>
+      </ul>
+    </div>
+    <div class="compare-card highlight">
+      <h3>Capstone Project <span class="badge badge-purple">40%</span></h3>
+      <ul>
+        <li>นำเสนอ Day 4 บ่าย</li>
+        <li>Workflow + Dashboard + Insight</li>
+        <li>ใช้ข้อมูลจริงจาก Express</li>
+        <li>มี HITL Checkpoint</li>
+      </ul>
+    </div>
+  </div>
+  <aside class="notes">เน้นว่า Capstone คือชิ้นที่จะนำไปใช้กับงานจริงได้ ไม่ใช่แค่ส่งให้ผู้สอน</aside>
+</section>
+
+<!-- SLIDE 11 — Resources -->
+<section class="layout-T3">
+  <h2>แหล่งค้นคว้าเพิ่มเติม</h2>
+  <p class="text-muted fs-sm">Recommended Resources for Self-Study</p>
+  <div class="concept-grid">
+    <div class="concept-item">
+      <div class="icon">📚</div>
+      <div class="text"><strong>หนังสือหลัก</strong>
+        <p>โปรแกรมสำเร็จรูปทางการบัญชี (รศ.ดร.อุเทน, 2565) | Data Analytics for Accounting (Richardson, Teeter, Terrell, 2023)</p></div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">🌐</div>
+      <div class="text"><strong>เว็บไซต์/แพลตฟอร์ม</strong>
+        <p>OpenAI Cookbook · Anthropic Docs · Google AI Studio · NotebookLM · Zapier Learn · n8n Community</p></div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">📜</div>
+      <div class="text"><strong>มาตรฐานและกฎหมาย</strong>
+        <p>TFRS for NPAEs · PDPA Thailand · ISO/IEC 42001 (AI Management) · IFAC Technology Initiative</p></div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">🎙️</div>
+      <div class="text"><strong>Podcasts &amp; YouTube</strong>
+        <p>The Accounting Podcast · Cloud Accounting Podcast · Latent Space (AI) · YouTube: Express Accounting Tutorials</p></div>
+    </div>
+  </div>
+  <aside class="notes">บอกผู้เรียนว่าจะมี Resource Pack ส่งใน Google Drive หลังเรียนทุกวัน ขอ ID Line เพื่อเพิ่มกลุ่ม</aside>
+</section>
+
+<!-- SLIDE 12 — Section 1 Recap -->
+<section class="layout-T8">
+  <h2>สรุป Section 1</h2>
+  <div class="takeaway-grid">
+    <div class="takeaway">
+      <div class="num">1</div>
+      <strong>หลักสูตร 4 วัน ต่อเนื่อง</strong>
+      <p>Foundation → AI → Analytics → Capstone — ขาดวันใดวันหนึ่งจะทำให้ Capstone ทำได้ยาก</p>
+    </div>
+    <div class="takeaway">
+      <div class="num">2</div>
+      <strong>วัด 7 CLOs ผ่าน Workshop + Project</strong>
+      <p>ไม่มีข้อสอบ — เน้นทำได้จริงในที่ทำงาน</p>
+    </div>
+    <div class="takeaway">
+      <div class="num">3</div>
+      <strong>เน้น Hands-on 60%+</strong>
+      <p>เปิด AI tools และ Express ตลอดเวลา</p>
+    </div>
+    <div class="takeaway">
+      <div class="num">4</div>
+      <strong>เรียนรู้แบบ Active</strong>
+      <p>ถามทันที · ลองทำ · เรียนรู้ร่วมกัน</p>
+    </div>
+  </div>
+  <aside class="notes">สรุปและถามว่ามีคำถามเรื่องโครงสร้างหลักสูตรไหม ก่อนเข้าเนื้อหา Section 2</aside>
+  <div class="footer-bar"><span class="course-name">AI &amp; Cloud-based Accounting Software</span><span class="day-tag">DAY 1 · Section 1</span></div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SECTION 2 — THE AI-ERA ACCOUNTANT
+     ═══════════════════════════════════════════════════════════ -->
+
+<!-- SLIDE 13 — Section 2 Divider -->
+<section class="layout-T2" id="sec-2" data-id="sec-2">
+  <div class="section-num">SECTION 02</div>
+  <h1>นักบัญชียุค AI : บริบท บทบาท และความพร้อม</h1>
+  <div class="en-title">The AI-Era Accountant : Context, Role &amp; Readiness</div>
+  <div class="topic-list">
+    <span>Digital Economy</span>
+    <span>AI Impact</span>
+    <span>Digital Transformation</span>
+    <span>Cybersecurity</span>
+    <span>PDPA</span>
+    <span>AI Ethics</span>
+    <span>New Roles</span>
+  </div>
+  <aside class="notes">เริ่มหัวข้อใหญ่ — ปูบริบทก่อนลงเทคนิค ใช้เวลาประมาณ 75 นาที</aside>
+</section>
+
+<!-- SLIDE 14 — Then vs Now -->
+<section class="layout-T4">
+  <h2>นักบัญชี: เมื่อวาน vs วันนี้ vs พรุ่งนี้</h2>
+  <div class="compare-grid cols-3">
+    <div class="compare-card">
+      <h3>เมื่อวาน <span class="badge">2010s</span></h3>
+      <ul>
+        <li>กระดาษ + Excel</li>
+        <li>ปิดงบ 30+ วัน</li>
+        <li>นั่งคีย์ Invoice</li>
+        <li>ตรวจสอบทีละแถว</li>
+        <li>รายงานรายเดือน</li>
+      </ul>
+    </div>
+    <div class="compare-card">
+      <h3>วันนี้ <span class="badge badge-sky">2025-2026</span></h3>
+      <ul>
+        <li>Cloud + Excel + AI</li>
+        <li>ปิดงบ 5-7 วัน</li>
+        <li>OCR/AI ช่วยคีย์</li>
+        <li>Sampling + AI Anomaly</li>
+        <li>รายงานรายสัปดาห์</li>
+      </ul>
+    </div>
+    <div class="compare-card highlight">
+      <h3>พรุ่งนี้ <span class="badge badge-purple">2027+</span></h3>
+      <ul>
+        <li>Continuous Accounting</li>
+        <li>ปิดงบ Real-time</li>
+        <li>Agentic AI ทำเอง</li>
+        <li>Continuous Audit</li>
+        <li>Dashboard 24/7</li>
+      </ul>
+    </div>
+  </div>
+  <aside class="notes">ถามผู้เรียนว่าตอนนี้องค์กรของแต่ละท่านอยู่ตรงไหน — ใช้เป็นจุดเริ่มต้นสนทนา</aside>
+</section>
+
+<!-- SLIDE 15 — Digital Economy -->
+<section class="layout-T3">
+  <h2>Digital Economy คืออะไร?</h2>
+  <p class="text-muted fs-sm">เศรษฐกิจดิจิทัล — เศรษฐกิจที่ขับเคลื่อนด้วยข้อมูลและเทคโนโลยีเป็นหลัก</p>
+  <div class="concept-grid">
+    <div class="concept-item">
+      <div class="icon">💱</div>
+      <div class="text"><strong>การค้าและธุรกรรมดิจิทัล</strong>
+        <p>e-Commerce, e-Payment, PromptPay, e-Tax Invoice — ทุกธุรกรรมเป็น Digital Trail</p></div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">🗃️</div>
+      <div class="text"><strong>ข้อมูลคือสินทรัพย์ใหม่</strong>
+        <p>Data &gt; Oil — บัญชีไม่ใช่แค่บันทึก แต่ต้อง "วิเคราะห์" ข้อมูลให้เกิดมูลค่า</p></div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">🌐</div>
+      <div class="text"><strong>Platform Business Model</strong>
+        <p>Shopee, LINE MAN, Grab — รายได้กระจาย ภาษีซับซ้อน บัญชีต้องเข้าใจ Reconciliation จากหลาย source</p></div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">🇹🇭</div>
+      <div class="text"><strong>นโยบายไทย</strong>
+        <p>Thailand 4.0 · National e-Payment · e-Tax Invoice/e-Receipt · Digital ID — กระทบงานบัญชีทั้งระบบ</p></div>
+    </div>
+  </div>
+  <aside class="notes">เน้นว่า Digital Economy ไม่ใช่ทฤษฎี แต่คือสภาพที่นักบัญชีไทยเจอแล้วทุกวัน</aside>
+</section>
+
+<!-- SLIDE 16 — AI Impact on Accounting -->
+<section class="layout-T4">
+  <h2>AI กระทบงานบัญชีอย่างไร?</h2>
+  <p class="text-muted fs-sm">McKinsey, Deloitte, AICPA — งานบัญชีถูกแบ่งเป็น 3 กลุ่ม</p>
+  <div class="compare-grid cols-3">
+    <div class="compare-card">
+      <h3>🔴 ลดลงเร็ว</h3>
+      <ul>
+        <li>Bookkeeping (ลงรายการ)</li>
+        <li>Data Entry (คีย์ข้อมูล)</li>
+        <li>Bank Reconciliation</li>
+        <li>Invoice Processing</li>
+        <li>Basic Compliance</li>
+      </ul>
+    </div>
+    <div class="compare-card">
+      <h3>🟡 เปลี่ยนรูปแบบ</h3>
+      <ul>
+        <li>Audit (Sampling → Continuous)</li>
+        <li>Tax Filing (Auto-prep)</li>
+        <li>Financial Reporting</li>
+        <li>Internal Control Testing</li>
+        <li>Budget Preparation</li>
+      </ul>
+    </div>
+    <div class="compare-card highlight">
+      <h3>🟢 เติบโต</h3>
+      <ul>
+        <li>Data Analytics</li>
+        <li>Advisory / CFO Services</li>
+        <li>Risk &amp; AI Governance</li>
+        <li>Forensic Accounting</li>
+        <li>ESG / Sustainability Reporting</li>
+      </ul>
+    </div>
+  </div>
+  <aside class="notes">ให้ผู้เรียนยกมือว่าตัวเองอยู่ในกลุ่มไหน คนส่วนใหญ่จะอยู่กลุ่มเหลือง — บอกว่าหลักสูตรนี้พาไปกลุ่มเขียว</aside>
+</section>
+
+<!-- SLIDE 17 — Digital Technologies in Accounting -->
+<section class="layout-T3">
+  <h2>5 เทคโนโลยีที่เปลี่ยนงานบัญชี</h2>
+  <p class="text-muted fs-sm">Digital Technologies in Accounting · Top 5 ที่ต้องรู้</p>
+  <div class="concept-grid">
+    <div class="concept-item">
+      <div class="icon">☁️</div>
+      <div class="text"><strong>1. Cloud Computing</strong>
+        <p>Software, Data, Computing บน Internet — ทำงานที่ไหนก็ได้, อัปเดตอัตโนมัติ, ลดค่า IT</p></div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">🧠</div>
+      <div class="text"><strong>2. Artificial Intelligence (AI/ML)</strong>
+        <p>Generative AI, NLP, Computer Vision — เขียน, อ่าน, วิเคราะห์, พยากรณ์ ได้เหมือนผู้ช่วย</p></div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">📊</div>
+      <div class="text"><strong>3. Big Data &amp; Analytics</strong>
+        <p>วิเคราะห์ทุกธุรกรรม ไม่ใช่แค่ Sampling — Pattern, Anomaly, Forecast</p></div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">🔗</div>
+      <div class="text"><strong>4. Blockchain</strong>
+        <p>Distributed Ledger — Audit Trail ที่แก้ไม่ได้, Smart Contract สำหรับ Invoice</p></div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">🤖</div>
+      <div class="text"><strong>5. RPA / Automation</strong>
+        <p>Robot คีย์ข้อมูลแทนคน — โอน Invoice, Bank, e-Tax ระหว่างระบบ</p></div>
+    </div>
+  </div>
+  <aside class="notes">วันนี้เน้น Cloud + AI + Automation, Big Data จะมาเจอ Day 3, Blockchain ยังเร็วเกินไปสำหรับ SME ไทย</aside>
+</section>
+
+<!-- SLIDE 18 — Digital Transformation -->
+<section class="layout-T5">
+  <h2>5 ขั้นของ Digital Transformation ในงานบัญชี</h2>
+  <p class="text-muted fs-sm">จาก Manual → Intelligent — องค์กรไทยส่วนใหญ่อยู่ขั้น 2-3</p>
+  <div class="workflow">
+    <div class="step"><div class="num">1</div><strong>Manual</strong><span>กระดาษ + Excel</span></div>
+    <div class="arrow">→</div>
+    <div class="step"><div class="num">2</div><strong>Digitized</strong><span>Express + ไฟล์ดิจิทัล</span></div>
+    <div class="arrow">→</div>
+    <div class="step"><div class="num">3</div><strong>Connected</strong><span>Cloud + Integration</span></div>
+    <div class="arrow">→</div>
+    <div class="step"><div class="num">4</div><strong>Automated</strong><span>RPA + AI ช่วย</span></div>
+    <div class="arrow">→</div>
+    <div class="step"><div class="num">5</div><strong>Intelligent</strong><span>Agentic AI + Real-time</span></div>
+  </div>
+  <div class="callout purple">
+    <strong>คำถาม:</strong> องค์กรของท่านอยู่ขั้นไหน? และเป้าหมายภายใน 12 เดือนคือขั้นไหน?
+  </div>
+  <aside class="notes">ใช้เป็น checkpoint ให้ผู้เรียนสะท้อนสภาพองค์กรตนเอง บอกว่าหลักสูตรนี้พาจาก 2 → 4</aside>
+</section>
+
+<!-- SLIDE 19 — Key Success Factor -->
+<section class="layout-T3">
+  <h2>ปัจจัยความสำเร็จในการเปลี่ยนผ่าน</h2>
+  <p class="text-muted fs-sm">Key Success Factors · ทำไม DT บางองค์กรล้มเหลว 70%?</p>
+  <div class="concept-grid">
+    <div class="concept-item">
+      <div class="icon">👥</div>
+      <div class="text"><strong>People First (50%)</strong>
+        <p>คนไม่ยอมเปลี่ยน ไม่ได้รับ Training พอ — เทคโนโลยีดีแค่ไหนก็ไม่สำเร็จ</p></div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">📋</div>
+      <div class="text"><strong>Process Redesign (30%)</strong>
+        <p>"ใช้ AI ทำงานเดิม" ไม่ได้ผล — ต้องออกแบบ Workflow ใหม่ให้เหมาะกับ Automation</p></div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">💻</div>
+      <div class="text"><strong>Technology (15%)</strong>
+        <p>เลือก Tool ที่เหมาะกับบริบท ไม่ใช่ Tool ที่ดังที่สุด</p></div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">📈</div>
+      <div class="text"><strong>Data Quality (5%)</strong>
+        <p>"Garbage In, Garbage Out" — AI ดีแค่ไหนก็พ่ายถ้าข้อมูลไม่สะอาด</p></div>
+    </div>
+  </div>
+  <aside class="notes">เน้นว่า DT ไม่ใช่เรื่องเทคโนโลยีล้วน — เรื่องคนและกระบวนการสำคัญกว่า</aside>
+</section>
+
+<!-- SLIDE 20 — Cybersecurity Concept -->
+<section class="layout-T3">
+  <h2>Cybersecurity สำหรับนักบัญชี</h2>
+  <p class="text-muted fs-sm">ข้อมูลบัญชี = ข้อมูลที่มีค่ามากที่สุดในองค์กร — เป้าหมายอันดับ 1 ของแฮกเกอร์</p>
+  <div class="concept-grid">
+    <div class="concept-item">
+      <div class="icon">🎣</div>
+      <div class="text"><strong>Phishing &amp; Business Email Compromise</strong>
+        <p>Email ปลอมที่หลอกให้โอนเงิน หรือเปลี่ยนเลขบัญชีลูกค้า — สูญเสียมากที่สุดในไทย</p></div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">🔒</div>
+      <div class="text"><strong>Ransomware</strong>
+        <p>เข้ารหัสข้อมูลแล้วเรียกค่าไถ่ — Express, Excel, Cloud ทุกที่เสี่ยง</p></div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">👁️</div>
+      <div class="text"><strong>Data Leakage</strong>
+        <p>พนักงานส่งไฟล์ออก, USB ลืม, AI Public ดูดข้อมูลลูกค้า</p></div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">🤖</div>
+      <div class="text"><strong>AI-Generated Fraud</strong>
+        <p>Deepfake voice/video CEO สั่งโอนเงิน — เพิ่มขึ้น 1,500% ในปี 2025</p></div>
+    </div>
+  </div>
+  <aside class="notes">ให้ผู้เรียนยกตัวอย่างเหตุการณ์ที่เคยเจอหรือได้ยิน เพื่อให้เห็นภาพ</aside>
+</section>
+
+<!-- SLIDE 21 — PDPA -->
+<section class="layout-T3">
+  <h2>PDPA สำหรับนักบัญชี</h2>
+  <p class="text-muted fs-sm">พ.ร.บ.คุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 — บังคับใช้ทุกองค์กร</p>
+  <div class="concept-grid">
+    <div class="concept-item">
+      <div class="icon">📥</div>
+      <div class="text"><strong>เก็บอย่างมีฐาน (Lawful Basis)</strong>
+        <p>เก็บข้อมูลลูกค้า/พนักงาน ต้องมีสัญญา · ความยินยอม · หรือกฎหมายรองรับเสมอ</p></div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">🎯</div>
+      <div class="text"><strong>ใช้ตามวัตถุประสงค์</strong>
+        <p>เก็บเพื่อบัญชี = ใช้เพื่อบัญชี ห้ามนำไปใช้การตลาด หรือป้อน AI Public โดยไม่บอก</p></div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">🛡️</div>
+      <div class="text"><strong>เก็บอย่างปลอดภัย</strong>
+        <p>เข้ารหัสข้อมูล · จำกัดผู้เข้าถึง · มี Audit Log · มี Backup</p></div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">⏱️</div>
+      <div class="text"><strong>เก็บเท่าที่จำเป็น</strong>
+        <p>ตามกรมสรรพากร 5 ปี · กฎหมายแรงงาน 2-10 ปี · เกินนั้นต้องลบ</p></div>
+    </div>
+  </div>
+  <div class="callout purple"><strong>โทษ:</strong> ปรับสูงสุด 5 ล้านบาท · จำคุก 1 ปี · ความเสียหายต่อชื่อเสียงประเมินไม่ได้</div>
+  <aside class="notes">เน้นว่าตอนใช้ AI Public เช่น ChatGPT ต้องระวังการแปะข้อมูลส่วนบุคคล — จะลงรายละเอียด Day 2 เรื่อง Internal vs External AI</aside>
+</section>
+
+<!-- SLIDE 22 — AI Ethics -->
+<section class="layout-T3">
+  <h2>AI Ethics &amp; Accountability</h2>
+  <p class="text-muted fs-sm">5 หลักการสำคัญ — AI ไม่ใช่ "เครื่องมือไร้ความรับผิด"</p>
+  <div class="concept-grid">
+    <div class="concept-item">
+      <div class="icon">⚖️</div>
+      <div class="text"><strong>1. Fairness</strong>
+        <p>ไม่เลือกปฏิบัติ — เช่น AI ประเมินเครดิตลูกค้าต้องไม่ลำเอียงเพศ/อายุ</p></div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">🔍</div>
+      <div class="text"><strong>2. Transparency</strong>
+        <p>อธิบายได้ว่า AI ตัดสินใจอย่างไร — สำคัญมากในงาน Audit</p></div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">🛡️</div>
+      <div class="text"><strong>3. Privacy</strong>
+        <p>ไม่ละเมิด PDPA — ไม่ป้อนข้อมูลลูกค้าเข้า AI Public โดยไม่จัดการ</p></div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">👤</div>
+      <div class="text"><strong>4. Human Oversight (HITL)</strong>
+        <p>AI เสนอ มนุษย์ตัดสินใจ — โดยเฉพาะธุรกรรมเงิน, การลงนามรายงาน</p></div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">⚡</div>
+      <div class="text"><strong>5. Accountability</strong>
+        <p>ใครรับผิดชอบเมื่อ AI พลาด? — นักบัญชีที่ใช้ AI ยังรับผิดชอบเหมือนเดิม</p></div>
+    </div>
+  </div>
+  <aside class="notes">เน้นว่าสภาวิชาชีพบัญชีไทย กำลังทำคู่มือ AI Ethics สำหรับผู้สอบบัญชี — Day 2 จะลงลึก Governance</aside>
+</section>
+
+<!-- SLIDE 23 — Role of Accountants -->
+<section class="layout-T4">
+  <h2>บทบาทใหม่ของนักบัญชี</h2>
+  <p class="text-muted fs-sm">From Bookkeeper → Business Partner</p>
+  <div class="compare-grid cols-2">
+    <div class="compare-card">
+      <h3>บทบาทเดิม (Traditional)</h3>
+      <ul>
+        <li>📒 Recorder — บันทึกบัญชี</li>
+        <li>📋 Reporter — ทำงบการเงิน</li>
+        <li>✅ Compliance Officer — ทำตามมาตรฐาน</li>
+        <li>🧾 Tax Preparer — เตรียมภาษี</li>
+        <li>🔍 Reconciler — กระทบยอด</li>
+      </ul>
+    </div>
+    <div class="compare-card highlight">
+      <h3>บทบาทใหม่ (AI-Era)</h3>
+      <ul>
+        <li>🧠 Data Analyst — แปลข้อมูลเป็น Insight</li>
+        <li>💼 Business Partner — ที่ปรึกษาผู้บริหาร</li>
+        <li>🛡️ AI Governance Officer — ดูแล Risk + Ethics</li>
+        <li>🎨 System Designer — ออกแบบ Workflow</li>
+        <li>📊 Storyteller — สื่อสารด้วย Dashboard</li>
+      </ul>
+    </div>
+  </div>
+  <aside class="notes">ให้ผู้เรียนเลือกว่าสนใจบทบาทใหม่อันไหนที่สุด — ใช้เป็นแรงจูงใจตลอดหลักสูตร</aside>
+</section>
+
+<!-- SLIDE 24 — Skills Required -->
+<section class="layout-T3">
+  <h2>ทักษะที่นักบัญชียุค AI ต้องมี</h2>
+  <p class="text-muted fs-sm">T-Shaped Skills · ลึกบัญชี + กว้าง Tech &amp; Soft Skills</p>
+  <div class="concept-grid">
+    <div class="concept-item">
+      <div class="icon">📊</div>
+      <div class="text"><strong>Hard Skills</strong>
+        <p>Accounting Standard · Excel ขั้นสูง · SQL พื้นฐาน · Prompt Engineering · Data Visualization · ภาษีดิจิทัล</p></div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">💡</div>
+      <div class="text"><strong>Cognitive Skills</strong>
+        <p>Critical Thinking · Pattern Recognition · Hypothesis Testing · Root Cause Analysis</p></div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">🤝</div>
+      <div class="text"><strong>Soft Skills</strong>
+        <p>Storytelling · Stakeholder Communication · Collaboration · Adaptability · Curiosity</p></div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">⚖️</div>
+      <div class="text"><strong>Professional Ethics</strong>
+        <p>Independence · Confidentiality · Professional Skepticism · AI Accountability</p></div>
+    </div>
+  </div>
+  <aside class="notes">ให้ผู้เรียนประเมินตัวเอง 1-5 ใน 4 หมวดนี้ — เก็บเป็น Baseline ก่อนหลักสูตร</aside>
+</section>
+
+<!-- SLIDE 25 — Workshop 2.1 Self-Assessment -->
+<section class="layout-T7">
+  <span class="workshop-header">⚡ WORKSHOP 1.2.1</span>
+  <h2>Self-Assessment: ความพร้อมสู่ยุค AI</h2>
+  <div class="workshop-grid">
+    <div class="workshop-card">
+      <h3>วัตถุประสงค์</h3>
+      <ul>
+        <li>ประเมินตนเองใน 4 มิติ</li>
+        <li>กำหนดเป้าหมายการเรียนรู้</li>
+        <li>แชร์กับเพื่อนร่วมโต๊ะ</li>
+      </ul>
+    </div>
+    <div class="workshop-card purple">
+      <h3>ขั้นตอน</h3>
+      <ol>
+        <li>ดาวน์โหลด Self-Assessment Form</li>
+        <li>ให้คะแนน 1-5 ทั้ง 20 ข้อ</li>
+        <li>คำนวณคะแนนรวม</li>
+        <li>เขียน Goal 3 ข้อก่อนจบหลักสูตร</li>
+        <li>แชร์ในโต๊ะ 5 นาที</li>
+      </ol>
+    </div>
+  </div>
+  <div class="workshop-meta">
+    <span class="badge">⏱️ 15 นาที</span>
+    <span class="badge">👥 รายบุคคล + กลุ่ม 4 คน</span>
+    <span class="badge">📤 Submit ผ่าน Google Form</span>
+  </div>
+  <aside class="notes">เก็บผลไว้เปรียบเทียบกับ Day 4 ตอนจบหลักสูตร — ใช้เป็น KPI ของการอบรม</aside>
+</section>
+
+<!-- SLIDE 26 — Section 2 Recap -->
+<section class="layout-T8">
+  <h2>สรุป Section 2</h2>
+  <div class="takeaway-grid">
+    <div class="takeaway"><div class="num">1</div><strong>Digital Economy เปลี่ยนงานบัญชีถาวร</strong><p>ไม่ใช่แค่เทรนด์ — เป็นสภาพจริงที่เจอทุกวัน</p></div>
+    <div class="takeaway"><div class="num">2</div><strong>AI กระทบงานบัญชี 3 รูปแบบ</strong><p>ลด · เปลี่ยน · เพิ่ม — ต้องรู้ว่าตัวเองอยู่กลุ่มไหน</p></div>
+    <div class="takeaway"><div class="num">3</div><strong>Cybersecurity + PDPA + AI Ethics</strong><p>3 เสาหลักที่นักบัญชียุคใหม่ต้องเข้าใจก่อนใช้ AI</p></div>
+    <div class="takeaway"><div class="num">4</div><strong>บทบาทใหม่: Business Partner ไม่ใช่ Bookkeeper</strong><p>ความสามารถวิเคราะห์ + สื่อสาร = ค่าตัวสูงขึ้น</p></div>
+  </div>
+  <div class="footer-bar"><span class="course-name">AI &amp; Cloud-based Accounting Software</span><span class="day-tag">DAY 1 · Section 2</span></div>
+  <aside class="notes">เปิดให้ถาม 5 นาที ก่อนพักเบรค 10:30</aside>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SECTION 3 — MODERN ACCOUNTING INFORMATION SYSTEMS
+     ═══════════════════════════════════════════════════════════ -->
+
+<!-- SLIDE 27 — Section 3 Divider -->
+<section class="layout-T2" id="sec-3" data-id="sec-3">
+  <div class="section-num">SECTION 03</div>
+  <h1>ระบบสารสนเทศทางการบัญชีสมัยใหม่</h1>
+  <div class="en-title">Modern Accounting Information Systems</div>
+  <div class="topic-list">
+    <span>AIS Framework</span>
+    <span>Data Flow</span>
+    <span>Internal Control</span>
+    <span>ERP vs Accounting SW</span>
+    <span>Information Design</span>
+    <span>Future Trends</span>
+  </div>
+  <aside class="notes">หัวข้อนี้ปูพื้นฐานก่อนเข้า Cloud Software — ใช้ 60 นาที</aside>
+</section>
+
+<!-- SLIDE 28 — AIS Definition -->
+<section class="layout-T3">
+  <h2>AIS คืออะไร?</h2>
+  <p class="text-muted fs-sm">Accounting Information System — ไม่ใช่ "โปรแกรมบัญชี"</p>
+  <blockquote>
+    AIS คือ <strong>ระบบ</strong> ที่ประกอบด้วย <strong>คน · ขั้นตอน · เทคโนโลยี · ข้อมูล · การควบคุม</strong>
+    ที่รวบรวม-ประมวลผล-นำเสนอข้อมูลทางการเงินและการบริหาร เพื่อสนับสนุนการตัดสินใจ
+  </blockquote>
+  <div class="concept-grid">
+    <div class="concept-item">
+      <div class="icon">🧩</div>
+      <div class="text"><strong>โปรแกรมบัญชีเป็นแค่ส่วนหนึ่ง</strong>
+        <p>Express, FlowAccount, PEAK = ส่วนเทคโนโลยีของ AIS แต่ AIS ใหญ่กว่านั้น</p></div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">🎯</div>
+      <div class="text"><strong>เป้าหมาย: สนับสนุนการตัดสินใจ</strong>
+        <p>ไม่ใช่แค่ "ทำงบ" — ต้องช่วยผู้บริหารตัดสินใจได้</p></div>
+    </div>
+  </div>
+  <aside class="notes">ทำให้ผู้เรียนเห็นว่า AIS ไม่ใช่แค่ software — เป็นระบบที่ใหญ่กว่า</aside>
+</section>
+
+<!-- SLIDE 29 — AIS Components / REA -->
+<section class="layout-T3">
+  <h2>5 องค์ประกอบของ AIS</h2>
+  <p class="text-muted fs-sm">5 Components — เปลี่ยนแปลงทั้งหมดในยุค AI</p>
+  <div class="concept-grid">
+    <div class="concept-item">
+      <div class="icon">👥</div>
+      <div class="text"><strong>1. People</strong>
+        <p>นักบัญชี · ผู้ใช้ · ผู้ตรวจสอบ — ต้อง Reskill เพื่อทำงานกับ AI</p></div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">📋</div>
+      <div class="text"><strong>2. Procedures &amp; Instructions</strong>
+        <p>SOP · Workflow · Approval Matrix — ต้อง Redesign เพื่อรองรับ Automation</p></div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">🗃️</div>
+      <div class="text"><strong>3. Data</strong>
+        <p>Master Data · Transaction Data · Reference Data — เปลี่ยนจาก "บันทึก" เป็น "Asset"</p></div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">💻</div>
+      <div class="text"><strong>4. Software &amp; IT Infrastructure</strong>
+        <p>Express + Cloud + AI + Integration — ต้องเชื่อมต่อกันได้</p></div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">🛡️</div>
+      <div class="text"><strong>5. Internal Controls &amp; Security</strong>
+        <p>Access Control · Audit Trail · Encryption — ทวีความสำคัญในยุคคลาวด์</p></div>
+    </div>
+  </div>
+  <aside class="notes">เน้นว่า 5 องค์ประกอบนี้ต้องสมดุลกัน — ลงทุน Software อย่างเดียว ไม่ได้</aside>
+</section>
+
+<!-- SLIDE 30 — Data Flow -->
+<section class="layout-T5">
+  <h2>การไหลของข้อมูลใน AIS</h2>
+  <p class="text-muted fs-sm">Data Flow · จากเอกสารต้นทาง → รายงานผู้บริหาร</p>
+  <div class="workflow">
+    <div class="step"><div class="num">1</div><strong>Source Documents</strong><span>ใบกำกับ · ใบเสร็จ · Bank</span></div>
+    <div class="arrow">→</div>
+    <div class="step"><div class="num">2</div><strong>Capture</strong><span>OCR · ICR · Manual</span></div>
+    <div class="arrow">→</div>
+    <div class="step"><div class="num">3</div><strong>Process</strong><span>JE · Validation · Posting</span></div>
+    <div class="arrow">→</div>
+    <div class="step"><div class="num">4</div><strong>Store</strong><span>GL · Sub-ledgers · DB</span></div>
+    <div class="arrow">→</div>
+    <div class="step"><div class="num">5</div><strong>Report</strong><span>FS · MIS · Dashboard</span></div>
+  </div>
+  <div class="callout purple">
+    <strong>AI/Automation เข้ามาตรงไหน?</strong> ขั้น 2 (OCR/ICR), ขั้น 3 (Auto-JE/Validation), ขั้น 5 (AI-Generated Report) — Day 2-4 จะลงลึกแต่ละขั้น
+  </div>
+  <aside class="notes">วาดให้เห็นว่า "งานคีย์ข้อมูล" หายไปทีละน้อย เพราะ AI/OCR เก่งขึ้น</aside>
+</section>
+
+<!-- SLIDE 31 — Internal Control -->
+<section class="layout-T3">
+  <h2>Internal Control ในระบบดิจิทัล</h2>
+  <p class="text-muted fs-sm">COSO Framework ปรับสำหรับ Cloud + AI</p>
+  <div class="concept-grid">
+    <div class="concept-item">
+      <div class="icon">🌐</div>
+      <div class="text"><strong>Control Environment</strong>
+        <p>วัฒนธรรม · จริยธรรม · นโยบาย AI Governance — Tone at the Top</p></div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">🎯</div>
+      <div class="text"><strong>Risk Assessment</strong>
+        <p>เพิ่มความเสี่ยงใหม่: Cloud Outage · Data Leak · AI Hallucination · API Down</p></div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">🔐</div>
+      <div class="text"><strong>Control Activities</strong>
+        <p>SoD · Approval Matrix · 2FA · Audit Log · HITL Checkpoint</p></div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">📡</div>
+      <div class="text"><strong>Information &amp; Communication</strong>
+        <p>Real-time Alert · Anomaly Notification · Stakeholder Reporting</p></div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">🔄</div>
+      <div class="text"><strong>Monitoring</strong>
+        <p>Continuous Auditing · KPI Dashboard · Quarterly Review</p></div>
+    </div>
+  </div>
+  <aside class="notes">ใน Cloud ผู้ดูแลคือผู้ให้บริการ (Shared Responsibility Model) — ผู้ใช้ก็ยังมีหน้าที่ส่วนของตน</aside>
+</section>
+
+<!-- SLIDE 32 — IT General Controls vs Application Controls -->
+<section class="layout-T4">
+  <h2>IT Controls 2 ระดับ</h2>
+  <p class="text-muted fs-sm">ITGC vs Application Controls — ผู้สอบบัญชีต้องตรวจทั้งคู่</p>
+  <div class="compare-grid cols-2">
+    <div class="compare-card">
+      <h3>ITGC (IT General Controls)</h3>
+      <ul>
+        <li>🔑 Access Management — รหัสผ่าน, MFA</li>
+        <li>📦 Change Management — Update Software</li>
+        <li>💾 Backup &amp; Disaster Recovery</li>
+        <li>👁️ Physical/Logical Security</li>
+        <li>📜 Vendor Management — กรณี Cloud</li>
+      </ul>
+    </div>
+    <div class="compare-card">
+      <h3>Application Controls</h3>
+      <ul>
+        <li>✅ Input Validation — รูปแบบเลขผิด, วันที่ผิด</li>
+        <li>⚖️ Processing Controls — งบดุลลงตัว</li>
+        <li>📤 Output Controls — รายงานครบถ้วน</li>
+        <li>🔢 Approval Workflow — Limit Approver</li>
+        <li>📝 Audit Trail — บันทึกการแก้ไข</li>
+      </ul>
+    </div>
+  </div>
+  <aside class="notes">ใน Express มี Application Controls ในตัว — ITGC ผู้ใช้ต้องเสริม เช่น สำรองข้อมูล</aside>
+</section>
+
+<!-- SLIDE 33 — ERP vs Accounting Software -->
+<section class="layout-T4">
+  <h2>ERP vs Accounting Software</h2>
+  <p class="text-muted fs-sm">เลือกอย่างไรให้เหมาะกับธุรกิจ?</p>
+  <div class="compare-grid cols-2">
+    <div class="compare-card">
+      <h3>ERP</h3>
+      <ul>
+        <li>📦 รวมทุก Module — Sales, Purchase, HR, Manufacturing, Accounting</li>
+        <li>💰 ราคาสูง (หลักล้าน-สิบล้าน)</li>
+        <li>⏳ Implement 6-18 เดือน</li>
+        <li>🏢 บริษัทใหญ่ + Holding</li>
+        <li>ตัวอย่าง: SAP, Oracle, Microsoft Dynamics, Odoo</li>
+      </ul>
+    </div>
+    <div class="compare-card highlight">
+      <h3>Accounting Software</h3>
+      <ul>
+        <li>📊 เน้น Module บัญชี + คลังเป็นหลัก</li>
+        <li>💸 ราคาต่ำ (หลักพัน-แสน/ปี)</li>
+        <li>⚡ Implement 1-4 สัปดาห์</li>
+        <li>🏪 SME ส่วนใหญ่ในไทย</li>
+        <li>ตัวอย่าง: <strong>Express</strong>, FlowAccount, PEAK, Xero, Zoho Books</li>
+      </ul>
+    </div>
+  </div>
+  <div class="callout"><strong>ในหลักสูตรนี้:</strong> โฟกัสที่ Accounting Software (โดยเฉพาะ Express) เพราะคือสิ่งที่ SME ไทย 80% ใช้จริง</div>
+  <aside class="notes">เน้นว่าหลักสูตรไม่ครอบคลุม ERP — แต่หลักการ AI ใช้ได้กับ ERP ด้วย</aside>
+</section>
+
+<!-- SLIDE 34 — Information Design -->
+<section class="layout-T3">
+  <h2>Information Design &amp; Development</h2>
+  <p class="text-muted fs-sm">ออกแบบข้อมูลให้ "เล่าเรื่องได้" ไม่ใช่แค่ "ครบถ้วน"</p>
+  <div class="concept-grid">
+    <div class="concept-item">
+      <div class="icon">🎯</div>
+      <div class="text"><strong>Audience-First Design</strong>
+        <p>CFO อยากเห็นต่างจากนักบัญชี — ออกแบบรายงานตามคนรับ ไม่ใช่ตามคนทำ</p></div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">🏗️</div>
+      <div class="text"><strong>Layered Information</strong>
+        <p>สรุป 1 หน้า → ลึกลง 5 หน้า → Drill-down ทุก Transaction</p></div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">📐</div>
+      <div class="text"><strong>Visual Hierarchy</strong>
+        <p>เลขสำคัญใหญ่ · เลขรองเล็ก · แนวโน้มเป็นกราฟ · รายละเอียดเป็นตาราง</p></div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">🔄</div>
+      <div class="text"><strong>Iterative Development</strong>
+        <p>ทำ → ให้ Feedback → ปรับ — ไม่ต้องสมบูรณ์ครั้งเดียว</p></div>
+    </div>
+  </div>
+  <aside class="notes">หลักการนี้จะใช้ใน Day 3-4 ตอนทำ Executive Summary และ Dashboard</aside>
+</section>
+
+<!-- SLIDE 35 — Future AIS Trends -->
+<section class="layout-T3">
+  <h2>อนาคต AIS: From Recording → Intelligent Platform</h2>
+  <p class="text-muted fs-sm">5 เทรนด์ที่ AIS กำลังจะเปลี่ยนภายใน 3-5 ปี</p>
+  <div class="concept-grid">
+    <div class="concept-item">
+      <div class="icon">⚡</div>
+      <div class="text"><strong>Continuous Accounting</strong>
+        <p>ปิดงบทุกวัน ไม่ใช่ทุกเดือน — Real-time Financial Position</p></div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">🤖</div>
+      <div class="text"><strong>Agentic AI Workflows</strong>
+        <p>AI ทำงานเอง ตั้งแต่ดึงข้อมูล วิเคราะห์ จนสร้างรายงาน</p></div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">🔍</div>
+      <div class="text"><strong>Continuous Auditing</strong>
+        <p>ตรวจสอบทุกธุรกรรม Real-time แทนการ Sampling</p></div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">🌐</div>
+      <div class="text"><strong>Embedded Finance</strong>
+        <p>บัญชีฝังในระบบทำงาน — Payment + Accounting รวมในแอปเดียว</p></div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">🌱</div>
+      <div class="text"><strong>ESG &amp; Sustainability Reporting</strong>
+        <p>รายงานความยั่งยืน Carbon · Social · Governance — บังคับสำหรับ บจ.</p></div>
+    </div>
+  </div>
+  <aside class="notes">ทั้ง 5 เทรนด์จะเจอในหลักสูตร — ESG ยังไม่ครอบคลุมในหลักสูตรนี้ แต่อ้างอิงไว้</aside>
+</section>
+
+<!-- SLIDE 36 — Section 3 Recap -->
+<section class="layout-T8">
+  <h2>สรุป Section 3</h2>
+  <div class="takeaway-grid">
+    <div class="takeaway"><div class="num">1</div><strong>AIS &gt; โปรแกรมบัญชี</strong><p>คน · กระบวนการ · ข้อมูล · เทคโน · ควบคุม — ครบทั้ง 5</p></div>
+    <div class="takeaway"><div class="num">2</div><strong>Data Flow มี 5 ขั้น</strong><p>AI/Automation เข้ามาช่วยขั้น 2, 3, 5</p></div>
+    <div class="takeaway"><div class="num">3</div><strong>Internal Control เพิ่ม Risk ใหม่</strong><p>Cloud Outage · AI Hallucination · API Down</p></div>
+    <div class="takeaway"><div class="num">4</div><strong>หลักสูตรนี้โฟกัส Accounting SW</strong><p>โดยเฉพาะ Express — ที่ SME ไทยใช้มากที่สุด</p></div>
+  </div>
+  <div class="footer-bar"><span class="course-name">AI &amp; Cloud-based Accounting Software</span><span class="day-tag">DAY 1 · Section 3</span></div>
+  <aside class="notes">ก่อนพักเที่ยง 12:00 — ให้ผู้เรียนคิดคำถามเตรียมไว้ตอนกลับมาบ่าย</aside>
+</section>
+
+<!-- SLIDE 37 — Lunch Break -->
+<section class="layout-T2">
+  <div class="section-num">BREAK</div>
+  <h1>พักรับประทานอาหารกลางวัน</h1>
+  <div class="en-title">Lunch Break · 12:00 — 13:00</div>
+  <div class="topic-list">
+    <span>กลับมา 13:00</span>
+    <span>เตรียม Notebook + AI account</span>
+    <span>บ่ายลง Hands-on</span>
+  </div>
+  <aside class="notes">บอกให้ผู้เรียนเตรียม account ChatGPT/Claude/Gemini ตัวใดตัวหนึ่ง สำหรับช่วงบ่าย</aside>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SECTION 4 — CLOUD-BASED ACCOUNTING SOFTWARE
+     ═══════════════════════════════════════════════════════════ -->
+
+<!-- SLIDE 38 — Section 4 Divider -->
+<section class="layout-T2" id="sec-4" data-id="sec-4">
+  <div class="section-num">SECTION 04</div>
+  <h1>โปรแกรมบัญชีคลาวด์</h1>
+  <div class="en-title">Cloud-based Accounting Software</div>
+  <div class="topic-list">
+    <span>Cloud Concept</span>
+    <span>Desktop vs Cloud</span>
+    <span>Thai Context</span>
+    <span>Invoice &amp; Receipt</span>
+    <span>Bank Reconciliation</span>
+    <span>Real-time Reporting</span>
+    <span>Collaboration</span>
+  </div>
+  <aside class="notes">หัวข้อใหญ่ของช่วงบ่าย ใช้เวลา 90 นาที เน้น Workshop</aside>
+</section>
+
+<!-- SLIDE 39 — Cloud Computing Definition -->
+<section class="layout-T3">
+  <h2>Cloud Computing คืออะไร?</h2>
+  <p class="text-muted fs-sm">NIST Definition — ฐานความเข้าใจก่อนใช้งาน</p>
+  <blockquote>
+    การส่งมอบทรัพยากรคอมพิวเตอร์ <strong>(Server, Storage, Software, Database, AI)</strong>
+    ผ่าน <strong>Internet</strong> โดยจ่ายตามการใช้งาน <strong>(Pay-as-you-go)</strong>
+    และเข้าถึงได้ทุกที่ทุกเวลา
+  </blockquote>
+  <div class="concept-grid">
+    <div class="concept-item">
+      <div class="icon">📡</div>
+      <div class="text"><strong>5 Essential Characteristics</strong>
+        <p>On-demand · Broad Network Access · Resource Pooling · Rapid Elasticity · Measured Service</p></div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">🍰</div>
+      <div class="text"><strong>3 Service Models</strong>
+        <p>IaaS (Infra) · PaaS (Platform) · <em>SaaS (Software)</em> — บัญชีใช้ SaaS เป็นหลัก</p></div>
+    </div>
+  </div>
+  <aside class="notes">อธิบาย analogy — ใช้ไฟฟ้า (Cloud) แทนซื้อเครื่องปั่นไฟเอง (Desktop)</aside>
+</section>
+
+<!-- SLIDE 40 — Cloud for Accounting -->
+<section class="layout-T3">
+  <h2>Cloud Accounting Concept</h2>
+  <p class="text-muted fs-sm">บัญชีบนคลาวด์ — ไม่ใช่แค่ "เก็บไฟล์ออนไลน์"</p>
+  <div class="concept-grid">
+    <div class="concept-item">
+      <div class="icon">📲</div>
+      <div class="text"><strong>เข้าถึงทุกที่ ทุกอุปกรณ์</strong>
+        <p>Notebook · Tablet · มือถือ — ทำงานจากบ้าน · จากลูกค้า · ระหว่างเดินทาง</p></div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">🔄</div>
+      <div class="text"><strong>อัปเดตอัตโนมัติ</strong>
+        <p>กฎหมายภาษีเปลี่ยน · มาตรฐานบัญชีใหม่ — ผู้ใช้ไม่ต้องลงเอง</p></div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">🤝</div>
+      <div class="text"><strong>หลายคนทำพร้อมกัน</strong>
+        <p>นักบัญชี · ผู้บริหาร · ผู้สอบบัญชี เห็นข้อมูลเดียวกัน Real-time</p></div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">🔌</div>
+      <div class="text"><strong>เชื่อมระบบอื่นได้ง่าย</strong>
+        <p>Bank · POS · e-Commerce · ภาษี · AI — ผ่าน API</p></div>
+    </div>
+  </div>
+  <aside class="notes">ย้ำว่า Cloud ไม่ใช่แค่ Google Drive — เป็นทั้ง software ที่ run บน Internet</aside>
+</section>
+
+<!-- SLIDE 41 — Desktop vs Cloud -->
+<section class="layout-T4">
+  <h2>Desktop vs Cloud Accounting</h2>
+  <div class="compare-grid cols-2">
+    <div class="compare-card">
+      <h3>Desktop (เช่น Express)</h3>
+      <ul>
+        <li>✅ ทำงาน Offline ได้</li>
+        <li>✅ จ่ายครั้งเดียว ใช้ยาว</li>
+        <li>✅ ข้อมูลอยู่ที่เครื่อง</li>
+        <li>❌ เปลี่ยนเครื่องลำบาก</li>
+        <li>❌ Backup ต้องทำเอง</li>
+        <li>❌ ทำพร้อมกันไม่ได้</li>
+        <li>❌ Integration จำกัด</li>
+      </ul>
+    </div>
+    <div class="compare-card highlight">
+      <h3>Cloud (เช่น PEAK, FlowAccount)</h3>
+      <ul>
+        <li>✅ เข้าใช้ทุกที่ ทุกอุปกรณ์</li>
+        <li>✅ Backup อัตโนมัติ</li>
+        <li>✅ ทำพร้อมกันหลายคน</li>
+        <li>✅ เชื่อม Bank/POS ง่าย</li>
+        <li>✅ AI/Auto-suggestion ในตัว</li>
+        <li>❌ ต้องมี Internet</li>
+        <li>❌ จ่ายรายเดือน/ปี ตลอดไป</li>
+      </ul>
+    </div>
+  </div>
+  <div class="callout purple"><strong>คำแนะนำ:</strong> SME ไทยส่วนใหญ่จะเริ่ม Hybrid — ใช้ Express เดิม + เพิ่ม Cloud Tools (Bank Feed, e-Tax, AI) เป็น Best of Both</div>
+  <aside class="notes">เน้นว่าไม่ต้องเลือกข้างเดียว — ใช้ Hybrid ได้ ซึ่งเป็นรูปแบบที่หลักสูตรนี้สอน</aside>
+</section>
+
+<!-- SLIDE 42 — Thai Context -->
+<section class="layout-T4">
+  <h2>โปรแกรมบัญชีในตลาดไทย</h2>
+  <p class="text-muted fs-sm">ภาพรวม Software ที่ SME ไทยใช้ ปี 2025-2026</p>
+  <div class="compare-grid cols-3">
+    <div class="compare-card">
+      <h3>Desktop ดั้งเดิม</h3>
+      <ul>
+        <li><strong>Express</strong> (มากที่สุด)</li>
+        <li>BC Account</li>
+        <li>SmartBiz</li>
+        <li>FORMA</li>
+        <li>AutoFlight</li>
+      </ul>
+    </div>
+    <div class="compare-card highlight">
+      <h3>Cloud-Native ไทย</h3>
+      <ul>
+        <li><strong>PEAK</strong></li>
+        <li><strong>FlowAccount</strong></li>
+        <li>AccountCloud</li>
+        <li>MOLOG</li>
+        <li>BeeBuzz</li>
+      </ul>
+    </div>
+    <div class="compare-card">
+      <h3>Cloud-Native ต่างชาติ</h3>
+      <ul>
+        <li>Xero</li>
+        <li>QuickBooks Online</li>
+        <li>Zoho Books</li>
+        <li>SAP Business One Cloud</li>
+        <li>Odoo</li>
+      </ul>
+    </div>
+  </div>
+  <aside class="notes">เน้นว่าหลักสูตรนี้เป็นกลาง — สอนหลักการที่ใช้ได้ทุก Software โดยอ้างอิง Express ใน Day 3-4</aside>
+</section>
+
+<!-- SLIDE 43 — Practical Use: Invoice & Receipt -->
+<section class="layout-T3">
+  <h2>การใช้งานจริง: Invoice &amp; Receipt</h2>
+  <p class="text-muted fs-sm">ใบกำกับภาษี · ใบเสร็จ — งานหลักของนักบัญชีไทย</p>
+  <div class="concept-grid">
+    <div class="concept-item">
+      <div class="icon">📄</div>
+      <div class="text"><strong>e-Tax Invoice / e-Receipt</strong>
+        <p>กรมสรรพากรกำหนด — ส่งแบบดิจิทัล มี Digital Signature</p></div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">⚡</div>
+      <div class="text"><strong>Auto-numbering &amp; Validation</strong>
+        <p>เลข Running ไม่ซ้ำ · ตรวจ TIN ลูกค้า · คำนวณ VAT/WHT อัตโนมัติ</p></div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">📤</div>
+      <div class="text"><strong>Email/LINE Delivery</strong>
+        <p>ส่งใบกำกับให้ลูกค้าทันที · ติดตามว่าเปิดอ่านแล้วหรือยัง</p></div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">🔗</div>
+      <div class="text"><strong>เชื่อมกับสรรพากร (RD)</strong>
+        <p>ส่ง e-Tax Invoice ตรงเข้าสรรพากร ผ่าน RD eXchange / Service Provider</p></div>
+    </div>
+  </div>
+  <aside class="notes">เน้นว่า e-Tax Invoice ไทยซับซ้อนกว่าหลายประเทศ — Cloud SW ในตลาดไทยทำได้แล้ว</aside>
+</section>
+
+<!-- SLIDE 44 — Bank Reconciliation -->
+<section class="layout-T3">
+  <h2>การใช้งานจริง: Bank Reconciliation</h2>
+  <p class="text-muted fs-sm">งานที่นักบัญชีใช้เวลามากที่สุด — Cloud + AI ลดเหลือ 1/10</p>
+  <div class="concept-grid">
+    <div class="concept-item">
+      <div class="icon">🏦</div>
+      <div class="text"><strong>Bank Feed (API)</strong>
+        <p>ดึง Statement อัตโนมัติจากธนาคารทุกวัน — ไม่ต้อง download CSV</p></div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">🧠</div>
+      <div class="text"><strong>AI Auto-Match</strong>
+        <p>AI เรียนรู้ Pattern: "โอนเข้าจาก ABC Co. = รับชำระจากใบ INV-001"</p></div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">⚠️</div>
+      <div class="text"><strong>Exception Handling</strong>
+        <p>ระบบเสนอที่ AI ไม่แน่ใจ ให้คนทบทวน — HITL Pattern</p></div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">📊</div>
+      <div class="text"><strong>Daily Reconciliation</strong>
+        <p>ปิดยอดทุกวัน — ไม่ต้องรอสิ้นเดือน · ตรวจ Fraud ได้เร็ว</p></div>
+    </div>
+  </div>
+  <aside class="notes">งาน Reconciliation ในไทยซับซ้อนมาก เพราะมีค่าธรรมเนียม Promptpay ที่หลายธนาคาร — Cloud SW ใหม่จัดการได้</aside>
+</section>
+
+<!-- SLIDE 45 — Real-time Reporting -->
+<section class="layout-T3">
+  <h2>Real-time Reporting</h2>
+  <p class="text-muted fs-sm">รายงานสด — ผู้บริหารดูตลอดเวลา ไม่รอสิ้นเดือน</p>
+  <div class="concept-grid">
+    <div class="concept-item">
+      <div class="icon">📈</div>
+      <div class="text"><strong>Live Dashboard</strong>
+        <p>ยอดขายวันนี้ · เงินสดคงเหลือ · ลูกหนี้ค้างชำระ — ทุกตัวเลข Refresh ทันที</p></div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">📱</div>
+      <div class="text"><strong>Mobile-First</strong>
+        <p>CEO เปิดมือถือดูได้ตลอด — Push Notification เมื่อมียอดเกิน Threshold</p></div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">🎯</div>
+      <div class="text"><strong>KPI Drill-Down</strong>
+        <p>เห็น Gross Margin → คลิกดู Product → ดูใบกำกับใบไหนกำไรน้อย</p></div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">🤖</div>
+      <div class="text"><strong>AI-Generated Insights</strong>
+        <p>"ลูกหนี้ ABC ค้างผิดปกติ — มีการชำระล่าช้า 3 ครั้งใน 6 เดือน"</p></div>
+    </div>
+  </div>
+  <aside class="notes">Day 3-4 จะลงลึกเรื่องการสร้าง Dashboard แบบนี้</aside>
+</section>
+
+<!-- SLIDE 46 — Collaborative Accounting -->
+<section class="layout-T3">
+  <h2>Collaborative Accounting</h2>
+  <p class="text-muted fs-sm">บัญชีไม่ใช่งานคนเดียวอีกต่อไป</p>
+  <div class="concept-grid">
+    <div class="concept-item">
+      <div class="icon">👥</div>
+      <div class="text"><strong>Multi-user Real-time</strong>
+        <p>นักบัญชีทำใบกำกับ · CEO อนุมัติ Order · ผู้สอบบัญชีดูข้อมูล — ทำพร้อมกัน</p></div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">💬</div>
+      <div class="text"><strong>In-app Comments &amp; Approval</strong>
+        <p>คุยกันในระบบ ติดตามได้ — ไม่ต้องแชท LINE แยก</p></div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">🔐</div>
+      <div class="text"><strong>Role-based Access</strong>
+        <p>ลูกค้าเห็นแค่ใบของตน · พนักงานเห็นแค่แผนกของตน — กำหนดสิทธิ์ละเอียด</p></div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">🤝</div>
+      <div class="text"><strong>Client Portal</strong>
+        <p>ลูกค้ามี Portal ของตน — Upload เอกสาร · ดูใบกำกับ · ชำระเงิน</p></div>
+    </div>
+  </div>
+  <aside class="notes">เน้นการเปลี่ยนรูปแบบ — สำนักบัญชีไทยที่ใช้ Cloud จะไม่ต้องส่งไฟล์ไปกลับลูกค้าอีก</aside>
+</section>
+
+<!-- SLIDE 47 — Workshop 1.4 -->
+<section class="layout-T7">
+  <span class="workshop-header">⚡ WORKSHOP 1.4 · Cloud Exploration</span>
+  <h2>สำรวจ Cloud Accounting Software</h2>
+  <div class="workshop-grid">
+    <div class="workshop-card">
+      <h3>วัตถุประสงค์</h3>
+      <ul>
+        <li>เปรียบเทียบ Software 2 ตัวที่ใช้/สนใจ</li>
+        <li>วาด Decision Matrix สำหรับ SME</li>
+        <li>เลือก Software ที่เหมาะกับเคสตัวอย่าง</li>
+      </ul>
+    </div>
+    <div class="workshop-card purple">
+      <h3>ขั้นตอน</h3>
+      <ol>
+        <li>ลงทะเบียน Free Trial 1 ตัว (PEAK/FlowAccount/Xero)</li>
+        <li>ลองสร้างใบกำกับภาษี 1 ใบ</li>
+        <li>ทำตาราง Pros/Cons เทียบกับ <strong>Express Accounting Software</strong></li>
+        <li>ตอบคำถาม: "ลูกค้ายุค 2027 ควรใช้แบบไหน?"</li>
+      </ol>
+    </div>
+  </div>
+  <div class="workshop-meta">
+    <span class="badge">⏱️ 25 นาที</span>
+    <span class="badge">👥 จับคู่</span>
+    <span class="badge">📤 Submit ผ่าน Google Form</span>
+    <span class="badge">🎯 Deliverable: ตาราง Pros/Cons + คำแนะนำ</span>
+  </div>
+  <aside class="notes">ตรวจ Submission ใน Day 4 — ใช้เป็นจุดเริ่ม Capstone Project</aside>
+</section>
+
+<!-- SLIDE 48 — Section 4 Recap -->
+<section class="layout-T8">
+  <h2>สรุป Section 4</h2>
+  <div class="takeaway-grid">
+    <div class="takeaway"><div class="num">1</div><strong>Cloud = Internet + Pay-as-you-go</strong><p>ใช้ที่ไหนก็ได้ · ไม่ต้องลงเอง · ทำพร้อมกัน</p></div>
+    <div class="takeaway"><div class="num">2</div><strong>Hybrid = ทางที่ SME ไทยเลือกมากที่สุด</strong><p>Express + Bank Feed + e-Tax + AI</p></div>
+    <div class="takeaway"><div class="num">3</div><strong>Real-time Reporting คือมาตรฐานใหม่</strong><p>ไม่ใช่ทำงบสิ้นเดือน — ทำทุกวัน</p></div>
+    <div class="takeaway"><div class="num">4</div><strong>Collaboration เปลี่ยนความสัมพันธ์ลูกค้า-นักบัญชี</strong><p>จาก "ส่งไฟล์" เป็น "ทำงานร่วมกัน"</p></div>
+  </div>
+  <div class="footer-bar"><span class="course-name">AI &amp; Cloud-based Accounting Software</span><span class="day-tag">DAY 1 · Section 4</span></div>
+  <aside class="notes">พักย่อย 14:30 ก่อนเข้า Section 5</aside>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SECTION 5 — AUTOMATION FUNDAMENTAL & RPA
+     ═══════════════════════════════════════════════════════════ -->
+
+<!-- SLIDE 49 — Section 5 Divider -->
+<section class="layout-T2" id="sec-5" data-id="sec-5">
+  <div class="section-num">SECTION 05</div>
+  <h1>พื้นฐานระบบบัญชีอัตโนมัติและ RPA</h1>
+  <div class="en-title">Accounting Automation Fundamental &amp; RPA Concept</div>
+  <div class="topic-list">
+    <span>Manual vs Automation</span>
+    <span>Workflow Design</span>
+    <span>e-DMS · ICR</span>
+    <span>RPA · No-Code</span>
+    <span>System Integration</span>
+  </div>
+  <aside class="notes">หัวข้อสุดท้ายของ Day 1 — ใช้ 90 นาที จบ 16:00</aside>
+</section>
+
+<!-- SLIDE 50 — Manual vs Automation -->
+<section class="layout-T4">
+  <h2>Manual vs Automation Process</h2>
+  <p class="text-muted fs-sm">เคสตัวอย่าง: การออกใบกำกับภาษี 100 ใบ/วัน</p>
+  <div class="compare-grid cols-2">
+    <div class="compare-card">
+      <h3>Manual Process</h3>
+      <ul>
+        <li>⏱️ 4 นาที/ใบ × 100 = <strong>6.7 ชม./วัน</strong></li>
+        <li>❌ Error rate ~5%</li>
+        <li>👤 ต้องมีคนทำตลอด</li>
+        <li>💸 ค่าแรง ~15,000 บ./เดือน</li>
+        <li>📅 ทำได้เฉพาะเวลางาน</li>
+      </ul>
+    </div>
+    <div class="compare-card highlight">
+      <h3>Automated Process</h3>
+      <ul>
+        <li>⚡ 10 วินาที/ใบ × 100 = <strong>17 นาที/วัน</strong></li>
+        <li>✅ Error rate &lt;0.5%</li>
+        <li>🤖 ทำเอง ไม่ต้องมีคน</li>
+        <li>💰 ค่าระบบ ~3,000 บ./เดือน</li>
+        <li>🌙 ทำ 24/7 ได้</li>
+      </ul>
+    </div>
+  </div>
+  <div class="callout purple"><strong>ROI:</strong> ประหยัดได้ ~12,000 บาท/เดือน + ปลดล็อกเวลานักบัญชีไปทำงานวิเคราะห์ที่มีมูลค่าสูงกว่า</div>
+  <aside class="notes">ตัวเลขนี้เป็นค่าเฉลี่ย SME ขนาดกลาง — บางที่ ROI สูงกว่านี้มาก</aside>
+</section>
+
+<!-- SLIDE 51 — Process Assessment -->
+<section class="layout-T3">
+  <h2>Process Assessment Framework</h2>
+  <p class="text-muted fs-sm">งานไหนควร Automate ก่อน? — ใช้ 4 เกณฑ์ประเมิน</p>
+  <div class="concept-grid">
+    <div class="concept-item">
+      <div class="icon">🔁</div>
+      <div class="text"><strong>1. Volume &amp; Frequency</strong>
+        <p>ทำซ้ำมาก ทำบ่อย — ROI สูง (เช่น Bank Reconciliation รายวัน)</p></div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">📐</div>
+      <div class="text"><strong>2. Rule-based</strong>
+        <p>มีกฎชัด ไม่ใช้ดุลยพินิจมาก — Automate ง่าย (เช่น คำนวณ VAT)</p></div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">📊</div>
+      <div class="text"><strong>3. Structured Data</strong>
+        <p>ข้อมูลมีรูปแบบ — Automate ได้ดี (เช่น Excel, Database)</p></div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">⚠️</div>
+      <div class="text"><strong>4. Error-Prone</strong>
+        <p>ทำพลาดบ่อย — Automate ลดความเสี่ยงได้มาก</p></div>
+    </div>
+  </div>
+  <div class="callout"><strong>Sweet Spot:</strong> งานที่ผ่านทั้ง 4 เกณฑ์ = เริ่ม Automate ก่อนเลย</div>
+  <aside class="notes">ถามผู้เรียนว่างานไหนในออฟฟิศตัวเองผ่านทั้ง 4 เกณฑ์</aside>
+</section>
+
+<!-- SLIDE 52 — Automation Workflow Design -->
+<section class="layout-T5">
+  <h2>การออกแบบ Automation Workflow</h2>
+  <p class="text-muted fs-sm">5 ขั้นตอนการออกแบบ Workflow ก่อน Implement</p>
+  <div class="workflow">
+    <div class="step"><div class="num">1</div><strong>Map As-Is</strong><span>วาดกระบวนการปัจจุบัน</span></div>
+    <div class="arrow">→</div>
+    <div class="step"><div class="num">2</div><strong>Identify Pain</strong><span>หา Bottleneck · Error Point</span></div>
+    <div class="arrow">→</div>
+    <div class="step"><div class="num">3</div><strong>Design To-Be</strong><span>วาด Workflow ใหม่</span></div>
+    <div class="arrow">→</div>
+    <div class="step"><div class="num">4</div><strong>Pilot</strong><span>ทดลอง 1-2 Process</span></div>
+    <div class="arrow">→</div>
+    <div class="step"><div class="num">5</div><strong>Scale</strong><span>ขยายเมื่อพิสูจน์ได้</span></div>
+  </div>
+  <div class="callout purple"><strong>Tip:</strong> อย่า Automate "งานพัง" — แก้กระบวนการก่อน แล้วค่อย Automate (Don't pave the cowpath)</div>
+  <aside class="notes">เน้นว่าออกแบบบนกระดาษก่อน อย่ารีบใช้ Tool</aside>
+</section>
+
+<!-- SLIDE 53 — Document Management -->
+<section class="layout-T3">
+  <h2>e-DMS &amp; ICR/OCR</h2>
+  <p class="text-muted fs-sm">การจัดการเอกสารดิจิทัล + การอ่านเอกสารด้วย AI</p>
+  <div class="concept-grid">
+    <div class="concept-item">
+      <div class="icon">🗄️</div>
+      <div class="text"><strong>e-DMS (Document Management System)</strong>
+        <p>เก็บใบกำกับ · ใบเสร็จ · สัญญา ใน Cloud — ค้นหาง่าย, มี Audit Trail</p></div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">👁️</div>
+      <div class="text"><strong>OCR (Optical Character Recognition)</strong>
+        <p>อ่านตัวอักษรจากรูป — แปลง PDF/รูปใบกำกับเป็นข้อความ</p></div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">🧾</div>
+      <div class="text"><strong>ICR (Intelligent Character Recognition)</strong>
+        <p>OCR + AI — เข้าใจ "ฟิลด์" เช่น เลขที่ใบกำกับ, ยอดรวม, VAT</p></div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">⚡</div>
+      <div class="text"><strong>เคสจริง</strong>
+        <p>ถ่ายรูปใบเสร็จ → ICR อ่าน → สร้าง JE อัตโนมัติ — ใช้เวลา 5 วินาที</p></div>
+    </div>
+  </div>
+  <aside class="notes">เครื่องมือที่นิยม: Google Document AI · AWS Textract · Microsoft Form Recognizer · Hubdoc · Dext</aside>
+</section>
+
+<!-- SLIDE 54 — RPA Concept -->
+<section class="layout-T3">
+  <h2>RPA คืออะไร?</h2>
+  <p class="text-muted fs-sm">Robotic Process Automation — "พนักงานหุ่นยนต์" ทำงานคีย์ข้อมูล</p>
+  <blockquote>
+    RPA = ซอฟต์แวร์ที่ <strong>เลียนแบบการทำงานของมนุษย์</strong> บนคอมพิวเตอร์
+    เช่น เปิดโปรแกรม, คลิก, คีย์ข้อมูล, สำเนาไปวาง, ส่งอีเมล โดยไม่ต้องเปลี่ยนระบบเดิม
+  </blockquote>
+  <div class="concept-grid">
+    <div class="concept-item">
+      <div class="icon">🤖</div>
+      <div class="text"><strong>Use Case ในงานบัญชี</strong>
+        <p>ดาวน์โหลด Bank Statement · คีย์เข้า Express · ส่ง e-Tax Invoice · กระทบยอด</p></div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">🛠️</div>
+      <div class="text"><strong>เครื่องมือยอดนิยม</strong>
+        <p>UiPath · Automation Anywhere · Microsoft Power Automate · Blue Prism</p></div>
+    </div>
+  </div>
+  <div class="callout purple"><strong>RPA vs AI:</strong> RPA = ทำตามขั้นตอนซ้ำๆ (Rule-based) | AI = ตัดสินใจ (Cognition) → ใช้ผสมกันได้ดีที่สุด</div>
+  <aside class="notes">RPA เป็นทางเลือกสำหรับองค์กรที่ Software เก่าเชื่อม API ไม่ได้</aside>
+</section>
+
+<!-- SLIDE 55 — No-Code Tools -->
+<section class="layout-T3">
+  <h2>No-Code / Low-Code Tools</h2>
+  <p class="text-muted fs-sm">เชื่อมระบบโดยไม่ต้องเขียนโค้ด — นักบัญชีใช้ได้เอง</p>
+  <div class="concept-grid">
+    <div class="concept-item">
+      <div class="icon">⚡</div>
+      <div class="text"><strong>Zapier</strong>
+        <p>เชื่อม 7,000+ apps — ง่ายที่สุด เริ่มฟรี เหมาะ Workflow เล็กๆ</p></div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">🔧</div>
+      <div class="text"><strong>Make (เดิม Integromat)</strong>
+        <p>ทำ Workflow ซับซ้อนได้ดี — ราคาถูกกว่า Zapier ในงานปริมาณมาก</p></div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">🌐</div>
+      <div class="text"><strong>n8n</strong>
+        <p>Self-host ได้ฟรี — เหมาะองค์กรที่ห่วง Data Privacy</p></div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">🇲🇸</div>
+      <div class="text"><strong>Microsoft Power Automate</strong>
+        <p>มากับ Microsoft 365 — เชื่อม Excel, Outlook, Teams, SharePoint ดี</p></div>
+    </div>
+  </div>
+  <aside class="notes">Day 4 จะลงลึกการใช้ No-Code Tools ในการสร้าง Reporting Workflow</aside>
+</section>
+
+<!-- SLIDE 56 — System Integration -->
+<section class="layout-T4">
+  <h2>System Integration: 3 จุดเชื่อมหลัก</h2>
+  <p class="text-muted fs-sm">งานบัญชีต้องเชื่อมระบบอื่นๆ — เพราะข้อมูลกระจาย</p>
+  <div class="compare-grid cols-3">
+    <div class="compare-card">
+      <h3>🛒 POS</h3>
+      <ul>
+        <li>ยอดขายรายวัน → JE</li>
+        <li>สินค้าคงเหลือ → Inventory</li>
+        <li>ตัวอย่าง: Loyverse · Storehub · Wongnai POS</li>
+      </ul>
+    </div>
+    <div class="compare-card">
+      <h3>🛍️ e-Commerce</h3>
+      <ul>
+        <li>Shopee · Lazada · Tiktok</li>
+        <li>คำสั่งซื้อ → Sales Order</li>
+        <li>ค่าธรรมเนียม → Expense Auto</li>
+      </ul>
+    </div>
+    <div class="compare-card highlight">
+      <h3>🏦 Banking</h3>
+      <ul>
+        <li>Bank Feed API ทุกธนาคาร</li>
+        <li>Statement → Auto Reconcile</li>
+        <li>Promptpay → ระบุลูกค้า</li>
+        <li>กรุงไทย · ไทยพาณิชย์ · กสิกรเปิด API</li>
+      </ul>
+    </div>
+  </div>
+  <aside class="notes">ในไทยตอนนี้ Bank API เปิดมากขึ้น — กรุงไทย, กสิกร, ไทยพาณิชย์เปิดให้ Cloud SW เชื่อมตรงได้</aside>
+</section>
+
+<!-- SLIDE 57 — End-to-End Use Case -->
+<section class="layout-T5">
+  <h2>เคสจริง: End-to-End Automated Workflow</h2>
+  <p class="text-muted fs-sm">ลูกค้าซื้อของบน Shopee → บันทึกบัญชีอัตโนมัติ</p>
+  <div class="workflow">
+    <div class="step"><div class="num">1</div><strong>Shopee Order</strong><span>ลูกค้าซื้อ</span></div>
+    <div class="arrow">→</div>
+    <div class="step"><div class="num">2</div><strong>Auto-Sync</strong><span>Order → Cloud SW</span></div>
+    <div class="arrow">→</div>
+    <div class="step"><div class="num">3</div><strong>e-Tax Invoice</strong><span>สร้าง · ส่ง RD</span></div>
+    <div class="arrow">→</div>
+    <div class="step"><div class="num">4</div><strong>Bank Reconcile</strong><span>Shopee จ่าย → ตัด AR</span></div>
+    <div class="arrow">→</div>
+    <div class="step"><div class="num">5</div><strong>Update Stock</strong><span>หักสินค้า</span></div>
+    <div class="arrow">→</div>
+    <div class="step"><div class="num">6</div><strong>Dashboard</strong><span>CEO เห็น Real-time</span></div>
+  </div>
+  <div class="callout purple"><strong>เวลาที่ใช้:</strong> &lt;30 วินาที (จาก Order ถึง Dashboard) | <strong>คนเข้ามาแทรก:</strong> 0 (HITL เฉพาะ Exception)</div>
+  <aside class="notes">นี่คือเป้าหมายระยะยาว — แต่ละขั้นเรียนละเอียดใน Day 2-4</aside>
+</section>
+
+<!-- SLIDE 58 — Workshop 1.5 -->
+<section class="layout-T7">
+  <span class="workshop-header">⚡ WORKSHOP 1.5 · Workflow Design</span>
+  <h2>ออกแบบ Automation Workflow ของตัวเอง</h2>
+  <div class="workshop-grid">
+    <div class="workshop-card">
+      <h3>วัตถุประสงค์</h3>
+      <ul>
+        <li>เลือก 1 Process ที่อยากทำ Automate</li>
+        <li>วาด As-Is และ To-Be Workflow</li>
+        <li>ระบุ Tool ที่ใช้ในแต่ละขั้น</li>
+        <li>คำนวณ ROI เบื้องต้น</li>
+      </ul>
+    </div>
+    <div class="workshop-card purple">
+      <h3>ขั้นตอน</h3>
+      <ol>
+        <li>เลือก Process จากตัวอย่าง 5 ตัว (หรือของตัวเอง)</li>
+        <li>วาด As-Is บนกระดาษ A3</li>
+        <li>ระบุ Pain Points 3 จุด</li>
+        <li>วาด To-Be Workflow ที่ Automate</li>
+        <li>เขียน Tool Stack ที่ใช้</li>
+        <li>คำนวณ ROI: เวลาประหยัด × อัตราค่าแรง</li>
+      </ol>
+    </div>
+  </div>
+  <div class="workshop-meta">
+    <span class="badge">⏱️ 30 นาที</span>
+    <span class="badge">👥 กลุ่ม 3 คน</span>
+    <span class="badge">📤 ถ่ายรูปส่ง Google Drive</span>
+    <span class="badge">🎯 ใช้ตัวอย่าง <strong>Express Accounting Software</strong></span>
+  </div>
+  <aside class="notes">Workshop นี้สำคัญมาก — เป็นจุดเริ่มต้นของ Capstone Project ใน Day 4</aside>
+</section>
+
+<!-- SLIDE 59 — Section 5 Recap -->
+<section class="layout-T8">
+  <h2>สรุป Section 5</h2>
+  <div class="takeaway-grid">
+    <div class="takeaway"><div class="num">1</div><strong>Automation ROI สูงในงานซ้ำๆ</strong><p>4 เกณฑ์ประเมิน: Volume · Rule · Structure · Error</p></div>
+    <div class="takeaway"><div class="num">2</div><strong>ออกแบบ Workflow ก่อน Implement</strong><p>As-Is → Pain → To-Be → Pilot → Scale</p></div>
+    <div class="takeaway"><div class="num">3</div><strong>RPA + No-Code = นักบัญชีใช้ได้เอง</strong><p>ไม่ต้องเขียนโค้ด · ไม่ต้องพึ่ง IT</p></div>
+    <div class="takeaway"><div class="num">4</div><strong>Integration 3 จุด</strong><p>POS · e-Commerce · Banking — ครบ Workflow ขายของไทย</p></div>
+  </div>
+  <div class="footer-bar"><span class="course-name">AI &amp; Cloud-based Accounting Software</span><span class="day-tag">DAY 1 · Section 5</span></div>
+  <aside class="notes">เข้าสู่ส่วนปิด Day 1</aside>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     CLOSING: KEY TAKEAWAYS · Q&A · DAY 2 PREVIEW
+     ═══════════════════════════════════════════════════════════ -->
+
+<!-- SLIDE 60 — Day 1 Key Takeaways -->
+<section class="layout-T8">
+  <h2>Key Takeaways · Day 1</h2>
+  <p class="text-muted fs-sm">5 ประเด็นที่ต้องจดจำก่อนกลับบ้านวันนี้</p>
+  <div class="takeaway-grid">
+    <div class="takeaway"><div class="num">1</div><strong>นักบัญชียุค AI = Business Partner</strong><p>ไม่ใช่ Bookkeeper — ต้องวิเคราะห์ + สื่อสาร + ดูแล Risk</p></div>
+    <div class="takeaway"><div class="num">2</div><strong>AIS &gt; Software</strong><p>คน · กระบวนการ · ข้อมูล · เทคโน · ควบคุม</p></div>
+    <div class="takeaway"><div class="num">3</div><strong>Cloud + Hybrid คือทางที่ SME ไทยใช้</strong><p>Express + Bank Feed + e-Tax + AI</p></div>
+    <div class="takeaway"><div class="num">4</div><strong>Automation เริ่มที่งานซ้ำ Rule-based</strong><p>Bank Reconcile · Invoice · Reporting</p></div>
+    <div class="takeaway"><div class="num">5</div><strong>PDPA + Cybersecurity + AI Ethics</strong><p>3 เสาก่อนใช้ AI กับข้อมูลลูกค้า</p></div>
+  </div>
+  <aside class="notes">ขอให้ผู้เรียนพูดออกมา 1 ข้อที่จะนำกลับไปใช้พรุ่งนี้</aside>
+</section>
+
+<!-- SLIDE 61 — Action Items / Homework -->
+<section class="layout-T3">
+  <h2>การบ้านก่อน Day 2</h2>
+  <p class="text-muted fs-sm">เพื่อให้ Day 2 ลงลึกได้ทันที</p>
+  <div class="concept-grid">
+    <div class="concept-item">
+      <div class="icon">📝</div>
+      <div class="text"><strong>1. ลงทะเบียน AI Account 3 ตัว</strong>
+        <p>ChatGPT (chat.openai.com) · Claude (claude.ai) · Gemini (gemini.google.com) — ทั้งหมดมีแผน Free</p></div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">🧪</div>
+      <div class="text"><strong>2. ลองถาม AI 3 คำถามเรื่องบัญชี</strong>
+        <p>เปรียบเทียบคำตอบ — สังเกตจุดแข็ง/จุดอ่อนแต่ละตัว</p></div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">📊</div>
+      <div class="text"><strong>3. ส่ง Workshop 1.4 และ 1.5</strong>
+        <p>ผ่าน Google Form · กำหนด 22:00 คืนนี้</p></div>
+    </div>
+    <div class="concept-item">
+      <div class="icon">📖</div>
+      <div class="text"><strong>4. อ่าน Pre-read</strong>
+        <p>"What is Generative AI" (15 นาที) · จะส่งลิงก์ใน LINE Group</p></div>
+    </div>
+  </div>
+  <aside class="notes">เน้นว่าการบ้านไม่ยาก แต่จำเป็นเพื่อให้ Day 2 บินไปได้เลย</aside>
+</section>
+
+<!-- SLIDE 62 — Day 2 Preview -->
+<section class="layout-T2">
+  <div class="section-num">PREVIEW</div>
+  <h1>Day 2 · 13 กันยายน 2569</h1>
+  <div class="en-title">Applied Artificial Intelligence in Accounting</div>
+  <div class="topic-list">
+    <span>AI Provider Landscape 2026</span>
+    <span>RICIOV Prompt Framework</span>
+    <span>AP/AR/Tax Use Cases</span>
+    <span>NotebookLM</span>
+    <span>AI Governance</span>
+    <span>AI Dark Side</span>
+  </div>
+  <div class="callout purple" style="background: rgba(255,255,255,0.1); border-left-color: var(--color-purple-soft); color: rgba(255,255,255,0.95); margin-top: 2em;">
+    <strong>ไฮไลต์:</strong> Hands-on Workshop ใช้เวลา 60% ของวัน — ลงมือทำจริงทุกส่วน
+  </div>
+  <aside class="notes">สร้างความตื่นเต้นสำหรับ Day 2 — เน้นว่าบ่ายของ Day 2 จะได้ใช้ AI สด</aside>
+</section>
+
+<!-- SLIDE 63 — Q&A · Premium Open Discussion -->
+<section class="layout-T1 cover-qa">
+  <div class="cover-header">
+    <div class="cover-eyebrow">Day 01 · <strong>Open Discussion · 15 Minutes</strong></div>
+    <img class="kkbs-logo" src="https://kkbs.kku.ac.th/wp/wp-content/uploads/2025/01/KKUxKKBS-Color250w-2.png" alt="KKBS">
+  </div>
+  <div class="cover-body">
+    <div class="qa-mark">?</div>
+    <div class="qa-content">
+      <div class="qa-tag">Question · Comment · Reflection</div>
+      <h1>คำถาม คำตอบ<br>และข้อเสนอแนะ</h1>
+      <div class="qa-subtitle">Let's discuss · ถามได้ทุกข้อ ไม่มีคำถามไหนผิด</div>
+      <div class="qa-prompts">
+        <div class="prompt-card">
+          <strong>Surprise</strong>
+          วันนี้อะไรที่ "เซอร์ไพรส์" ท่านมากที่สุด?
+        </div>
+        <div class="prompt-card">
+          <strong>Apply</strong>
+          จะนำสิ่งใดกลับไปใช้พรุ่งนี้เป็นข้อแรก?
+        </div>
+        <div class="prompt-card">
+          <strong>Concern</strong>
+          มีเรื่องไหนที่ยังกังวลหรือไม่เข้าใจ?
+        </div>
+        <div class="prompt-card">
+          <strong>Wishlist</strong>
+          อยากให้ Day 2 ลงลึกเรื่องอะไรเพิ่ม?
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="cover-footer cols-3">
+    <div class="meta-cell">
+      <div class="label">Phone</div>
+      <div class="value">081-595-0990<small>โทรได้ทุกวันทำการ</small></div>
+    </div>
+    <div class="meta-cell">
+      <div class="label">Line ID</div>
+      <div class="value">Aj_uthen<small>แชทตอบเร็วที่สุด</small></div>
+    </div>
+    <div class="meta-cell">
+      <div class="label">Email</div>
+      <div class="value">Uthen.l@I-dc.co.th<small>คำถามยาว · เอกสารแนบ</small></div>
+    </div>
+  </div>
+  <aside class="notes">เปิดคำถาม — ถ้าเงียบ ใช้ 4 prompt cards เป็นจุดเริ่มต้นการสนทนา</aside>
+</section>
+
+<!-- SLIDE 64 — Thank You · Day 2 Preview -->
+<section class="layout-T1 cover-end">
+  <div class="cover-header">
+    <div class="cover-eyebrow">End of <strong>Day 01</strong> · 16:00</div>
+    <img class="kkbs-logo" src="https://kkbs.kku.ac.th/wp/wp-content/uploads/2025/01/KKUxKKBS250w-2.png" alt="KKBS">
+  </div>
+  <div class="cover-body">
+    <div class="end-tag">Thank You · ขอบคุณครับ</div>
+    <div class="end-thanks-th">วันนี้ทำได้ดีมากครับ</div>
+    <h1>เจอกันพรุ่งนี้<br>ที่ Day 02</h1>
+    <div class="end-subtitle">Applied Artificial Intelligence in Accounting · 13 September 2026 · พร้อมลงมือทำ AI สด 60% ของวัน</div>
+    <div class="end-quote">
+      <div class="quote-text">"นักบัญชีที่ใช้ AI จะมาแทนที่นักบัญชีที่ไม่ใช้ AI<br>— ไม่ใช่ AI มาแทนนักบัญชี"</div>
+      <div class="quote-author">— Mindset of the AI-Era Accountant</div>
+    </div>
+  </div>
+  <div class="cover-footer cols-3">
+    <div class="meta-cell">
+      <div class="label">Tomorrow</div>
+      <div class="value">09:00 — 16:00<small>เริ่ม Day 2 ตรงเวลาเหมือนเดิม</small></div>
+    </div>
+    <div class="meta-cell">
+      <div class="label">Pre-Class Prep</div>
+      <div class="value">AI Accounts × 3<small>ChatGPT · Claude · Gemini</small></div>
+    </div>
+    <div class="meta-cell">
+      <div class="label">Homework</div>
+      <div class="value">Workshop 1.4 + 1.5<small>ส่ง Google Form ก่อน 22:00</small></div>
+    </div>
+  </div>
+  <aside class="notes">ขอบคุณ ปิดด้วย Energy ดี — quote สร้างแรงบันดาลใจสำหรับวันถัดไป</aside>
+</section>
+
+</div>
+</div>
+
+<!-- Persistent TOC Navigation Bar -->
+<nav class="toc-nav">
+  <span class="toc-day-tag">Day 01</span>
+  <a class="toc-home" href="#/agenda" title="Agenda · กลับไปสารบัญ">⌂ TOC</a>
+  <span class="toc-divider">|</span>
+  <a href="#/sec-1" title="Course Overview">01 · Overview</a>
+  <a href="#/sec-2" title="The AI-Era Accountant">02 · AI-Era</a>
+  <a href="#/sec-3" title="Modern AIS">03 · AIS</a>
+  <a href="#/sec-4" title="Cloud Accounting Software">04 · Cloud</a>
+  <a href="#/sec-5" title="Automation & RPA">05 · RPA</a>
+</nav>
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/notes/notes.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/highlight.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/zoom/zoom.js"></script>
+
+<script>
+  Reveal.initialize({
+    hash: true,
+    slideNumber: 'c/t',
+    progress: true,
+    controls: true,
+    transition: 'fade',
+    transitionSpeed: 'default',
+    backgroundTransition: 'fade',
+    width: 1280,
+    height: 800,
+    margin: 0.04,
+    minScale: 0.2,
+    maxScale: 2.0,
+    plugins: [ RevealNotes, RevealHighlight, RevealZoom ]
+  });
+
+  // Auto-hide TOC nav on cover slides (T1) for cleaner look
+  Reveal.on('slidechanged', function(event) {
+    var s = event.currentSlide;
+    var isCover = s.classList.contains('layout-T1');
+    document.body.classList.toggle('hide-toc-nav', isCover);
+  });
+  // Initial state
+  document.addEventListener('DOMContentLoaded', function() {
+    var s = Reveal.getCurrentSlide && Reveal.getCurrentSlide();
+    if (s && s.classList.contains('layout-T1')) {
+      document.body.classList.add('hide-toc-nav');
+    }
+  });
+</script>
+
+</body>
+</html>
