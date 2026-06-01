@@ -8,11 +8,37 @@ from reportlab.pdfgen import canvas
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.lib.enums import TA_LEFT, TA_CENTER
-import os
+from reportlab.lib.styles import ParagraphStyle
+from reportlab.platypus import Paragraph
+import os, sys, platform
 
-# Register Thai font
-pdfmetrics.registerFont(TTFont('Thonburi', '/System/Library/Fonts/Supplemental/Thonburi.ttc', subfontIndex=0))
-pdfmetrics.registerFont(TTFont('Thonburi-Bold', '/System/Library/Fonts/Supplemental/Thonburi.ttc', subfontIndex=1))
+# Register Thai font — cross-platform (Windows / macOS / Linux)
+def _register_thai_font():
+    candidates = [
+        # Windows — THSarabunNew (preferred — official Thai font)
+        ('C:/Windows/Fonts/THSarabunNew.ttf',      'C:/Windows/Fonts/THSarabunNew Bold.ttf'),
+        ('C:/Windows/Fonts/THSarabun.ttf',         'C:/Windows/Fonts/THSarabun Bold.ttf'),
+        # Windows — Leelawadee UI (fallback)
+        ('C:/Windows/Fonts/leelawui.ttf',          'C:/Windows/Fonts/leelawdb.ttf'),
+        ('C:/Windows/Fonts/leelawad.ttf',          'C:/Windows/Fonts/leelawdb.ttf'),
+        # Windows — Tahoma (last resort)
+        ('C:/Windows/Fonts/tahoma.ttf',            'C:/Windows/Fonts/tahomabd.ttf'),
+    ]
+    for regular, bold in candidates:
+        if os.path.exists(regular) and os.path.exists(bold):
+            pdfmetrics.registerFont(TTFont('ThaiBody',     regular))
+            pdfmetrics.registerFont(TTFont('ThaiBody-Bold', bold))
+            print(f"  [OK] Using font: {os.path.basename(regular)}")
+            return
+    # macOS Thonburi (legacy fallback)
+    mac_thon = '/System/Library/Fonts/Supplemental/Thonburi.ttc'
+    if os.path.exists(mac_thon):
+        pdfmetrics.registerFont(TTFont('ThaiBody',      mac_thon, subfontIndex=0))
+        pdfmetrics.registerFont(TTFont('ThaiBody-Bold', mac_thon, subfontIndex=1))
+        return
+    raise RuntimeError("ไม่พบฟอนต์ภาษาไทยในระบบ — กรุณาติดตั้ง THSarabunNew หรือ Leelawadee UI")
+
+_register_thai_font()
 
 # Brand colors
 NAVY = HexColor('#003D7A')
@@ -100,102 +126,131 @@ DAYS = [
 ]
 
 
+def _fit_text(c, text, font, max_width, start_size, min_size=8):
+    """Shrink font size until text fits within max_width."""
+    size = start_size
+    while size > min_size and c.stringWidth(text, font, size) > max_width:
+        size -= 0.5
+    return size
+
+
 def draw_header(c, day):
-    """Draw the header band with course info."""
+    """Draw the header band with course info — auto-fit titles to avoid clipping."""
     # Navy header band
     c.setFillColor(NAVY_DEEP)
     c.rect(0, H - 90, W, 90, fill=1, stroke=0)
 
-    # Course title
+    # Day badge on the right (defines title width budget)
+    badge_w, badge_h = 80, 64
+    badge_x = W - 25 - badge_w
+    badge_y = H - 78
+    c.setFillColor(SKY)
+    c.roundRect(badge_x, badge_y, badge_w, badge_h, 8, fill=1, stroke=0)
     c.setFillColor(white)
-    c.setFont('Thonburi-Bold', 13)
-    c.drawString(25, H - 35, COURSE_TITLE_TH)
-    c.setFont('Thonburi', 9)
-    c.drawString(25, H - 52, COURSE_TITLE_EN)
+    c.setFont('ThaiBody', 10)
+    c.drawCentredString(badge_x + badge_w / 2, H - 32, "DAY")
+    c.setFont('ThaiBody-Bold', 30)
+    c.drawCentredString(badge_x + badge_w / 2, H - 65, f"0{day['num']}")
+
+    # Title width budget = from x=25 to badge - 15 padding
+    title_max_w = badge_x - 25 - 15
+
+    # Course title (auto-fit)
+    c.setFillColor(white)
+    th_size = _fit_text(c, COURSE_TITLE_TH, 'ThaiBody-Bold', title_max_w, start_size=15, min_size=10)
+    c.setFont('ThaiBody-Bold', th_size)
+    c.drawString(25, H - 32, COURSE_TITLE_TH)
+
+    en_size = _fit_text(c, COURSE_TITLE_EN, 'ThaiBody', title_max_w, start_size=11, min_size=8)
+    c.setFont('ThaiBody', en_size)
+    c.drawString(25, H - 50, COURSE_TITLE_EN)
 
     # Faculty line
     c.setFillColor(HexColor('#BBDEFB'))
-    c.setFont('Thonburi', 8)
-    c.drawString(25, H - 72, f"{FACULTY}  |  {INSTRUCTOR_TH}")
-
-    # Day badge on right
-    c.setFillColor(SKY)
-    c.roundRect(W - 95, H - 78, 75, 60, 8, fill=1, stroke=0)
-    c.setFillColor(white)
-    c.setFont('Thonburi', 9)
-    c.drawCentredString(W - 57, H - 35, "DAY")
-    c.setFont('Thonburi-Bold', 30)
-    c.drawCentredString(W - 57, H - 68, f"0{day['num']}")
+    fac_text = f"{FACULTY}  |  {INSTRUCTOR_TH}"
+    fac_size = _fit_text(c, fac_text, 'ThaiBody', title_max_w, start_size=10, min_size=7)
+    c.setFont('ThaiBody', fac_size)
+    c.drawString(25, H - 70, fac_text)
 
 
 def draw_day_title(c, day, y):
     """Draw the day title section."""
     # Module tag
     c.setFillColor(PURPLE)
-    c.setFont('Thonburi', 10)
+    c.setFont('ThaiBody', 10)
     c.drawString(25, y, day['module'])
 
     y -= 28
     # Thai title
     c.setFillColor(NAVY)
-    c.setFont('Thonburi-Bold', 18)
+    c.setFont('ThaiBody-Bold', 18)
     c.drawString(25, y, day['title_th'])
 
     y -= 22
     # English subtitle
     c.setFillColor(TEXT_MUTED)
-    c.setFont('Thonburi', 11)
+    c.setFont('ThaiBody', 11)
     c.drawString(25, y, day['title_en'])
 
     y -= 18
     # Date
-    c.setFont('Thonburi', 10)
+    c.setFont('ThaiBody', 10)
     c.drawString(25, y, f"{day['date_en']}  ·  {day['date_th']}")
 
     return y - 15
 
 
 def draw_section_table(c, day, y):
-    """Draw the sections table."""
-    # Table header
+    """Draw the sections table — text auto-wraps to fit columns."""
+    # Column geometry (left edges + widths in points)
+    COL_SEC_X,  COL_SEC_W  = 35,  150        # Section label
+    COL_TH_X,   COL_TH_W   = 195, 215        # Thai description
+    COL_EN_X,   COL_EN_W   = 415, W - 25 - 415   # English description
+    PAD_TOP    = 8                            # padding inside row
+    PAD_BOT    = 8
+
+    # Header band
     c.setFillColor(NAVY)
     c.roundRect(25, y - 24, W - 50, 26, 4, fill=1, stroke=0)
     c.setFillColor(white)
-    c.setFont('Thonburi-Bold', 10)
-    c.drawString(35, y - 18, "หัวข้อ / Section")
-    c.drawString(200, y - 18, "รายละเอียด (TH)")
-    c.drawString(420, y - 18, "Description (EN)")
+    c.setFont('ThaiBody-Bold', 12)
+    c.drawString(COL_SEC_X, y - 17, "หัวข้อ / Section")
+    c.drawString(COL_TH_X,  y - 17, "รายละเอียด (TH)")
+    c.drawString(COL_EN_X,  y - 17, "Description (EN)")
 
-    y -= 30
-    row_h = 32
+    y -= 32
+
+    # Paragraph styles (auto-wrap)
+    style_th = ParagraphStyle('th', fontName='ThaiBody', fontSize=12, leading=15, textColor=black)
+    style_en = ParagraphStyle('en', fontName='ThaiBody', fontSize=10, leading=13, textColor=TEXT_MUTED)
+    style_sec = ParagraphStyle('sec', fontName='ThaiBody-Bold', fontSize=11, leading=14, textColor=NAVY)
 
     for i, (sec, th_desc, en_desc) in enumerate(day['sections']):
+        # Build paragraphs and measure required height per cell
+        p_sec = Paragraph(sec, style_sec)
+        p_th  = Paragraph(th_desc, style_th)
+        p_en  = Paragraph(en_desc, style_en)
+
+        h_sec = p_sec.wrap(COL_SEC_W, 200)[1]
+        h_th  = p_th.wrap(COL_TH_W,  200)[1]
+        h_en  = p_en.wrap(COL_EN_W,  200)[1]
+        row_h = max(h_sec, h_th, h_en) + PAD_TOP + PAD_BOT
+
+        # Row background
         bg = LIGHT_BG if i % 2 == 0 else white
         c.setFillColor(bg)
-        c.rect(25, y - row_h + 6, W - 50, row_h, fill=1, stroke=0)
+        c.rect(25, y - row_h, W - 50, row_h, fill=1, stroke=0)
 
-        # Section number
-        c.setFillColor(NAVY)
-        c.setFont('Thonburi-Bold', 9)
-        c.drawString(35, y - 8, sec)
-
-        # Thai description
-        c.setFillColor(black)
-        c.setFont('Thonburi', 9)
-        # Truncate if too long
-        th_text = th_desc[:28] if len(th_desc) > 28 else th_desc
-        c.drawString(200, y - 8, th_text)
-
-        # English description
-        c.setFillColor(TEXT_MUTED)
-        c.setFont('Thonburi', 8)
-        en_text = en_desc[:35] if len(en_desc) > 35 else en_desc
-        c.drawString(420, y - 8, en_text)
+        # Render cells (top of each Paragraph is row_top - PAD_TOP)
+        top = y - PAD_TOP
+        p_sec.drawOn(c, COL_SEC_X, top - h_sec)
+        p_th .drawOn(c, COL_TH_X,  top - h_th)
+        p_en .drawOn(c, COL_EN_X,  top - h_en)
 
         # Bottom border
         c.setStrokeColor(BORDER)
         c.setLineWidth(0.5)
-        c.line(25, y - row_h + 6, W - 25, y - row_h + 6)
+        c.line(25, y - row_h, W - 25, y - row_h)
 
         y -= row_h
 
@@ -205,19 +260,19 @@ def draw_section_table(c, day, y):
 def draw_keywords(c, day, y):
     """Draw keyword pills."""
     c.setFillColor(NAVY)
-    c.setFont('Thonburi-Bold', 11)
+    c.setFont('ThaiBody-Bold', 11)
     c.drawString(25, y, "คำสำคัญ · Keywords")
     y -= 22
 
     x = 25
     for kw in day['keywords']:
-        tw = c.stringWidth(kw, 'Thonburi', 9) + 20
+        tw = c.stringWidth(kw, 'ThaiBody', 9) + 20
         # Pill background
         c.setFillColor(HexColor('#E8F2FC'))
         c.roundRect(x, y - 4, tw, 20, 10, fill=1, stroke=0)
         # Pill text
         c.setFillColor(NAVY)
-        c.setFont('Thonburi', 9)
+        c.setFont('ThaiBody', 9)
         c.drawString(x + 10, y + 2, kw)
         x += tw + 8
         if x > W - 80:
@@ -230,7 +285,7 @@ def draw_keywords(c, day, y):
 def draw_notes_section(c, y):
     """Draw notes lines for student to write on."""
     c.setFillColor(NAVY)
-    c.setFont('Thonburi-Bold', 11)
+    c.setFont('ThaiBody-Bold', 11)
     c.drawString(25, y, "บันทึก · Notes")
     y -= 20
 
@@ -249,7 +304,7 @@ def draw_footer(c, day):
     c.setFillColor(BORDER)
     c.line(25, 55, W - 25, 55)
     c.setFillColor(TEXT_MUTED)
-    c.setFont('Thonburi', 7)
+    c.setFont('ThaiBody', 7)
     c.drawString(25, 40, f"Handout · Day {day['num']:02d} · {COURSE_TITLE_EN}")
     c.drawRightString(W - 25, 40, f"© 2026 · {FACULTY}")
 
@@ -280,7 +335,7 @@ def create_handout(day, output_dir):
     draw_footer(c, day)
 
     c.save()
-    print(f"  ✅ Created: {filename}")
+    print(f"  [OK] Created: {filename}")
     return filename
 
 
@@ -288,7 +343,7 @@ if __name__ == "__main__":
     script_dir = os.path.dirname(os.path.abspath(__file__))
     output_dir = script_dir
 
-    print("🔨 Generating handout PDFs...")
+    print("Generating handout PDFs...")
     for day in DAYS:
         create_handout(day, output_dir)
-    print(f"\n✨ Done! 4 handout PDFs created in {output_dir}")
+    print(f"\nDone! 4 handout PDFs created in {output_dir}")
